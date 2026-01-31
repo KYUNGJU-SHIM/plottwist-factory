@@ -120,32 +120,50 @@
     </div>
 
     <script>
-        // 여기에 실제 게임 폴더명을 입력하세요
-        const games = ['games']; 
+    async function loadGames() {
+        const listContainer = document.getElementById('game-list');
+        console.log("시작: 게임 데이터 불러오는 중..."); // 콘솔 확인용
 
-        async function loadGames() {
-            const listContainer = document.getElementById('game-list');
-            let htmlContent = '';
+        try {
+            // 캐시 방지를 위해 timestamp 추가
+            const response = await fetch(`./all-games.json?t=${new Date().getTime()}`);
             
-            for (const gameId of games) {
-                try {
-                    const response = await fetch(`/games/${gameId}/game-meta.json`);
-                    if (!response.ok) throw new Error();
-                    const meta = await response.json();
-                    
-                    htmlContent += `
-                        <div class="game-card" onclick="location.href='${meta.path}'">
-                            <span class="badge">GAME</span>
-                            <h3>${meta.title}</h3>
-                            <p>${meta.description}</p>
-                        </div>
-                    `;
-                } catch (e) {
-                    console.error(`${gameId} 정보를 찾을 수 없습니다.`);
-                }
+            if (!response.ok) {
+                throw new Error(`파일을 찾을 수 없습니다. (Status: ${response.status})`);
             }
-            
-            listContainer.innerHTML = htmlContent || '<p class="loading">등록된 게임이 없습니다.</p>';
-        }
 
+            const games = await response.json();
+            console.log("불러온 데이터:", games); // 콘솔에 데이터가 찍히는지 확인
+
+            if (!games || games.length === 0) {
+                listContainer.innerHTML = '<div class="loading">등록된 게임이 없습니다. (all-games.json이 비어있음)</div>';
+                return;
+            }
+
+            let htmlContent = '';
+            games.forEach(meta => {
+                htmlContent += `
+                    <div class="game-card" onclick="location.href='${meta.path}'">
+                        <span class="badge">GAME</span>
+                        <h3>${meta.title || '제목 없음'}</h3>
+                        <p>${meta.description || '설명이 없습니다.'}</p>
+                    </div>
+                `;
+            });
+            
+            listContainer.innerHTML = htmlContent;
+            console.log("성공: 리스트 렌더링 완료");
+
+        } catch (e) {
+            console.error("오류 발생:", e);
+            listContainer.innerHTML = `<div class="loading">오류 발생: ${e.message}</div>`;
+        }
+    }
+
+    // DOM이 완전히 로드된 후 실행되도록 보장
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGames);
+    } else {
         loadGames();
+    }
+</script>

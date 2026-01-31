@@ -1,0 +1,8 @@
+{
+  "name": "mystery-vn-games",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-games.js"
+  },
+  "devDependencies": {}
+}

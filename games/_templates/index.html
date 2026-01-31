@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mystery Visual Novel</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div id="monogatari">
+    <visual-novel>
+      <!-- 로딩 화면 -->
+      <loading-screen></loading-screen>
+      
+      <!-- 메인 화면 -->
+      <main-screen>
+        <main-menu></main-menu>
+      </main-screen>
+      
+      <!-- 게임 화면 -->
+      <game-screen>
+        <text-box></text-box>
+      </game-screen>
+      
+      <!-- 갤러리 -->
+      <gallery-screen></gallery-screen>
+      
+      <!-- 로드/세이브 -->
+      <load-screen></load-screen>
+      <save-screen></save-screen>
+      
+      <!-- 설정 -->
+      <settings-screen></settings-screen>
+      
+      <!-- 도움말 -->
+      <help-screen></help-screen>
+    </visual-novel>
+  </div>
+  
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

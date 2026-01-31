@@ -1,0 +1,138 @@
+/* 기본 스타일 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #0d0d0d;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+}
+
+#monogatari {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 비주얼 노벨 컨테이너 */
+[data-component="visual-novel"] {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* 텍스트 박스 스타일 */
+[data-component="text-box"] {
+  background: rgba(0, 0, 0, 0.85) !important;
+  border: 1px solid rgba(74, 74, 106, 0.5) !important;
+  border-radius: 8px;
+  margin: 0 20px 20px 20px;
+}
+
+/* 이름 박스 */
+[data-component="name-box"] {
+  background: linear-gradient(90deg, rgba(74, 74, 106, 0.9), rgba(74, 74, 106, 0.6)) !important;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 16px !important;
+}
+
+/* 대사 텍스트 */
+[data-component="text-box"] p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 16px 20px;
+}
+
+/* 선택지 스타일 */
+[data-component="choice-container"] {
+  padding: 20px;
+}
+
+[data-component="choice-container"] button {
+  background: rgba(74, 74, 106, 0.3);
+  border: 1px solid rgba(74, 74, 106, 0.6);
+  border-radius: 8px;
+  color: #fff;
+  padding: 16px 24px;
+  margin: 8px 0;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+[data-component="choice-container"] button:hover {
+  background: rgba(91, 202, 255, 0.3);
+  border-color: rgba(91, 202, 255, 0.6);
+  transform: translateX(4px);
+}
+
+/* 메인 메뉴 */
+[data-component="main-menu"] {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+[data-component="main-menu"] button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  padding: 12px 24px;
+  margin: 8px;
+  transition: all 0.2s ease;
+}
+
+[data-component="main-menu"] button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+/* 로딩 화면 */
+[data-component="loading-screen"] {
+  background: #0d0d0d;
+}
+
+/* 세이브/로드 화면 */
+[data-component="save-screen"],
+[data-component="load-screen"] {
+  background: rgba(26, 26, 46, 0.95);
+}
+
+/* 설정 화면 */
+[data-component="settings-screen"] {
+  background: rgba(26, 26, 46, 0.95);
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 74, 106, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 74, 106, 0.8);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  [data-component="text-box"] {
+    margin: 0 10px 10px 10px;
+  }
+  
+  [data-component="text-box"] p {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+  
+  [data-component="choice-container"] button {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}

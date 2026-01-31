@@ -1,8 +1,6 @@
 // 태풍 속 크루즈 빅토리아호
 // Generated: 2026-01-31T12:50:15.412Z
 
-const { monogatari } = window;
-
 monogatari.characters({
   "char_protagonist": {
     "name": "강수현",

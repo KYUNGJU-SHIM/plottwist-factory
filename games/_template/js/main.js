@@ -1,5 +1,5 @@
 // Monogatari를 esm.sh CDN에서 로드
-import Monogatari from 'https://esm.sh/@monogatari/core@2.0.2';
+import Monogatari from 'https://cdn.skypack.dev/@monogatari/core@2.0.2';
 
 // 전역으로 노출 (script.js에서 사용)
 window.Monogatari = Monogatari;

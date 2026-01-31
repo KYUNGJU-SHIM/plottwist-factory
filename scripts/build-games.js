@@ -36,7 +36,7 @@ const games = fs.readdirSync(gamesDir)
   });
 
 games.forEach(gameId => {
-  const gameScriptPath = path.join(gamesDir, gameId, 'script.js');
+  const gameScriptPath = path.join(gamesDir, gameId, 'js', 'script.js');
   
   if (fs.existsSync(gameScriptPath)) {
     const outputDir = path.join(distDir, gameId);

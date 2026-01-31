@@ -1,0 +1,387 @@
+{
+  "caseDesign": {
+    "victim": {
+      "characterId": "char_victim",
+      "name": "강태준",
+      "age": 45,
+      "occupation": "대형 건설사 회장",
+      "personality": "오만하고 냉철하며, 성공을 위해서는 수단과 방법을 가리지 않는 인물",
+      "appearance": "잘 다려진 고급 정장을 입고 있으며, 날카로운 눈매와 굳게 다문 입술이 인상적이다.",
+      "background": "가난한 집안에서 태어나 오직 자신의 능력으로 대기업을 일궈냈다. 과거 비리 스캔들에 연루된 적이 있다.",
+      "secrets": [
+        "해외 페이퍼 컴퍼니 운영",
+        "과거 하청업체 갑질",
+        "숨겨둔 사생아 존재"
+      ],
+      "relationshipsConflict": "크루즈에 탑승한 모든 사람들과 돈, 권력 문제로 얽혀있다.",
+      "prologueConflict": "프롤로그에서 강태준은 자신의 비리를 폭로하려는 기자(용의자 중 한 명)에게 협박을 가한다."
+    },
+    "culprit": {
+      "characterId": "char_journalist",
+      "motiveCategory": "복수",
+      "motiveDetail": "강태준의 과거 비리 폭로 시도 실패 및 언론 탄압으로 인한 기자 생명 위협",
+      "motiveConnection": "기자는 정의감에 불타는 성격이며, 과거 강태준의 비리를 파헤치다 좌절된 경험이 있다.",
+      "triggerEvent": "크루즈에서 강태준이 자신의 비리를 알고 있다는 사실을 노골적으로 드러내며 협박하자, 복수를 결심한다.",
+      "plan": "태풍으로 인해 크루즈가 고립된 상황을 이용하여 알리바이를 조작하고, 강태준을 살해한다.",
+      "alibiClaim": "사건 발생 시각에 자신의 객실에서 기사를 작성하고 있었다고 주장한다.",
+      "alibiTrickMethod": "미리 녹음해둔 타자 소리를 객실에서 틀어놓고, 다른 통로를 통해 피해자에게 접근하여 범행을 저지른다.",
+      "actualTimeline": {
+        "22:50": "객실에서 타자 소리 녹음 파일을 재생 시작",
+        "23:00": "비상 통로를 통해 피해자의 객실로 이동 (5분 소요)",
+        "23:05": "피해자 객실 도착",
+        "23:10": "피해자 살해",
+        "23:15": "비상 통로를 통해 자신의 객실로 복귀 (5분 소요)",
+        "23:20": "객실 도착, 녹음 파일 계속 재생",
+        "23:30": "사건 발생 후 객실에서 나옴"
+      }
+    },
+    "trick": {
+      "type": "alibi",
+      "summary": "타자 소리 녹음 파일을 이용한 알리바이 트릭",
+      "mechanism": "범인은 미리 타자 소리를 녹음해두고, 사건 발생 시각에 자신의 객실에서 녹음 파일을 재생하여 알리바이를 만든다. 실제로는 비상 통로를 이용하여 피해자에게 접근하여 범행을 저지른다.",
+      "components": [
+        {
+          "element": "타자 소리 녹음 파일",
+          "purpose": "알리바이 조작",
+          "howUsed": "사건 발생 시각에 객실에서 재생"
+        },
+        {
+          "element": "비상 통로",
+          "purpose": "피해자에게 은밀하게 접근",
+          "howUsed": "객실과 피해자 객실 사이를 이동"
+        },
+        {
+          "element": "객실 문 잠금",
+          "purpose": "자신의 객실에 있었다는 인상 심기",
+          "howUsed": "객실에서 나갈 때 자동으로 잠기도록 설정"
+        }
+      ],
+      "weakness": "녹음 파일의 길이, 비상 통로의 존재, 객실 문 잠금 방식",
+      "criticalEvidence": "녹음 파일의 반복되는 패턴, 비상 통로의 먼지, 객실 문 자동 잠금 장치의 결함",
+      "howPlayerFinds": "녹음 파일은 음향 전문가인 승객(용의자 중 한 명)이 분석, 비상 통로는 주인공이 크루즈 내부를 탐색, 객실 문 잠금 장치는 객실 관리인이 증언"
+    },
+    "allCharacterTimelines": {
+      "char_journalist": {
+        "22:50": "객실에서 타자 소리 녹음 파일 재생 시작",
+        "23:00": "비상 통로 이동",
+        "23:10": "피해자 살해",
+        "23:20": "비상 통로 이동 후 객실 복귀, 녹음 파일 재생",
+        "23:30": "객실에서 나옴",
+        "alibiVerifiedBy": null
+      },
+      "char_protagonist": {
+        "22:50": "식당에서 저녁 식사",
+        "23:00": "갑판에서 산책",
+        "23:10": "객실로 이동",
+        "23:20": "객실에서 휴식",
+        "23:30": "사건 발생 소식을 듣고 현장으로 이동",
+        "alibiVerifiedBy": "승객, 승무원"
+      },
+      "char_victim": {
+        "22:50": "자신의 객실에서 술을 마심",
+        "23:00": "누군가와 전화 통화",
+        "23:10": "사망 추정 시각",
+        "23:20": "사망",
+        "23:30": "사망",
+        "alibiVerifiedBy": null
+      }
+    }
+  },
+  "characters": [
+    {
+      "id": "char_protagonist",
+      "name": "강지훈",
+      "age": 28,
+      "gender": "male",
+      "occupation": "사립탐정",
+      "personality": "침착, 논리적, 관찰력",
+      "appearance": "평범한 외모에 날카로운 눈빛을 가졌다.",
+      "speechStyle": "간결하고 명료한 말투",
+      "relationToVictim": "과거 강태준의 의뢰를 받아 사건을 해결한 적이 있다.",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 자신의 객실에서 휴식을 취하고 있었다.",
+      "alibiTruth": "사건 발생 시각에 자신의 객실에서 휴식을 취하고 있었다.",
+      "whyNotCulprit": "피해자를 살해할 동기가 없고, 알리바이도 확실하다.",
+      "secret": "과거 해결하지 못한 사건에 대한 죄책감을 가지고 있다.",
+      "suspicionLevel": "low",
+      "role": "protagonist"
+    },
+    {
+      "id": "char_journalist",
+      "name": "김민지",
+      "age": 35,
+      "gender": "female",
+      "occupation": "기자",
+      "personality": "정의감, 집요함, 대담함",
+      "appearance": "안경을 쓴 지적인 인상",
+      "speechStyle": "직설적이고 날카로운 말투",
+      "relationToVictim": "과거 강태준의 비리를 폭로하려다 실패한 적이 있다.",
+      "motive": "강태준의 과거 비리 폭로 시도 실패 및 언론 탄압으로 인한 기자 생명 위협",
+      "alibiClaim": "사건 발생 시각에 자신의 객실에서 기사를 작성하고 있었다.",
+      "alibiTruth": "타자 소리 녹음 파일을 이용한 알리바이 트릭",
+      "whyNotCulprit": "결정적인 증거가 발견되기 전까지는 용의선상에서 제외하기 어렵다.",
+      "secret": "강태준의 사생아 존재를 알고 있다.",
+      "suspicionLevel": "high",
+      "role": "culprit"
+    },
+    {
+      "id": "char_heiress",
+      "name": "최수연",
+      "age": 25,
+      "gender": "female",
+      "occupation": "재벌 상속녀",
+      "personality": "변덕스러움, 화려함, 이기적",
+      "appearance": "화려한 옷차림과 액세서리를 착용하고 있다.",
+      "speechStyle": "도도하고 거만한 말투",
+      "relationToVictim": "강태준의 회사에 투자하고 있으며, 개인적인 감정은 좋지 않다.",
+      "motive": "강태준과의 투자 계약 조건 불만",
+      "alibiClaim": "사건 발생 시각에 카지노에서 게임을 하고 있었다.",
+      "alibiTruth": "카지노에서 게임을 하고 있었다.",
+      "whyNotCulprit": "카지노 직원의 증언으로 알리바이가 입증되었고, 살해 도구를 소지할 이유가 없다.",
+      "secret": "도박 빚에 시달리고 있다.",
+      "suspicionLevel": "medium",
+      "role": "suspect"
+    },
+    {
+      "id": "char_musician",
+      "name": "박선우",
+      "age": 40,
+      "gender": "male",
+      "occupation": "음악가",
+      "personality": "예민함, 예술가 기질, 우울함",
+      "appearance": "긴 머리와 덥수룩한 수염을 가진 외모",
+      "speechStyle": "몽환적이고 비유적인 말투",
+      "relationToVictim": "과거 강태준의 후원을 받았으나, 현재는 관계가 소원해졌다.",
+      "motive": "강태준의 후원 중단으로 인한 경제적 어려움",
+      "alibiClaim": "사건 발생 시각에 자신의 객실에서 작곡을 하고 있었다.",
+      "alibiTruth": "자신의 객실에서 작곡을 하고 있었다.",
+      "whyNotCulprit": "범행을 저지를 만한 체력이 부족하고, 살해 도구를 다룰 능력이 없어 보인다.",
+      "secret": "심각한 우울증을 앓고 있다.",
+      "suspicionLevel": "low",
+      "role": "suspect"
+    },
+    {
+      "id": "char_employee",
+      "name": "이수현",
+      "age": 32,
+      "gender": "female",
+      "occupation": "강태준의 비서",
+      "personality": "냉정함, 침착함, 충성심",
+      "appearance": "단정하고 세련된 외모",
+      "speechStyle": "정중하고 사무적인 말투",
+      "relationToVictim": "강태준의 오른팔 역할을 하며, 모든 비밀을 알고 있다.",
+      "motive": "강태준의 비리를 은폐하려는 동기 (반전)",
+      "alibiClaim": "사건 발생 시각에 자신의 객실에서 업무를 보고 있었다.",
+      "alibiTruth": "자신의 객실에서 업무를 보고 있었다.",
+      "whyNotCulprit": "강태준에게 충성스러운 모습을 보여주기 때문에 용의선상에서 제외되기 쉽다.",
+      "secret": "강태준의 사생아를 돌보고 있다.",
+      "suspicionLevel": "medium",
+      "role": "suspect"
+    },
+    {
+      "id": "char_soundEngineer",
+      "name": "정재현",
+      "age": 38,
+      "gender": "male",
+      "occupation": "음향 엔지니어",
+      "personality": "꼼꼼함, 분석적, 예민함",
+      "appearance": "수수한 차림에 항상 헤드폰을 착용하고 있다.",
+      "speechStyle": "전문 용어를 섞어 사용하는 말투",
+      "relationToVictim": "크루즈 행사에 참여하여 음향 장비를 담당하고 있다.",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 음향 장비를 점검하고 있었다.",
+      "alibiTruth": "음향 장비를 점검하고 있었다.",
+      "whyNotCulprit": "피해자와의 관계가 없고, 범행 동기도 없다.",
+      "secret": "과거 음향 사고로 인해 트라우마를 가지고 있다.",
+      "suspicionLevel": "low",
+      "role": "suspect"
+    }
+  ],
+  "evidence": {
+    "physical": [
+      {
+        "id": "ev_001",
+        "name": "타자 소리 녹음 파일",
+        "description": "김민지의 객실에서 발견된 녹음 파일. 반복적인 패턴이 나타난다.",
+        "foundAt": "김민지의 객실",
+        "foundWhen": "사건 발생 후 수색 과정에서",
+        "significance": "김민지의 알리바이 트릭을 밝히는 결정적인 증거",
+        "pointsTo": "char_journalist",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_002",
+        "name": "비상 통로의 먼지",
+        "description": "비상 통로에서 발견된 먼지. 최근에 사용된 흔적이 있다.",
+        "foundAt": "비상 통로",
+        "foundWhen": "주인공이 크루즈 내부를 탐색하는 과정에서",
+        "significance": "범인이 비상 통로를 이용했다는 증거",
+        "pointsTo": "char_journalist",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_003",
+        "name": "피해자의 객실 문 잠금 장치",
+        "description": "피해자의 객실 문에 설치된 자동 잠금 장치. 결함이 발견되었다.",
+        "foundAt": "피해자의 객실 문",
+        "foundWhen": "객실 관리인의 증언을 토대로 조사하는 과정에서",
+        "significance": "범인이 객실 문을 잠그고 나갔을 가능성을 시사",
+        "pointsTo": "char_journalist",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_004",
+        "name": "기자의 만년필",
+        "description": "기자의 만년필에서 피해자의 혈흔이 발견되었다.",
+        "foundAt": "기자의 객실",
+        "foundWhen": "수색 과정에서",
+        "significance": "기자가 범인이라는 결정적인 증거",
+        "pointsTo": "char_journalist",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      }
+    ],
+    "testimonies": [
+      {
+        "id": "test_001",
+        "witness": "char_soundEngineer",
+        "content": "김민지의 객실에서 반복적인 소리가 들렸습니다. 마치 타자 치는 소리 같았어요.",
+        "truthLevel": "true",
+        "realMeaning": "김민지가 타자 소리 녹음 파일을 재생했다는 증거",
+        "contradiction": null
+      },
+      {
+        "id": "test_002",
+        "witness": "char_heiress",
+        "content": "저는 그 시간에 카지노에 있었어요. 많은 사람들이 저를 봤을 거예요.",
+        "truthLevel": "true",
+        "realMeaning": "최수연의 알리바이를 입증",
+        "contradiction": null
+      },
+      {
+        "id": "test_003",
+        "witness": "char_employee",
+        "content": "저는 회장님께 충성을 다했습니다. 회장님을 해칠 이유가 없어요.",
+        "truthLevel": "complete_lie",
+        "realMeaning": "강태준의 비리를 은폐하려는 의도",
+        "contradiction": "강태준의 비리를 알고 있으며, 사생아를 돌보고 있다는 사실"
+      }
+    ]
+  },
+  "eliminationLogic": {
+    "char_heiress": {
+      "suspicionReason": "강태준과의 투자 계약 조건 불만",
+      "eliminationEvidence": [
+        "test_002"
+      ],
+      "eliminationLogic": "카지노 직원의 증언으로 알리바이가 입증되었고, 살해 도구를 소지할 이유가 없다."
+    },
+    "char_musician": {
+      "suspicionReason": "강태준의 후원 중단으로 인한 경제적 어려움",
+      "eliminationEvidence": [],
+      "eliminationLogic": "범행을 저지를 만한 체력이 부족하고, 살해 도구를 다룰 능력이 없어 보인다."
+    },
+    "char_employee": {
+      "suspicionReason": "강태준의 비리를 은폐하려는 동기",
+      "eliminationEvidence": [],
+      "eliminationLogic": "강태준에게 충성스러운 모습을 보여주기 때문에 용의선상에서 제외되기 쉽지만, 반전 요소로 활용 가능"
+    },
+    "char_soundEngineer": {
+      "suspicionReason": "없음",
+      "eliminationEvidence": [],
+      "eliminationLogic": "피해자와의 관계가 없고, 범행 동기도 없다."
+    }
+  },
+  "deductionLogic": {
+    "step1": {
+      "point": "타자 소리 녹음 파일의 존재",
+      "evidence": [
+        "ev_001"
+      ],
+      "eliminates": [],
+      "conclusion": "김민지가 알리바이를 조작했을 가능성이 높다."
+    },
+    "step2": {
+      "point": "비상 통로의 먼지",
+      "evidence": [
+        "ev_002"
+      ],
+      "eliminates": [],
+      "conclusion": "범인이 비상 통로를 이용했다."
+    },
+    "step3": {
+      "point": "피해자의 객실 문 잠금 장치의 결함",
+      "evidence": [
+        "ev_003"
+      ],
+      "eliminates": [],
+      "conclusion": "범인이 객실 문을 잠그고 나갔을 가능성이 있다."
+    },
+    "finalAccusation": {
+      "culprit": "char_journalist",
+      "requiredEvidence": [
+        "ev_001",
+        "ev_002",
+        "ev_003",
+        "ev_004"
+      ],
+      "trickExplanation": "김민지는 타자 소리 녹음 파일을 이용하여 자신의 객실에서 기사를 작성하고 있었다는 알리바이를 만들었습니다. 하지만 실제로는 비상 통로를 통해 피해자의 객실로 이동하여 범행을 저질렀습니다. 범행 후에는 다시 비상 통로를 통해 자신의 객실로 돌아와 녹음 파일을 계속 재생했습니다. 피해자의 객실 문에 설치된 자동 잠금 장치의 결함으로 인해, 김민지는 객실 문을 잠그고 나갈 수 있었습니다."
+    }
+  },
+  "backgrounds": [
+    {
+      "id": "bg_cruise_cabin",
+      "name": "크루즈 객실",
+      "description": "호화로운 크루즈의 객실. 고급 가구와 편안한 침대가 놓여 있다.",
+      "timeVariants": [
+        "day",
+        "night"
+      ]
+    },
+    {
+      "id": "bg_cruise_deck",
+      "name": "크루즈 갑판",
+      "description": "크루즈의 갑판. 탁 트인 바다를 감상할 수 있다.",
+      "timeVariants": [
+        "day",
+        "night",
+        "evening"
+      ]
+    },
+    {
+      "id": "bg_cruise_casino",
+      "name": "크루즈 카지노",
+      "description": "화려한 조명과 흥겨운 음악이 흐르는 카지노.",
+      "timeVariants": [
+        "night"
+      ]
+    },
+    {
+      "id": "bg_cruise_emergency_exit",
+      "name": "크루즈 비상 통로",
+      "description": "크루즈 내부의 좁고 어두운 비상 통로. 평소에는 잘 사용되지 않는다.",
+      "timeVariants": [
+        "day",
+        "night"
+      ]
+    }
+  ],
+  "consistencyCheck": {
+    "culpritMotiveMatchesCharacter": true,
+    "timelineHasNoOverlap": true,
+    "allEvidenceDiscoverable": true,
+    "allSuspectsEliminable": true,
+    "trickIsRealistic": true
+  }
+}

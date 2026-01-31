@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>태풍으로 멈춘 호화 크루즈</title>
+  
+  <!-- Monogatari Engine from _shared -->
+  <link rel="stylesheet" href="../_shared/monogatari/dist/engine/core/monogatari.min.css">
+  <link rel="stylesheet" href="../_shared/monogatari/dist/engine/core/design/kanade/styles.css">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #0d0d0d;
+    }
+    #monogatari {
+      width: 100vw;
+      height: 100vh;
+    }
+    [data-component="visual-novel"] {
+      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    }
+    [data-component="text-box"] {
+      background: rgba(0, 0, 0, 0.85) !important;
+      border: 1px solid #4a4a6a !important;
+    }
+    [data-component="name-box"] {
+      background: rgba(74, 74, 106, 0.9) !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="monogatari">
+    <visual-novel>
+      <language-selection-screen></language-selection-screen>
+      <loading-screen></loading-screen>
+      <main-screen>
+        <main-menu></main-menu>
+      </main-screen>
+      <game-screen>
+        <text-box></text-box>
+      </game-screen>
+    </visual-novel>
+  </div>
+  
+  <!-- Monogatari Engine from _shared -->
+  <script src="../_shared/monogatari/dist/engine/core/monogatari.min.js"></script>
+  
+  <!-- Game Script -->
+  <script src="js/script.js"></script>
+  
+  <script>
+    monogatari.init('#monogatari').then(() => {
+      monogatari.run();
+    });
+  </script>
+</body>
+</html>

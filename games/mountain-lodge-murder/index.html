@@ -2,34 +2,32 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>산장의 비밀</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monogatari@2.0.2/dist/engine/core/monogatari.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/monogatari@2.0.0-beta.21/dist/engine/core.css">
   <style>
     body { margin: 0; padding: 0; overflow: hidden; background: #0d0d0d; }
     #game-screen { width: 100vw; height: 100vh; }
-    /* 텍스트 전용 스타일 */
-    [data-component="visual-novel"] {
-      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
-    }
-    [data-component="text-box"] {
-      background: rgba(0, 0, 0, 0.85) !important;
-      border: 1px solid #4a4a6a !important;
-    }
-    [data-component="name-box"] {
-      background: rgba(74, 74, 106, 0.9) !important;
-    }
   </style>
 </head>
 <body>
   <div id="game-screen">
     <visual-novel></visual-novel>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/monogatari@2.0.2/dist/engine/core/monogatari.min.js"></script>
+
+  <script src="https://unpkg.com/monogatari@2.0.0-beta.21/dist/engine/core.js"></script>
+
   <script src="js/script.js"></script>
+
   <script>
-    monogatari.init('#game-screen').then(() => {
-      monogatari.run();
+    /* 브라우저가 위 스크립트들을 다 읽은 뒤 실행되도록 보장 */
+    window.addEventListener('load', () => {
+      if (typeof monogatari !== 'undefined') {
+        monogatari.init('#game-screen').then(() => {
+          console.log("Game Start!");
+        });
+      } else {
+        console.error("Monogatari 엔진을 불러오지 못했습니다. CDN 주소를 확인하세요.");
+      }
     });
   </script>
 </body>

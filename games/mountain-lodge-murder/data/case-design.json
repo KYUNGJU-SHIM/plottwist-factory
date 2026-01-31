@@ -1,0 +1,378 @@
+{
+  "caseDesign": {
+    "victim": {
+      "characterId": "char_victim",
+      "name": "강태준",
+      "age": 45,
+      "occupation": "건축가",
+      "personality": "오만하고 냉정하며, 완벽주의적 성향이 강함",
+      "appearance": "세련된 정장을 즐겨 입으며, 날카로운 눈매를 가졌다.",
+      "background": "성공한 건축가이지만, 과거 표절 시비에 휘말린 적이 있다.",
+      "secrets": [
+        "과거 표절 사실을 숨기고 있다.",
+        "숨겨둔 거액의 비자금"
+      ],
+      "relationshipsConflict": "모두와 갈등 관계. 특히 박선영과는 심각한 불화",
+      "prologueConflict": "박선영에게 모욕적인 언사를 퍼붓는 장면"
+    },
+    "culprit": {
+      "characterId": "char_sunyoung",
+      "motiveCategory": "복수",
+      "motiveDetail": "강태준의 과거 표절로 인해 건축가로서의 꿈을 포기해야 했다. 또한 강태준으로부터 지속적인 모욕과 갑질을 당했다.",
+      "motiveConnection": "박선영은 과거 건축가를 꿈꿨으나, 강태준의 표절로 인해 좌절했다. 강태준 밑에서 일하며 그의 갑질에 시달렸다.",
+      "triggerEvent": "프롤로그에서 강태준이 박선영에게 심한 모욕을 주는 사건 발생",
+      "plan": "폭설로 고립된 상황을 이용하여, 완벽한 알리바이를 만들고 강태준을 살해한다.",
+      "alibiClaim": "사건 발생 시각에 자신의 방에서 책을 읽고 있었다고 주장한다.",
+      "alibiTrickMethod": "타이머를 이용하여 라디오를 켜고, 자신의 방에서 책을 읽는 소리를 다른 사람들이 듣게 만든다. 실제로는 라디오가 켜진 동안 범행을 저지르고 돌아온다.",
+      "actualTimeline": {
+        "22:50": "라디오에 타이머 설정 (23:00 시작)",
+        "22:55": "방에서 책을 읽는 척 연기",
+        "23:00": "라디오가 켜지는 것을 확인 후, 방을 나섬",
+        "23:05": "강태준의 방으로 이동",
+        "23:10": "강태준 살해",
+        "23:15": "자신의 방으로 돌아옴",
+        "23:20": "다시 책을 읽는 척 연기",
+        "23:30": "다른 사람들이 라디오 소리를 듣고 자신의 알리바이를 믿도록 유도"
+      }
+    },
+    "trick": {
+      "type": "alibi",
+      "summary": "타이머를 이용해 라디오를 켜고, 그 시간 동안 범행을 저지르는 알리바이 트릭",
+      "mechanism": "타이머로 설정된 라디오가 지정된 시간에 켜지면서, 박선영이 자신의 방에 있었다는 착각을 불러일으킨다.",
+      "components": [
+        {
+          "element": "타이머",
+          "purpose": "정해진 시간에 라디오를 켜기 위해 사용",
+          "howUsed": "라디오에 연결하여 특정 시간에 작동하도록 설정"
+        },
+        {
+          "element": "라디오",
+          "purpose": "박선영이 방에 있었다는 소리를 내기 위해 사용",
+          "howUsed": "타이머에 의해 작동되어 책 읽는 소리를 낸다."
+        },
+        {
+          "element": "책",
+          "purpose": "알리바이를 강화하기 위해 사용",
+          "howUsed": "방에서 책을 읽는 척하며, 소리를 낸다."
+        }
+      ],
+      "weakness": "라디오의 타이머 설정 시간이 실제 알리바이 주장 시간과 약간의 차이가 있다는 점. 라디오를 켜고 끄는 소리가 나지 않는다는 점",
+      "criticalEvidence": "타이머 설정 시간과 박선영의 알리바이 주장 시간의 불일치. 라디오 전원 스위치에 묻은 박선영의 지문",
+      "howPlayerFinds": "타이머 설정 시간을 확인하고, 박선영의 증언과 비교한다. 라디오 전원 스위치를 조사한다."
+    },
+    "allCharacterTimelines": {
+      "char_protagonist": {
+        "22:50": "자신의 방에서 휴식",
+        "23:00": "거실에서 다른 사람들과 대화",
+        "23:10": "화장실에 감",
+        "23:20": "거실로 돌아옴",
+        "23:30": "자신의 방으로 돌아감",
+        "alibiVerifiedBy": "null"
+      },
+      "char_sunyoung": {
+        "22:50": "자신의 방에서 책을 읽는 척 준비",
+        "23:00": "라디오 타이머 작동 확인 후, 방을 나섬",
+        "23:10": "강태준 살해",
+        "23:20": "자신의 방으로 돌아와 책을 읽는 척 함",
+        "23:30": "다른 사람들에게 알리바이 주장",
+        "alibiVerifiedBy": "최민수 (라디오 소리)"
+      },
+      "char_minsoo": {
+        "22:50": "거실에서 TV 시청",
+        "23:00": "박선영의 방에서 라디오 소리를 들음",
+        "23:10": "화장실에 감",
+        "23:20": "거실로 돌아와 TV 시청",
+        "23:30": "자신의 방으로 돌아감",
+        "alibiVerifiedBy": "null"
+      },
+      "char_victim": {
+        "22:50": "서재에서 서류 작업",
+        "23:00": "자신의 방으로 이동",
+        "23:10": "사망",
+        "23:20": "사망",
+        "23:30": "사망",
+        "alibiVerifiedBy": "null"
+      }
+    }
+  },
+  "characters": [
+    {
+      "id": "char_protagonist",
+      "name": "김민지",
+      "age": 28,
+      "gender": "female",
+      "occupation": "소설가",
+      "personality": "침착하고 관찰력이 뛰어나며, 호기심이 많다.",
+      "appearance": "단정한 옷차림에 지적인 분위기를 풍긴다.",
+      "speechStyle": "조용하고 차분한 말투",
+      "relationToVictim": "취재를 위해 만난 사이",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 자신의 방에서 휴식을 취하고 있었다.",
+      "alibiTruth": "자신의 방에서 휴식을 취하고 있었다.",
+      "whyNotCulprit": "살해 동기가 없고, 알리바이도 확실하다.",
+      "secret": "과거 슬럼프를 겪었던 사실을 숨기고 있다.",
+      "suspicionLevel": "low",
+      "role": "protagonist"
+    },
+    {
+      "id": "char_sunyoung",
+      "name": "박선영",
+      "age": 35,
+      "gender": "female",
+      "occupation": "건축 설계사",
+      "personality": "내성적이지만, 강단 있는 면모도 있다.",
+      "appearance": "수수한 옷차림에 안경을 쓰고 있다.",
+      "speechStyle": "조심스럽고 소극적인 말투",
+      "relationToVictim": "강태준의 회사 직원",
+      "motive": "강태준의 과거 표절로 인해 건축가로서의 꿈을 포기해야 했다. 또한 강태준으로부터 지속적인 모욕과 갑질을 당했다.",
+      "alibiClaim": "사건 발생 시각에 자신의 방에서 책을 읽고 있었다.",
+      "alibiTruth": "타이머를 이용해 라디오를 켜고, 그 시간 동안 범행을 저질렀다.",
+      "whyNotCulprit": "소극적인 성격 때문에 범행을 저지를 것 같지 않다는 인상을 준다.",
+      "secret": "과거 강태준의 표절 사실을 폭로하려 했으나, 실패했다.",
+      "suspicionLevel": "high",
+      "role": "culprit"
+    },
+    {
+      "id": "char_minsoo",
+      "name": "최민수",
+      "age": 40,
+      "gender": "male",
+      "occupation": "의사",
+      "personality": "쾌활하고 사교적이며, 유머 감각이 뛰어나다.",
+      "appearance": "깔끔한 외모에 밝은 미소를 짓고 있다.",
+      "speechStyle": "능글맞고 장난기 넘치는 말투",
+      "relationToVictim": "강태준의 오랜 친구",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 거실에서 TV를 보고 있었다.",
+      "alibiTruth": "거실에서 TV를 보고 있었다.",
+      "whyNotCulprit": "강태준과 오랜 친구 사이이며, 살해 동기가 없다.",
+      "secret": "과거 의료 사고를 일으킨 적이 있다.",
+      "suspicionLevel": "low",
+      "role": "suspect"
+    },
+    {
+      "id": "char_jihoon",
+      "name": "김지훈",
+      "age": 25,
+      "gender": "male",
+      "occupation": "대학생",
+      "personality": "소심하고 내성적이며, 의존적인 성향이 강하다.",
+      "appearance": "어딘가 불안해 보이는 인상이다.",
+      "speechStyle": "소극적이고 웅얼거리는 말투",
+      "relationToVictim": "강태준의 조카",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 자신의 방에서 잠을 자고 있었다.",
+      "alibiTruth": "자신의 방에서 잠을 자고 있었다.",
+      "whyNotCulprit": "체력이 약하고, 소심한 성격 때문에 범행을 저지를 수 없을 것이다.",
+      "secret": "강태준에게 학대당하고 있었다.",
+      "suspicionLevel": "medium",
+      "role": "suspect"
+    },
+    {
+      "id": "char_seojin",
+      "name": "이서진",
+      "age": 32,
+      "gender": "female",
+      "occupation": "변호사",
+      "personality": "냉철하고 이성적이며, 논리적인 사고방식을 가졌다.",
+      "appearance": "세련된 옷차림에 차가운 인상을 풍긴다.",
+      "speechStyle": "정확하고 단호한 말투",
+      "relationToVictim": "강태준의 법률 자문",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 서재에서 책을 읽고 있었다.",
+      "alibiTruth": "서재에서 책을 읽고 있었다.",
+      "whyNotCulprit": "변호사로서 법을 어기는 행위를 하지 않을 것이다.",
+      "secret": "강태준과 불륜 관계였다.",
+      "suspicionLevel": "medium",
+      "role": "suspect"
+    },
+    {
+      "id": "char_yuna",
+      "name": "한유나",
+      "age": 22,
+      "gender": "female",
+      "occupation": "강태준의 간병인",
+      "personality": "활발하고 긍정적이며, 붙임성이 좋다.",
+      "appearance": "밝은 미소를 짓고 있다.",
+      "speechStyle": "상냥하고 친절한 말투",
+      "relationToVictim": "강태준의 간병인",
+      "motive": null,
+      "alibiClaim": "사건 발생 시각에 자신의 방에서 휴식을 취하고 있었다.",
+      "alibiTruth": "자신의 방에서 휴식을 취하고 있었다.",
+      "whyNotCulprit": "착하고 순수한 성격 때문에 범행을 저지를 것 같지 않다는 인상을 준다.",
+      "secret": "강태준의 비자금을 발견했다.",
+      "suspicionLevel": "low",
+      "role": "suspect"
+    }
+  ],
+  "evidence": {
+    "physical": [
+      {
+        "id": "ev_001",
+        "name": "라디오",
+        "description": "박선영의 방에 있던 라디오. 타이머 기능이 있다.",
+        "foundAt": "박선영의 방",
+        "foundWhen": "사건 조사 중",
+        "significance": "박선영의 알리바이 트릭에 사용된 도구",
+        "pointsTo": "char_sunyoung",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_002",
+        "name": "타이머 설정 시간",
+        "description": "라디오 타이머 설정 시간이 23시로 설정되어 있다.",
+        "foundAt": "라디오",
+        "foundWhen": "라디오 조사 중",
+        "significance": "박선영의 알리바이 주장 시간과 불일치",
+        "pointsTo": "char_sunyoung",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_003",
+        "name": "전원 스위치 지문",
+        "description": "라디오 전원 스위치에서 박선영의 지문이 발견되었다.",
+        "foundAt": "라디오",
+        "foundWhen": "라디오 조사 중",
+        "significance": "박선영이 라디오를 직접 조작했다는 증거",
+        "pointsTo": "char_sunyoung",
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_004",
+        "name": "강태준의 일기장",
+        "description": "강태준이 박선영을 심하게 괴롭혔다는 내용이 적혀 있다.",
+        "foundAt": "강태준의 방",
+        "foundWhen": "사건 조사 중",
+        "significance": "박선영의 범행 동기를 뒷받침하는 증거",
+        "pointsTo": "char_sunyoung",
+        "eliminates": null,
+        "isCritical": false,
+        "isRedHerring": false,
+        "mustFind": true
+      },
+      {
+        "id": "ev_005",
+        "name": "흉기",
+        "description": "피해자의 방에서 발견된 흉기",
+        "foundAt": "피해자의 방",
+        "foundWhen": "사건 조사 중",
+        "significance": "범행 도구",
+        "pointsTo": null,
+        "eliminates": null,
+        "isCritical": true,
+        "isRedHerring": false,
+        "mustFind": true
+      }
+    ],
+    "testimonies": [
+      {
+        "id": "test_001",
+        "witness": "char_sunyoung",
+        "content": "사건 발생 시각에 자신의 방에서 책을 읽고 있었다.",
+        "truthLevel": "complete_lie",
+        "realMeaning": "타이머를 이용해 라디오를 켜고, 그 시간 동안 범행을 저질렀다.",
+        "contradiction": "라디오 타이머 설정 시간과 알리바이 주장 시간의 불일치"
+      },
+      {
+        "id": "test_002",
+        "witness": "char_minsoo",
+        "content": "23시 즈음에 박선영의 방에서 라디오 소리가 들렸다.",
+        "truthLevel": "true",
+        "realMeaning": "박선영의 알리바이를 증명하는 듯 보이지만, 트릭의 일부이다.",
+        "contradiction": null
+      }
+    ]
+  },
+  "eliminationLogic": {
+    "char_minsoo": {
+      "suspicionReason": "강태준과 오랜 친구 사이였지만, 과거 의료 사고를 일으킨 적이 있다.",
+      "eliminationEvidence": [],
+      "eliminationLogic": "강태준과 오랜 친구 사이이며, 살해 동기가 부족하다."
+    },
+    "char_jihoon": {
+      "suspicionReason": "강태준에게 학대당하고 있었다.",
+      "eliminationEvidence": [],
+      "eliminationLogic": "체력이 약하고, 소심한 성격 때문에 범행을 저지를 수 없을 것이다."
+    },
+    "char_seojin": {
+      "suspicionReason": "강태준과 불륜 관계였다.",
+      "eliminationEvidence": [],
+      "eliminationLogic": "변호사로서 법을 어기는 행위를 하지 않을 것이다."
+    },
+    "char_yuna": {
+      "suspicionReason": "강태준의 비자금을 발견했다.",
+      "eliminationEvidence": [],
+      "eliminationLogic": "착하고 순수한 성격 때문에 범행을 저지를 것 같지 않다는 인상을 준다."
+    }
+  },
+  "deductionLogic": {
+    "step1": {
+      "point": "박선영의 알리바이가 라디오 트릭으로 만들어졌다는 것을 밝혀낸다.",
+      "evidence": [
+        "ev_001",
+        "ev_002",
+        "ev_003"
+      ],
+      "eliminates": [],
+      "conclusion": "박선영이 범인이다."
+    },
+    "finalAccusation": {
+      "culprit": "char_sunyoung",
+      "requiredEvidence": [
+        "ev_001",
+        "ev_002",
+        "ev_003",
+        "ev_004"
+      ],
+      "trickExplanation": "박선영은 타이머를 이용해 라디오를 켜고, 그 시간 동안 범행을 저질렀다. 라디오 타이머 설정 시간과 알리바이 주장 시간의 불일치, 라디오 전원 스위치에서 발견된 박선영의 지문이 결정적인 증거이다."
+    }
+  },
+  "backgrounds": [
+    {
+      "id": "bg_mountain_lodge_livingroom",
+      "name": "산장 거실",
+      "description": "눈 덮인 산장의 따뜻한 거실 풍경",
+      "timeVariants": [
+        "day",
+        "night",
+        "evening"
+      ]
+    },
+    {
+      "id": "bg_mountain_lodge_room",
+      "name": "산장 방",
+      "description": "단촐한 산장 방 풍경",
+      "timeVariants": [
+        "day",
+        "night",
+        "evening"
+      ]
+    },
+    {
+      "id": "bg_mountain_lodge_study",
+      "name": "산장 서재",
+      "description": "책이 가득한 산장 서재 풍경",
+      "timeVariants": [
+        "day",
+        "night",
+        "evening"
+      ]
+    }
+  ],
+  "consistencyCheck": {
+    "culpritMotiveMatchesCharacter": true,
+    "timelineHasNoOverlap": true,
+    "allEvidenceDiscoverable": true,
+    "allSuspectsEliminable": true,
+    "trickIsRealistic": true
+  }
+}

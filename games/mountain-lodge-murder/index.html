@@ -2,47 +2,48 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>산장의 비밀</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monogatari/dist/engine/core.css">
+  <link rel="stylesheet" href="https://unpkg.com/monogatari/dist/engine/core.css">
   <style>
     body { margin: 0; padding: 0; overflow: hidden; background: #000; color: #fff; }
     #game-screen { width: 100vw; height: 100vh; }
-    #debug-log { position: fixed; top: 10px; left: 10px; font-size: 12px; color: #0f0; z-index: 9999; }
+    #debug-log { position: fixed; top: 10px; left: 10px; font-size: 11px; color: #0f0; background: rgba(0,0,0,0.7); padding: 5px; z-index: 9999; }
   </style>
 </head>
 <body>
-  <div id="debug-log">준비 중...</div>
+  <div id="debug-log">시스템 시작...</div>
   <div id="game-screen">
     <visual-novel></visual-novel>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/monogatari/dist/engine/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@monogatari/core@2.0.2/dist/monogatari.min.js"></script>
   
   <script src="js/script.js"></script>
 
   <script>
-    const log = (msg) => { document.getElementById('debug-log').innerText += "\n" + msg; };
+    const log = (msg) => { document.getElementById('debug-log').innerText += "\n" + msg; console.log(msg); };
 
-    window.addEventListener('load', () => {
+    window.onload = function() {
       log("페이지 로드 완료");
 
-      // 브라우저 전역 객체에서 monogatari를 찾는 여러가지 시도
-      const engine = window.monogatari || window.Monogatari;
+      // Monogatari v2는 보통 전역에 'monogatari' 혹은 'Monogatari'로 존재합니다.
+      // 만약 둘 다 없다면, 번들 방식에 따라 Monogatari.default에 있을 수 있습니다.
+      const engine = window.monogatari || window.Monogatari || (window.Monogatari ? window.Monogatari.default : null);
 
-      if (engine) {
-        log("엔진 객체 발견! 초기화 시작...");
+      if (engine && typeof engine.init === 'function') {
+        log("엔진 객체 발견! 초기화 진행...");
         engine.init('#game-screen').then(() => {
-          log("초기화 성공!");
-          document.getElementById('debug-log').style.display = 'none'; // 성공 시 로그 숨김
+          log("초기화 성공! 게임을 시작합니다.");
+          setTimeout(() => document.getElementById('debug-log').style.display = 'none', 1000);
         }).catch(err => {
-          log("초기화 에러: " + err);
+          log("초기화 중 오류 발생: " + err);
         });
       } else {
-        log("엔진 객체를 찾을 수 없음 (CDN 로드 실패)");
-        // 최후의 수단: CDN이 죽었다면 다시 한 번 unpkg로 시도하는 버튼이라도 띄워야 할 판입니다.
+        log("❌ 에러: 엔진을 찾았으나 init() 함수가 없습니다.");
+        log("현재 객체 타입: " + typeof engine);
+        log("window.monogatari 존재 여부: " + !!window.monogatari);
       }
-    });
+    };
   </script>
 </body>
 </html>

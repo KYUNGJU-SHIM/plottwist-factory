@@ -1,0 +1,158 @@
+{
+  "caseDesign": {
+    "victim": {
+      "characterId": "char_dog",
+      "name": "해피",
+      "age": 3,
+      "occupation": "애완견",
+      "background": "푸들, 아파트 주민들에게 사랑받음. 특히 노인들에게 인기가 많음."
+    },
+    "culprit": {
+      "characterId": "char_05",
+      "motiveDetail": "최근 아파트 단지 내 강아지 소음 문제로 관리사무소에 여러 차례 민원을 넣었으나 해결되지 않자, 극단적인 방법으로 문제를 해결하려 함. 평소 강아지를 싫어하며, 특히 해피의 짖는 소리에 스트레스를 많이 받음.",
+      "alibiClaim": "사건 발생 시간 동안 집에서 TV 시청 중이었다고 주장. 이웃 주민에게 TV 소리가 들렸다는 증언을 확보.",
+      "actualTimeline": {
+        "23:00": "아파트 단지 내 CCTV 사각지대에서 해피를 데리고 나옴. 미리 준비한 가방에 해피를 넣고 택시를 이용하여 유기 장소로 이동.",
+        "23:30": "유기 장소 도착, 해피를 유기 후 택시를 타고 아파트로 복귀.",
+        "00:00": "아파트 도착 후 집으로 들어감. TV를 크게 틀어놓음."
+      }
+    },
+    "trick": {
+      "type": "alibi",
+      "summary": "범인은 TV 소리를 크게 틀어놓아 이웃 주민에게 알리바이를 증명받았지만, 실제로는 강아지를 유기하기 위해 아파트 단지를 나갔다.",
+      "criticalEvidence": "CCTV 사각지대에서 범인이 해피를 데리고 나가는 모습이 담긴 희미한 영상, 택시 블랙박스 영상 (결정적 증거)"
+    }
+  },
+  "characters": [
+    {
+      "id": "char_protagonist",
+      "name": "김탐정",
+      "age": 32,
+      "occupation": "사립 탐정",
+      "personality": "호기심 많고 정의감 넘침, 강아지를 좋아함",
+      "role": "protagonist"
+    },
+    {
+      "id": "char_01",
+      "name": "박씨",
+      "age": 60,
+      "occupation": "경비원",
+      "personality": "성실하지만 덤벙거림",
+      "role": "suspect"
+    },
+    {
+      "id": "char_02",
+      "name": "최씨",
+      "age": 35,
+      "occupation": "프리랜서 작가",
+      "personality": "예민하고 개인적인 성향",
+      "role": "suspect"
+    },
+    {
+      "id": "char_03",
+      "name": "정씨",
+      "age": 25,
+      "occupation": "대학생",
+      "personality": "활발하고 강아지를 좋아함",
+      "role": "suspect"
+    },
+    {
+      "id": "char_04",
+      "name": "강씨",
+      "age": 50,
+      "occupation": "주부",
+      "personality": "수다스럽고 남의 일에 관심이 많음",
+      "role": "suspect"
+    },
+    {
+      "id": "char_05",
+      "name": "조씨",
+      "age": 40,
+      "occupation": "회사원",
+      "personality": "신경질적이고 불만이 많음",
+      "role": "culprit"
+    },
+    {
+      "id": "char_06",
+      "name": "윤씨",
+      "age": 70,
+      "occupation": "은퇴",
+      "personality": "해피의 열렬한 팬, 외로움을 많이 느낌",
+      "role": "suspect"
+    },
+    {
+      "id": "char_07",
+      "name": "오씨",
+      "age": 20,
+      "occupation": "편의점 아르바이트",
+      "personality": "무뚝뚝하지만 속정이 깊음",
+      "role": "suspect"
+    },
+    {
+      "id": "char_08",
+      "name": "하씨",
+      "age": 48,
+      "occupation": "자영업",
+      "personality": "쾌활하고 붙임성이 좋음",
+      "role": "suspect"
+    },
+    {
+      "id": "char_09",
+      "name": "구씨",
+      "age": 30,
+      "occupation": "수의사",
+      "personality": "동물을 사랑하고 책임감이 강함",
+      "role": "suspect"
+    },
+    {
+      "id": "char_10",
+      "name": "신씨",
+      "age": 65,
+      "occupation": "전직 교사",
+      "personality": "지적이고 꼼꼼함",
+      "role": "suspect"
+    }
+  ],
+  "evidence": {
+    "physical": [
+      {
+        "id": "ev_001",
+        "name": "CCTV 영상",
+        "significance": "사각지대에서 누군가 해피와 비슷한 강아지를 데리고 나가는 희미한 영상 포착",
+        "isCritical": true
+      },
+      {
+        "id": "ev_002",
+        "name": "택시 블랙박스 영상",
+        "significance": "조씨가 해피를 유기 장소 근처에 내려달라고 요청하는 장면이 담김",
+        "isCritical": true
+      },
+      {
+        "id": "ev_003",
+        "name": "해피의 털",
+        "significance": "조씨의 집에서 발견된 해피의 털",
+        "isCritical": false
+      },
+      {
+        "id": "ev_004",
+        "name": "조씨 집 앞 쓰레기통에서 발견된 강아지 이동 가방",
+        "significance": "새 제품 구매 후 버림",
+        "isCritical": false
+      }
+    ]
+  },
+  "backgrounds": [
+    {
+      "id": "bg_apartment",
+      "name": "아파트 단지"
+    },
+    {
+      "id": "bg_parkinglot",
+      "name": "주차장"
+    },
+    {
+      "id": "bg_playground",
+      "name": "놀이터"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+/* 기본 배경 및 레이아웃 설정 */
+body {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+#monogatari {
+    width: 100vw;
+    height: 100vh;
+}

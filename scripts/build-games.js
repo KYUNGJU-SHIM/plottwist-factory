@@ -56,7 +56,7 @@ gameFolders.forEach(gameId => {
     // A. 템플릿(엔진) 복사
     copyDir(templateDir, outputDir);
 
-    // B. shared-assets 복사 (중첩 방지를 위해 내용물만 복사)
+    // B. shared-assets 복사 (엔진의 기대치에 맞춰 폴더명 변경)
     if (fs.existsSync(sharedAssetsDir)) {
       if (!fs.existsSync(destAssetsDir)) {
         fs.mkdirSync(destAssetsDir, { recursive: true });
@@ -65,7 +65,12 @@ gameFolders.forEach(gameId => {
       const entries = fs.readdirSync(sharedAssetsDir);
       for (const entry of entries) {
         const srcPath = path.join(sharedAssetsDir, entry);
-        const destPath = path.join(destAssetsDir, entry);
+        
+        // 💡 핵심: 만약 폴더명이 'audio'라면 'music'으로 바꿔서 복사합니다.
+        let targetName = entry;
+        if (entry === 'audio') targetName = 'music';
+        
+        const destPath = path.join(destAssetsDir, targetName);
         
         if (fs.lstatSync(srcPath).isDirectory()) {
           copyDir(srcPath, destPath);

@@ -3,74 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>산장의 비밀</title>
-  <link rel="stylesheet" href="https://unpkg.com/@monogatari/core/dist/engine/core.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monogatari/dist/engine/core.css">
   <style>
-    body { margin: 0; padding: 0; background: #000; color: #fff; font-family: sans-serif; }
+    body { margin: 0; padding: 0; background: #000; color: #fff; }
     #game-screen { width: 100vw; height: 100vh; }
-    #debug-log { position: fixed; top: 10px; left: 10px; font-size: 11px; color: #0f0; background: rgba(0,0,0,0.8); padding: 10px; z-index: 9999; max-height: 80vh; overflow: auto; border: 1px solid #333; }
   </style>
 </head>
 <body>
-  <div id="debug-log">🔍 엔진 탐색 중...</div>
   <div id="game-screen">
     <visual-novel></visual-novel>
   </div>
 
-  <script src="https://unpkg.com/@monogatari/core@2.0.2/dist/monogatari.js"></script>
-  
-  <script src="js/script.js"></script>
+  <script type="module">
+    // 1. esm.sh를 사용하면 npm 패키지를 브라우저용 모듈로 완벽하게 변환해줍니다.
+    import { monogatari } from 'https://esm.sh/@monogatari/core@2.0.2';
 
-  <script>
-    const log = (msg) => { 
-      const el = document.getElementById('debug-log');
-      el.innerText += "\n" + msg; 
-      el.scrollTop = el.scrollHeight;
-      console.log("[Debug]", msg); 
+    // 2. 후속 script.js가 사용할 수 있도록 전역에 강제 할당
+    window.monogatari = monogatari;
+
+    // 3. 시나리오 파일(script.js)을 동적으로 로드 (엔진 주입 후 실행 보장)
+    const scriptTag = document.createElement('script');
+    scriptTag.src = 'js/script.js';
+    scriptTag.onload = () => {
+      console.log("시나리오 로드 완료, 초기화 시작...");
+      monogatari.init('#game-screen').then(() => {
+        console.log("✅ 게임 엔진 가동 성공!");
+      });
     };
-
-    window.addEventListener('load', () => {
-      log("🚀 페이지 로딩 완료");
-
-      // [핵심] 모든 가능성을 열어두고 엔진 인스턴스를 찾습니다.
-      let engine = null;
-
-      // 1순위: 전역 monogatari
-      if (window.monogatari && typeof window.monogatari.init === 'function') {
-        engine = window.monogatari;
-        log("✅ 소문자 monogatari 인스턴스 확보");
-      } 
-      // 2순위: 전역 Monogatari
-      else if (window.Monogatari) {
-        if (typeof window.Monogatari.init === 'function') {
-          engine = window.Monogatari;
-          log("✅ 대문자 Monogatari 인스턴스 확보");
-        } else if (window.Monogatari.monogatari && typeof window.Monogatari.monogatari.init === 'function') {
-          engine = window.Monogatari.monogatari;
-          log("✅ Monogatari.monogatari 하위 인스턴스 확보");
-        }
-      }
-
-      if (engine) {
-        log("🎮 초기화 시도 중...");
-        engine.init('#game-screen').then(() => {
-          log("🎉 성공! 게임이 시작되었습니다.");
-          setTimeout(() => document.getElementById('debug-log').style.display = 'none', 2000);
-        }).catch(err => {
-          log("❌ 초기화 실패: " + err);
-        });
-      } else {
-        log("❌ 에러: 실행 가능한 엔진을 찾을 수 없습니다.");
-        log("--- 검사 결과 ---");
-        log("window.monogatari 타입: " + typeof window.monogatari);
-        log("window.Monogatari 타입: " + typeof window.Monogatari);
-        
-        // 백엔드 엔지니어를 위한 객체 구조 덤프
-        console.dir({ 
-          monogatari: window.monogatari, 
-          Monogatari: window.Monogatari 
-        });
-      }
-    });
+    document.body.appendChild(scriptTag);
   </script>
 </body>
 </html>

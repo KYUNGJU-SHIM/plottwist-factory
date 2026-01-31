@@ -3,55 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>산장의 비밀</title>
-  <link rel="stylesheet" href="https://unpkg.com/monogatari/dist/engine/core.css">
+  <link rel="stylesheet" href="https://unpkg.com/@monogatari/core/dist/engine/core.css">
   <style>
-    body { margin: 0; padding: 0; background: #000; color: #fff; }
+    body { margin: 0; padding: 0; background: #000; color: #fff; font-family: sans-serif; }
     #game-screen { width: 100vw; height: 100vh; }
-    #debug-log { position: fixed; top: 10px; left: 10px; font-size: 11px; color: #0f0; background: rgba(0,0,0,0.8); z-index: 9999; }
+    #debug-log { position: fixed; top: 10px; left: 10px; font-size: 11px; color: #0f0; background: rgba(0,0,0,0.8); padding: 10px; z-index: 9999; max-height: 80vh; overflow: auto; border: 1px solid #333; }
   </style>
 </head>
 <body>
-  <div id="debug-log">검사 중...</div>
+  <div id="debug-log">🔍 엔진 탐색 중...</div>
   <div id="game-screen">
     <visual-novel></visual-novel>
   </div>
 
-  <script src="https://unpkg.com/monogatari@2.0.0-beta.21/dist/engine/core.js"></script>
+  <script src="https://unpkg.com/@monogatari/core@2.0.2/dist/monogatari.js"></script>
   
   <script src="js/script.js"></script>
 
   <script>
-    const log = (msg) => { document.getElementById('debug-log').innerText += "\n" + msg; console.log(msg); };
+    const log = (msg) => { 
+      const el = document.getElementById('debug-log');
+      el.innerText += "\n" + msg; 
+      el.scrollTop = el.scrollHeight;
+      console.log("[Debug]", msg); 
+    };
 
     window.addEventListener('load', () => {
-      log("페이지 로딩 완료");
+      log("🚀 페이지 로딩 완료");
 
-      // [핵심] Monogatari 객체 구조를 샅샅이 뒤져서 init을 찾아냅니다.
+      // [핵심] 모든 가능성을 열어두고 엔진 인스턴스를 찾습니다.
       let engine = null;
 
-      if (window.monogatari) {
-        engine = window.monogatari; // 소문자 인스턴스
-        log("소문자 monogatari 발견");
-      } else if (window.Monogatari) {
-        // 대문자일 경우, 인스턴스인지 클래스인지 확인
+      // 1순위: 전역 monogatari
+      if (window.monogatari && typeof window.monogatari.init === 'function') {
+        engine = window.monogatari;
+        log("✅ 소문자 monogatari 인스턴스 확보");
+      } 
+      // 2순위: 전역 Monogatari
+      else if (window.Monogatari) {
         if (typeof window.Monogatari.init === 'function') {
           engine = window.Monogatari;
-          log("대문자 Monogatari 객체 발견");
-        } else if (window.Monogatari.monogatari) {
+          log("✅ 대문자 Monogatari 인스턴스 확보");
+        } else if (window.Monogatari.monogatari && typeof window.Monogatari.monogatari.init === 'function') {
           engine = window.Monogatari.monogatari;
-          log("Monogatari.monogatari 하위 객체 발견");
+          log("✅ Monogatari.monogatari 하위 인스턴스 확보");
         }
       }
 
-      if (engine && typeof engine.init === 'function') {
+      if (engine) {
+        log("🎮 초기화 시도 중...");
         engine.init('#game-screen').then(() => {
-          log("✅ 성공: 게임 초기화 완료!");
-          setTimeout(() => document.getElementById('debug-log').style.display = 'none', 1000);
+          log("🎉 성공! 게임이 시작되었습니다.");
+          setTimeout(() => document.getElementById('debug-log').style.display = 'none', 2000);
+        }).catch(err => {
+          log("❌ 초기화 실패: " + err);
         });
       } else {
-        log("❌ 에러: 적절한 엔진 인스턴스를 찾을 수 없습니다.");
-        // 엔지니어를 위한 객체 구조 덤프
-        console.dir(window.Monogatari || window.monogatari);
+        log("❌ 에러: 실행 가능한 엔진을 찾을 수 없습니다.");
+        log("--- 검사 결과 ---");
+        log("window.monogatari 타입: " + typeof window.monogatari);
+        log("window.Monogatari 타입: " + typeof window.Monogatari);
+        
+        // 백엔드 엔지니어를 위한 객체 구조 덤프
+        console.dir({ 
+          monogatari: window.monogatari, 
+          Monogatari: window.Monogatari 
+        });
       }
     });
   </script>

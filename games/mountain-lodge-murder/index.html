@@ -2,40 +2,47 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>산장의 비밀</title>
-  <link rel="stylesheet" href="https://unpkg.com/monogatari/dist/engine/core.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monogatari/dist/engine/core.css">
   <style>
-    body { margin: 0; padding: 0; overflow: hidden; background: #0d0d0d; }
+    body { margin: 0; padding: 0; overflow: hidden; background: #000; color: #fff; }
     #game-screen { width: 100vw; height: 100vh; }
+    #debug-log { position: fixed; top: 10px; left: 10px; font-size: 12px; color: #0f0; z-index: 9999; }
   </style>
 </head>
 <body>
+  <div id="debug-log">준비 중...</div>
   <div id="game-screen">
     <visual-novel></visual-novel>
   </div>
 
-  <script src="https://unpkg.com/monogatari/dist/engine/core.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/monogatari/dist/engine/core.js"></script>
+  
   <script src="js/script.js"></script>
 
   <script>
-    /** * 4. 브라우저가 위 파일들을 모두 '파싱'한 후 실행되도록 보장합니다.
-     * monogatari 객체가 전역(window)에 등록되었는지 확인 후 초기화합니다.
-     */
-    window.onload = function() {
-      if (window.monogatari) {
-        window.monogatari.init('#game-screen').then(() => {
-          console.log("Monogatari initialized successfully.");
+    const log = (msg) => { document.getElementById('debug-log').innerText += "\n" + msg; };
+
+    window.addEventListener('load', () => {
+      log("페이지 로드 완료");
+
+      // 브라우저 전역 객체에서 monogatari를 찾는 여러가지 시도
+      const engine = window.monogatari || window.Monogatari;
+
+      if (engine) {
+        log("엔진 객체 발견! 초기화 시작...");
+        engine.init('#game-screen').then(() => {
+          log("초기화 성공!");
+          document.getElementById('debug-log').style.display = 'none'; // 성공 시 로그 숨김
+        }).catch(err => {
+          log("초기화 에러: " + err);
         });
       } else {
-        // 여전히 안 된다면, 대문자 'M'으로 시작하는 객체인지 한 번 더 체크합니다.
-        if (window.Monogatari) {
-            window.Monogatari.init('#game-screen');
-        } else {
-            document.body.innerHTML = "<h2 style='color:white; text-align:center; margin-top:20%;'>엔진 로드 실패: 네트워크 상태나 CDN 주소를 확인하세요.</h2>";
-        }
+        log("엔진 객체를 찾을 수 없음 (CDN 로드 실패)");
+        // 최후의 수단: CDN이 죽었다면 다시 한 번 unpkg로 시도하는 버튼이라도 띄워야 할 판입니다.
       }
-    };
+    });
   </script>
 </body>
 </html>

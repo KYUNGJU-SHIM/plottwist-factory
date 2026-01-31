@@ -19,4 +19,4 @@ monogatari.assets({
 });
 
 // 엔진 실행
-monogatari.init('#monogatari');
+monogatari.init('#game-screen');

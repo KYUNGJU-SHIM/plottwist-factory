@@ -40,6 +40,10 @@ monogatari.assets('scenes', {
   "bg_lounge": "#1a1a2e"
 });
 
+monogatari.assets ('music', {
+    'main_bgm': '../../shared-assets/audio/bgm/half-mystery.mp3'
+});
+
 monogatari.script({
   "scene_001": [
     "show scene bg_cabin",
@@ -158,6 +162,7 @@ monogatari.script({
     "The End."
   ],
   "Start": [
+    "play music main_bgm with loop",
     "jump scene_001"
   ]
 });

@@ -31,78 +31,53 @@ function copyDir(src, dest) {
   }
 }
 
-// 2. 루트의 index.html을 dist로 복사 (메인 허브 페이지)
+// 2. 메인 index.html 복사
 if (fs.existsSync(path.join(rootDir, 'index.html'))) {
   fs.copyFileSync(path.join(rootDir, 'index.html'), path.join(distDir, 'index.html'));
 }
 
-// 3. 게임 빌드 및 메타데이터 수집
-const gameFolders = fs.readdirSync(gamesDir).filter(f => {
-  const fullPath = path.join(gamesDir, f);
-  return fs.statSync(fullPath).isDirectory();
-});
-
+// 3. 게임 빌드
+const gameFolders = fs.readdirSync(gamesDir).filter(f => fs.statSync(path.join(gamesDir, f)).isDirectory());
 const gameMetadataList = [];
 
 gameFolders.forEach(gameId => {
   const gamePath = path.join(gamesDir, gameId);
   const gameScriptPath = path.join(gamePath, 'js', 'script.js');
-  const metaPath = path.join(gamePath, 'game-meta.json');
   
   if (fs.existsSync(gameScriptPath)) {
     const outputDir = path.join(distDir, gameId);
     const destAssetsDir = path.join(outputDir, 'assets');
     
-    // A. 템플릿(엔진) 복사
+    // A. 엔진 템플릿 복사
     copyDir(templateDir, outputDir);
 
-    // B. shared-assets 복사 (엔진의 기대치에 맞춰 폴더명 변경)
+    // B. shared-assets 복사 (엔진 표준 폴더명으로 매핑)
     if (fs.existsSync(sharedAssetsDir)) {
-      if (!fs.existsSync(destAssetsDir)) {
-        fs.mkdirSync(destAssetsDir, { recursive: true });
-      }
-    
       const entries = fs.readdirSync(sharedAssetsDir);
-      for (const entry of entries) {
+      entries.forEach(entry => {
         const srcPath = path.join(sharedAssetsDir, entry);
         
-        // 💡 핵심: 만약 폴더명이 'audio'라면 'music'으로 바꿔서 복사합니다.
-        let targetName = entry;
-        if (entry === 'audio') targetName = 'music';
+        // 💡 핵심: shared-assets/audio/bgm -> assets/music/bgm 구조로 변환
+        let targetFolderName = entry;
+        if (entry === 'audio') targetFolderName = 'music';
         
-        const destPath = path.join(destAssetsDir, targetName);
-        
-        if (fs.lstatSync(srcPath).isDirectory()) {
-          copyDir(srcPath, destPath);
-        } else {
-          fs.copyFileSync(srcPath, destPath);
-        }
-      }
+        const destPath = path.join(destAssetsDir, targetFolderName);
+        copyDir(srcPath, destPath);
+      });
     }
 
-    // C. 개별 게임 script.js 덮어쓰기
-    // 엔진의 js 폴더가 이미 복사되어 있으므로 그 안의 script.js를 교체합니다.
-    const targetScriptPath = path.join(outputDir, 'js', 'script.js');
-    fs.copyFileSync(gameScriptPath, targetScriptPath);
+    // C. 게임별 script.js 주입
+    fs.copyFileSync(gameScriptPath, path.join(outputDir, 'js', 'script.js'));
     
     // D. 메타데이터 수집
+    const metaPath = path.join(gamePath, 'game-meta.json');
     if (fs.existsSync(metaPath)) {
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      gameMetadataList.push({
-        ...meta,
-        id: gameId,
-        path: `./${gameId}/index.html` 
-      });
+      gameMetadataList.push({ ...meta, id: gameId, path: `./${gameId}/index.html` });
     }
     
     console.log(`✓ Built: ${gameId}`);
   }
 });
 
-// 4. 수집된 메타데이터를 dist/all-games.json으로 저장
-fs.writeFileSync(
-  path.join(distDir, 'all-games.json'), 
-  JSON.stringify(gameMetadataList, null, 2)
-);
-
-console.log(`\n총 ${gameMetadataList.length}개 게임 빌드 및 메타데이터 생성 완료`);
+fs.writeFileSync(path.join(distDir, 'all-games.json'), JSON.stringify(gameMetadataList, null, 2));

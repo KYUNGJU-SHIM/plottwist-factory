@@ -68,20 +68,32 @@ for (const game of games) {
       stdio: 'inherit' 
     });
 
-        // npm run build 후 추가
-		console.log('6. Moving build output...');
-		const buildDir = path.join(gameDistDir, 'dist');
-		if (fs.existsSync(buildDir)) {
-		  // dist/* 내용을 게임 폴더로 이동
-		  const buildFiles = fs.readdirSync(buildDir);
-		  for (const file of buildFiles) {
-		    const src = path.join(buildDir, file);
-		    const dest = path.join(gameDistDir, file);
-		    if (fs.existsSync(dest)) fs.rmSync(dest, { recursive: true });
-		    fs.renameSync(src, dest);
-		  }
-		  fs.rmSync(buildDir, { recursive: true });
-		}
+    console.log('6. Moving build output to root...');
+    const viteBuildDir = path.join(gameDistDir, 'dist');
+    
+    if (fs.existsSync(viteBuildDir)) {
+      // dist/* 내용을 게임 폴더 루트로 이동
+      const buildFiles = fs.readdirSync(viteBuildDir);
+      for (const file of buildFiles) {
+        const src = path.join(viteBuildDir, file);
+        const dest = path.join(gameDistDir, file);
+        
+        // 기존 소스 파일 삭제
+        if (fs.existsSync(dest)) {
+          fs.rmSync(dest, { recursive: true });
+        }
+        
+        // 빌드 결과물 이동
+        fs.renameSync(src, dest);
+      }
+      
+      // 빈 dist 폴더 삭제
+      fs.rmSync(viteBuildDir, { recursive: true });
+      
+      console.log(`  ✓ Moved build output`);
+    } else {
+      console.warn(`  ⚠ No build output found at ${viteBuildDir}`);
+    }
     
     console.log(`✓ ${game} built successfully!`);
   } catch (error) {

@@ -32,6 +32,10 @@ monogatari.characters({
   }
 });
 
+monogatari.assets ('music', {
+    'main_bgm': '../assets/audio/bgm/half-mystery.mp3'
+});
+
 monogatari.assets('scenes', {
   "bg_lobby": "#1a1a2e",
   "bg_maze": "#1a1a2e",
@@ -159,6 +163,7 @@ monogatari.script({
     "jump ending_true"
   ],
   "Start": [
+    "play music main_bgm with loop",
     "jump scene_001"
   ]
 });

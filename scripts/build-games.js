@@ -67,6 +67,21 @@ for (const game of games) {
       cwd: gameDistDir, 
       stdio: 'inherit' 
     });
+
+        // npm run build 후 추가
+		console.log('6. Moving build output...');
+		const buildDir = path.join(gameDistDir, 'dist');
+		if (fs.existsSync(buildDir)) {
+		  // dist/* 내용을 게임 폴더로 이동
+		  const buildFiles = fs.readdirSync(buildDir);
+		  for (const file of buildFiles) {
+		    const src = path.join(buildDir, file);
+		    const dest = path.join(gameDistDir, file);
+		    if (fs.existsSync(dest)) fs.rmSync(dest, { recursive: true });
+		    fs.renameSync(src, dest);
+		  }
+		  fs.rmSync(buildDir, { recursive: true });
+		}
     
     console.log(`✓ ${game} built successfully!`);
   } catch (error) {

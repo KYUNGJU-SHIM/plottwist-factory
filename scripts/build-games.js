@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 const GAMES_DIR = './games';
 const TEMPLATE_DIR = './games/_template';
@@ -12,7 +11,7 @@ if (fs.existsSync(DIST_DIR)) {
 }
 fs.mkdirSync(DIST_DIR, { recursive: true });
 
-// 게임 폴더 목록 (_, . 으로 시작하는 폴더 제외)
+// 게임 폴더 목록
 const games = fs.readdirSync(GAMES_DIR)
   .filter(f => {
     const fullPath = path.join(GAMES_DIR, f);
@@ -21,11 +20,11 @@ const games = fs.readdirSync(GAMES_DIR)
            fs.statSync(fullPath).isDirectory();
   });
 
-console.log(`Found ${games.length} games to build: ${games.join(', ')}`);
+console.log(`Found ${games.length} games: ${games.join(', ') || '(none)'}`);
 
-// 각 게임 빌드
+// 각 게임 처리 (단순 복사)
 for (const game of games) {
-  console.log(`\n========== Building: ${game} ==========`);
+  console.log(`\n========== Processing: ${game} ==========`);
   
   const gameSrcDir = path.join(GAMES_DIR, game);
   const gameDistDir = path.join(DIST_DIR, game);
@@ -40,13 +39,13 @@ for (const game of games) {
   const scriptDest = path.join(gameDistDir, 'js', 'script.js');
   
   if (fs.existsSync(scriptSrc)) {
-    fs.mkdirSync(path.dirname(scriptDest), { recursive: true });
     fs.copyFileSync(scriptSrc, scriptDest);
+    console.log('   ✓ script.js copied');
   } else {
-    console.warn(`  Warning: ${scriptSrc} not found!`);
+    console.warn('   ⚠ script.js not found, using template default');
   }
   
-  // 3. 게임별 data 폴더 복사 (있으면)
+  // 3. 게임별 data 폴더 복사
   const dataSrc = path.join(gameSrcDir, 'data');
   const dataDest = path.join(gameDistDir, 'data');
   if (fs.existsSync(dataSrc)) {
@@ -54,54 +53,17 @@ for (const game of games) {
     copyDir(dataSrc, dataDest);
   }
   
-  // 4. npm install && npm run build
-  console.log('4. Installing dependencies...');
-  try {
-    execSync('npm install', { 
-      cwd: gameDistDir, 
-      stdio: 'inherit' 
-    });
-    
-    console.log('5. Building...');
-    execSync('npm run build', { 
-      cwd: gameDistDir, 
-      stdio: 'inherit' 
-    });
-
-    console.log('6. Moving build output to root...');
-    const viteBuildDir = path.join(gameDistDir, 'dist');
-    
-    if (fs.existsSync(viteBuildDir)) {
-      // dist/* 내용을 게임 폴더 루트로 이동
-      const buildFiles = fs.readdirSync(viteBuildDir);
-      for (const file of buildFiles) {
-        const src = path.join(viteBuildDir, file);
-        const dest = path.join(gameDistDir, file);
-        
-        // 기존 소스 파일 삭제
-        if (fs.existsSync(dest)) {
-          fs.rmSync(dest, { recursive: true });
-        }
-        
-        // 빌드 결과물 이동
-        fs.renameSync(src, dest);
-      }
-      
-      // 빈 dist 폴더 삭제
-      fs.rmSync(viteBuildDir, { recursive: true });
-      
-      console.log(`  ✓ Moved build output`);
-    } else {
-      console.warn(`  ⚠ No build output found at ${viteBuildDir}`);
-    }
-    
-    console.log(`✓ ${game} built successfully!`);
-  } catch (error) {
-    console.error(`✗ Failed to build ${game}:`, error.message);
+  // 4. game-meta.json 복사
+  const metaSrc = path.join(gameSrcDir, 'game-meta.json');
+  const metaDest = path.join(gameDistDir, 'game-meta.json');
+  if (fs.existsSync(metaSrc)) {
+    fs.copyFileSync(metaSrc, metaDest);
   }
+  
+  console.log(`✓ ${game} ready!`);
 }
 
-// 인덱스 페이지 생성 (게임 목록)
+// 인덱스 페이지 생성
 console.log('\n========== Creating index page ==========');
 createIndexPage(games);
 
@@ -117,9 +79,6 @@ function copyDir(src, dest) {
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
     
-    // node_modules 제외
-    if (entry.name === 'node_modules') continue;
-    
     if (entry.isDirectory()) {
       copyDir(srcPath, destPath);
     } else {
@@ -129,7 +88,6 @@ function copyDir(src, dest) {
 }
 
 function createIndexPage(games) {
-  // 각 게임의 메타데이터 수집
   const gameList = games.map(game => {
     const metaPath = path.join(GAMES_DIR, game, 'game-meta.json');
     let meta = { id: game, title: game };
@@ -137,9 +95,7 @@ function createIndexPage(games) {
     if (fs.existsSync(metaPath)) {
       try {
         meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
-      } catch (e) {
-        console.warn(`  Warning: Could not parse ${metaPath}`);
-      }
+      } catch (e) {}
     }
     
     return meta;
@@ -154,18 +110,13 @@ function createIndexPage(games) {
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
       min-height: 100vh;
       color: #fff;
       padding: 40px 20px;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
+    h1 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
     .games {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -187,26 +138,16 @@ function createIndexPage(games) {
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       background: rgba(255,255,255,0.15);
     }
-    .game-card h2 {
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-    }
-    .game-card p {
-      opacity: 0.8;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-    .game-meta {
-      margin-top: 16px;
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
+    .game-card h2 { margin-bottom: 12px; font-size: 1.4rem; }
+    .game-card p { opacity: 0.8; font-size: 0.95rem; line-height: 1.5; }
+    .game-meta { margin-top: 16px; font-size: 0.85rem; opacity: 0.6; }
+    .empty { text-align: center; opacity: 0.6; padding: 60px; }
   </style>
 </head>
 <body>
   <h1>🔍 Mystery Visual Novel Games</h1>
   <div class="games">
-    ${gameList.map(game => `
+    ${gameList.length > 0 ? gameList.map(game => `
     <a href="./${game.id}/" class="game-card">
       <h2>${game.title || game.id}</h2>
       <p>${game.description || '추리 비주얼 노벨 게임'}</p>
@@ -214,8 +155,7 @@ function createIndexPage(games) {
         ${game.characterCount ? `👥 ${game.characterCount}명` : ''}
         ${game.endingCount ? ` · 🎭 ${game.endingCount}개 엔딩` : ''}
       </div>
-    </a>
-    `).join('')}
+    </a>`).join('') : '<div class="empty"><p>아직 게임이 없습니다.</p></div>'}
   </div>
 </body>
 </html>`;

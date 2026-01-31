@@ -41,7 +41,7 @@ monogatari.assets('scenes', {
 });
 
 monogatari.assets ('music', {
-    'main_bgm': '../../shared-assets/audio/bgm/half-mystery.mp3'
+    'main_bgm': 'assets/audio/bgm/half-mystery.mp3'
 });
 
 monogatari.script({

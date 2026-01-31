@@ -5,6 +5,7 @@ const rootDir = path.join(__dirname, '..');
 const templateDir = path.join(rootDir, 'core-engine');
 const gamesDir = path.join(rootDir, 'games');
 const distDir = path.join(rootDir, 'dist');
+const sharedAssetsDir = path.join(rootDir, 'shared-assets');
 
 // 1. dist 폴더 초기화
 if (fs.existsSync(distDir)) {
@@ -39,9 +40,25 @@ gameFolders.forEach(gameId => {
   
   if (fs.existsSync(gameScriptPath)) {
     const outputDir = path.join(distDir, gameId);
+    const destAssetsDir = path.join(outputDir, 'assets');
     
-    // 템플릿 복사 및 스크립트 주입
+    // 1. 템플릿 복사 및 스크립트 주입
     copyDir(templateDir, outputDir);
+
+    // 2. shared-assets를 각 게임의 assets 폴더로 복사
+    // 이렇게 하면 실제 게임 폴더에 assets가 없어도 빌드 결과물에는 생기게 됩니다.
+    if (fs.existsSync(sharedAssetsDir)) {
+      copyDir(sharedAssetsDir, destAssetsDir);
+      console.log(`  → Shared assets injected into ${gameId}`);
+    }
+
+    // 3. (혹시나 나중에 생길) 개별 게임의 assets도 있다면 덮어쓰기
+    const gameAssetsDir = path.join(gamePath, 'assets');
+    if (fs.existsSync(gameAssetsDir)) {
+      copyDir(gameAssetsDir, destAssetsDir);
+    }
+
+    // 4. script.js 복사
     fs.copyFileSync(gameScriptPath, path.join(outputDir, 'js', 'script.js'));
     
     // 메타데이터 수집

@@ -1,348 +1,385 @@
 {
   "meta": {
-    "title": "방탈출 살인사건: 미궁 속의 진실",
-    "description": "성공한 방탈출 게임장 사장, 강태준이 갑작스럽게 사망한다. 추리 소설 작가 나유리는 우연히 사건에 휘말려 진실을 파헤치기 시작한다. 밀실 속에서 벌어진 살인, 과연 범인은 누구일까?",
+    "title": "태풍 속 크루즈 빅토리아호",
+    "description": "호화 크루즈에서 벌어진 살인사건. 추리 소설 작가 강수현은 숨겨진 진실을 밝혀낼 수 있을까?",
     "playtime": "45-75분"
   },
   "characters": {
     "char_protagonist": {
-      "name": "나유리",
-      "color": "#3498db"
+      "name": "강수현",
+      "color": "#2980b9"
     },
-    "char_victim": {
-      "name": "강태준",
-      "color": "#95a5a6"
-    },
-    "char_developer": {
-      "name": "박철수",
+    "char_heiress": {
+      "name": "박선영",
       "color": "#e74c3c"
     },
-    "char_student": {
-      "name": "김민지",
-      "color": "#2ecc71"
+    "char_doctor": {
+      "name": "최준혁",
+      "color": "#95a5a6"
     },
-    "char_employee": {
-      "name": "최지훈",
-      "color": "#f39c12"
+    "char_singer": {
+      "name": "유미나",
+      "color": "#f1c40f"
     },
-    "char_gamer": {
-      "name": "정현우",
-      "color": "#9b59b6"
-    },
-    "char_investor": {
-      "name": "송은주",
+    "char_steward": {
+      "name": "이동욱",
       "color": "#34495e"
+    },
+    "char_detective": {
+      "name": "오형사",
+      "color": "#777777"
+    },
+    "char_victim": {
+      "name": "김민준",
+      "color": "#000000"
     }
   },
   "backgrounds": [
     {
-      "id": "bg_lobby",
-      "name": "방탈출 게임장 로비"
+      "id": "bg_cruise",
+      "name": "크루즈 빅토리아호"
     },
     {
-      "id": "bg_maze",
-      "name": "방탈출 게임 '미궁' 내부"
+      "id": "bg_cabin",
+      "name": "피해자의 객실"
     },
     {
-      "id": "bg_office",
-      "name": "사장실"
+      "id": "bg_hallway",
+      "name": "크루즈 복도"
     },
     {
-      "id": "bg_cctv",
-      "name": "CCTV 감시실"
+      "id": "bg_dining",
+      "name": "크루즈 식당"
+    },
+    {
+      "id": "bg_lounge",
+      "name": "크루즈 라운지"
     }
   ],
   "scenes": [
     {
       "id": "scene_001",
-      "background": "bg_lobby",
+      "background": "bg_cabin",
       "dialogue": [
         {
           "type": "narration",
-          "text": "방탈출 게임장의 화려한 조명이 나를 감쌌다. 새로운 소재를 찾기 위해 방문한 곳이었지만, 이 곳에서 살인사건이 벌어질 줄은 상상도 못했다."
+          "text": "화려한 크루즈 빅토리아호, 나는 추리 소설가 강수현. 휴가를 즐기러 왔지만, 불길한 기운이 감돈다."
+        },
+        {
+          "type": "narration",
+          "text": "객실 문이 열리고, 김민준 사장이 쓰러져 있다. 그는 이미 숨을 거둔 듯하다."
         },
         {
           "type": "speak",
           "character": "char_victim",
-          "text": "어서 오세요! 오늘 '미궁' 테마는 어떠셨나요? 특히 마지막 방 문제가 아주 기가 막히죠."
+          "text": "(괴로운 신음) 컥…."
         },
         {
           "type": "narration",
-          "text": "강태준 사장은 의기양양한 표정으로 손님들을 맞이하고 있었다. 그의 얼굴에는 성공에 대한 자신감이 넘쳐흘렀다."
+          "text": "마지막으로 괴로운 신음을 내뱉고 눈을 감았다."
         }
       ],
       "next": "scene_002"
     },
     {
       "id": "scene_002",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
         {
           "type": "narration",
-          "text": "다음 날, 나는 게임장 앞에서 경찰 통제선을 마주했다. 어젯밤, 강태준 사장이 싸늘한 시체로 발견되었다는 소식이 들려왔다."
+          "text": "사건 현장을 보존하고, 크루즈 내에 있던 오형사에게 알렸다. 그는 휴가 중이었지만, 사건을 외면할 수 없었을 것이다."
         },
         {
           "type": "speak",
-          "character": "char_protagonist",
-          "text": "(혼잣말) 방탈출 게임장에서 살인이라니… 흥미로운걸. 그냥 지나칠 수 없지."
+          "character": "char_detective",
+          "text": "젠장, 휴가 망했군. 강 작가, 자네도 있었나. 무슨 일인지 대충 짐작은 가네."
         }
       ],
       "next": "scene_003"
     },
     {
       "id": "scene_003",
-      "background": "bg_lobby",
+      "background": "bg_cabin",
       "dialogue": [
         {
-          "type": "speak",
-          "character": "char_employee",
-          "text": "저… 정말 끔찍해요. 사장님이 갑자기 돌아가시다니…."
-        },
-        {
-          "type": "speak",
-          "character": "char_protagonist",
-          "text": "실례지만, 어젯밤 상황에 대해 조금 여쭤봐도 될까요? 혹시 특이한 점은 없었나요?"
-        },
-        {
-          "type": "choice",
-          "options": [
-            {
-              "text": "계속 질문한다",
-              "next": "scene_004"
-            },
-            {
-              "text": "다른 사람에게 가본다",
-              "next": "scene_005"
-            }
-          ]
-        }
-      ],
-      "next": null
-    },
-    {
-      "id": "scene_004",
-      "background": "bg_lobby",
-      "dialogue": [
-        {
-          "type": "speak",
-          "character": "char_employee",
-          "text": "음… 어제 박철수 씨가 좀 예민해 보였어요. 사장님과 계속 뭔가 이야기를 나누던데… 내용은 잘 모르겠어요."
+          "type": "narration",
+          "text": "오형사와 함께 객실을 조사하기 시작했다. 흉기는 날카로운 칼. 주변은 격렬하게 싸운 흔적은 없어보인다."
         },
         {
           "type": "narration",
-          "text": "직원의 말에 박철수라는 이름이 뇌리에 박혔다. 그는 누구일까?"
+          "text": "피해자의 다이어리가 눈에 띈다. 최근 크루즈 사업 투자로 막대한 손실을 입었다는 내용이 적혀 있다."
+        },
+        {
+          "type": "narration",
+          "text": "다이어리에는 몇몇 사람들의 이름이 적혀있다. 박선영, 최준혁, 유미나, 그리고 이동욱..."
         }
       ],
-      "next": "scene_006"
+      "next": "scene_004"
+    },
+    {
+      "id": "scene_004",
+      "background": "bg_cruise",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "오형사와 함께 용의자들을 차례대로 만나보기로 했다. 첫 번째는 재벌 상속녀 박선영. 그녀는 과거 김민준과 연인 관계였다."
+        },
+        {
+          "type": "speak",
+          "character": "char_heiress",
+          "text": "김민준이 죽었다고요? 말도 안 돼… 그 사람은… 한때 사랑했던 사람이었어요."
+        },
+        {
+          "type": "speak",
+          "character": "char_detective",
+          "text": "사건 당일, 뭘 하고 있었습니까?"
+        },
+        {
+          "type": "speak",
+          "character": "char_heiress",
+          "text": "스파에서 마사지를 받고 있었어요. 증인이 필요하면 스파 직원을 불러주세요."
+        }
+      ],
+      "next": "scene_005"
     },
     {
       "id": "scene_005",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
         {
+          "type": "narration",
+          "text": "다음은 김민준의 주치의였던 최준혁. 그는 냉정하고 차분한 태도를 유지했다."
+        },
+        {
           "type": "speak",
-          "character": "char_student",
-          "text": "저는 어제 '미궁' 게임을 했는데, 정말 재미있었어요! 하지만… 사장님은 왜…?"
+          "character": "char_doctor",
+          "text": "김민준은 최근 건강이 좋지 않았습니다. 스트레스가 심했죠. 죽음이 안타깝지만, 놀랍지는 않네요."
         },
         {
           "type": "speak",
           "character": "char_protagonist",
-          "text": "혹시 게임 중에 특이한 점은 없었나요? 예를 들어, 다른 참가자들의 행동이라던가…"
+          "text": "사건 당일 밤에는 어디에 계셨나요?"
         },
         {
           "type": "speak",
-          "character": "char_student",
-          "text": "글쎄요… 박철수 씨가 중간에 잠깐 사라졌던 것 같기도 하고… 그냥 화장실에 간 걸지도 모르지만요."
+          "character": "char_doctor",
+          "text": "제 방에서 책을 읽고 있었습니다. 혼자였기 때문에 증명할 방법은 없군요."
         }
       ],
       "next": "scene_006"
     },
     {
       "id": "scene_006",
-      "background": "bg_office",
+      "background": "bg_cruise",
       "dialogue": [
         {
           "type": "narration",
-          "text": "나는 강태준 사장의 사무실로 향했다. 폴리스 라인이 쳐져 있었지만, 경찰의 허락을 받아 조심스럽게 안으로 들어갔다."
+          "text": "세 번째 용의자는 유명 가수 유미나. 그녀는 과거 김민준과 스캔들이 있었다."
         },
         {
-          "type": "narration",
-          "text": "사무실은 어수선하게 흩어져 있었다. 책상 위에는 여러 장의 개발 노트와 설계도가 놓여 있었다."
+          "type": "speak",
+          "character": "char_singer",
+          "text": "그 사람이 죽었다니… 믿을 수 없어요. 우린 그저 비즈니스 관계였을 뿐이에요!"
+        },
+        {
+          "type": "speak",
+          "character": "char_detective",
+          "text": "사건 당일 밤 11시부터 12시 사이에 뭘 했습니까?"
+        },
+        {
+          "type": "speak",
+          "character": "char_singer",
+          "text": "라운지에서 술을 마시고 있었어요. 팬들이랑 사진도 찍었고요. 증인들이 많을 거예요."
         }
       ],
       "next": "scene_007"
     },
     {
       "id": "scene_007",
-      "background": "bg_office",
+      "background": "bg_cruise",
       "dialogue": [
         {
           "type": "narration",
-          "text": "개발 노트를 살펴보던 중, 나는 박철수의 이름이 적힌 페이지를 발견했다. '아이디어 도용'이라는 글자가 붉은색 펜으로 강조되어 있었다."
+          "text": "마지막으로 크루즈 승무원 이동욱을 만났다. 그는 친절했지만, 어딘가 불안해 보였다."
         },
         {
-          "type": "narration",
-          "text": "증거물 '강태준의 개발 노트' 획득."
+          "type": "speak",
+          "character": "char_steward",
+          "text": "사장님이… 돌아가셨다니… 정말 안타깝습니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "사건 발생 시각에 무엇을 하고 있었나요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_steward",
+          "text": "룸서비스를 제공하고 있었습니다. 다른 승객에게 룸서비스를 전달했었죠."
         }
       ],
       "next": "scene_008"
     },
     {
       "id": "scene_008",
-      "background": "bg_cctv",
+      "background": "bg_hallway",
       "dialogue": [
         {
           "type": "narration",
-          "text": "나는 CCTV 감시실로 향했다. 어젯밤 '미궁' 게임 참가자들의 동선을 확인하기 위해서였다."
+          "text": "이동욱이 룸서비스를 제공했다는 승객을 찾아 증언을 확보했다. 하지만, 뭔가 이상하다. 룸서비스 기록과 시간이 맞지 않는다."
         },
         {
           "type": "narration",
-          "text": "CCTV 화면 속에서 박철수는 김민지와 함께 게임을 진행하고 있었다. 하지만, 잠시 후 그는 김민지에게서 떨어져 다른 곳으로 향했다."
+          "text": "태풍 때문에 CCTV가 작동하지 않는다는 점을 이용한 알리바이 트릭인가…?"
         }
       ],
       "next": "scene_009"
     },
     {
       "id": "scene_009",
-      "background": "bg_cctv",
+      "background": "bg_cabin",
       "dialogue": [
         {
           "type": "narration",
-          "text": "박철수가 사라진 시간은 약 5분. 그리고 그 시간은 강태준 사장의 사망 추정 시간과 일치했다."
+          "text": "다시 김민준의 객실을 조사하던 중, 룸서비스 카트에서 희미한 혈흔을 발견했다."
         },
         {
-          "type": "narration",
-          "text": "증거물 'CCTV 영상' 획득."
+          "type": "speak",
+          "character": "char_detective",
+          "text": "국과수에 감식을 의뢰해야겠군. 강 작가, 자네 생각은 어떤가?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "이동욱이 범인이라고 생각한다.",
+              "next": "scene_010"
+            },
+            {
+              "text": "아직 단서가 부족하다.",
+              "next": "scene_011"
+            }
+          ]
         }
       ],
       "next": "scene_010"
     },
     {
       "id": "scene_010",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
         {
-          "type": "speak",
-          "character": "char_protagonist",
-          "text": "박철수 씨, 잠깐 시간 괜찮으신가요? 몇 가지 여쭤볼게 있어서요."
+          "type": "narration",
+          "text": "이동욱을 다시 불러 심문하기로 했다."
         },
         {
           "type": "speak",
-          "character": "char_developer",
-          "text": "…무슨 일이죠? 저는 아무것도 모릅니다."
+          "character": "char_detective",
+          "text": "이동욱 씨, 룸서비스 기록이 당신의 증언과 다르다는 사실을 알고 있습니까?"
         },
         {
-          "type": "choice",
-          "options": [
-            {
-              "text": "어젯밤 알리바이에 대해 질문한다",
-              "next": "scene_011"
-            },
-            {
-              "text": "강태준과의 관계에 대해 질문한다",
-              "next": "scene_012"
-            }
-          ]
+          "type": "speak",
+          "character": "char_steward",
+          "text": "(당황하며) 그, 그럴 리가 없습니다… 저는 분명히 룸서비스를…"
         }
       ],
-      "next": null
+      "next": "scene_012"
     },
     {
       "id": "scene_011",
-      "background": "bg_lobby",
+      "background": "bg_lounge",
       "dialogue": [
         {
-          "type": "speak",
-          "character": "char_protagonist",
-          "text": "어젯밤 '미궁' 게임에서 김민지 씨와 함께 있었다고 하셨죠? 혹시 중간에 자리를 비우신 적은 없나요?"
-        },
-        {
-          "type": "speak",
-          "character": "char_developer",
-          "text": "…화장실에 잠깐 다녀왔습니다. 그게 전부입니다."
+          "type": "narration",
+          "text": "다른 용의자들의 알리바이를 다시 확인해봐야겠다."
         },
         {
           "type": "narration",
-          "text": "박철수의 눈빛이 불안하게 흔들렸다."
+          "text": "박선영의 스파 기록, 유미나의 팬들과 찍은 사진들을 조사해 추가 단서를 찾아보자."
+        },
+        {
+          "type": "narration",
+          "text": "하지만 뚜렷한 단서는 발견하지 못했다."
         }
       ],
-      "next": "scene_013"
+      "next": "scene_012"
     },
     {
       "id": "scene_012",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
         {
-          "type": "speak",
-          "character": "char_protagonist",
-          "text": "강태준 사장님과는 어떤 관계였나요? 개발 노트에 '아이디어 도용'이라고 적혀 있던데…"
-        },
-        {
-          "type": "speak",
-          "character": "char_developer",
-          "text": "…그건 오해입니다. 사장님과는 좋은 협력 관계였습니다."
-        },
-        {
           "type": "narration",
-          "text": "박철수의 목소리가 떨렸다."
+          "text": "국과수 감식 결과, 룸서비스 카트에서 발견된 혈흔은 김민준의 것이었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_detective",
+          "text": "이동욱 씨, 이제 변명할 수 없겠지. 룸서비스 카트에 묻은 피해자의 혈흔은 어떻게 설명할 건가?"
+        },
+        {
+          "type": "speak",
+          "character": "char_steward",
+          "text": "(울먹이며) 죄송합니다… 제가… 제가 죽였습니다…"
         }
       ],
       "next": "scene_013"
     },
     {
       "id": "scene_013",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
         {
           "type": "narration",
-          "text": "나는 박철수의 집을 수색하기 위해 경찰과 함께 그의 집으로 향했다."
+          "text": "이동욱은 모든 것을 자백했다. 그는 과거 김민준의 회사에 투자했다가 전 재산을 잃었고, 복수를 계획했다."
         },
         {
-          "type": "narration",
-          "text": "수색 결과, 박철수의 방에서 해독제가 발견되었다. 그리고 그 해독제는 강태준 사장의 컵에서 검출된 독극물 성분과 일치했다."
-        },
-        {
-          "type": "narration",
-          "text": "증거물 '범인의 해독제' 획득."
+          "type": "speak",
+          "character": "char_steward",
+          "text": "김민준 그 자식… 내 인생을 망쳤어! 냉정하게 외면하는 모습에 분노를 참을 수 없었습니다…"
         }
       ],
       "next": "scene_014"
     },
     {
       "id": "scene_014",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
+        {
+          "type": "narration",
+          "text": "태풍 속 크루즈 살인사건은 그렇게 막을 내렸다. 이동욱은 체포되었고, 나는 다시 휴가를 즐기기로 했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_detective",
+          "text": "강 작가, 덕분에 사건을 해결할 수 있었네. 역시 추리 소설가는 다르구만."
+        },
         {
           "type": "speak",
           "character": "char_protagonist",
-          "text": "박철수 씨, 이제 더 이상 숨길 수 없어요. 당신이 범인입니다."
-        },
-        {
-          "type": "speak",
-          "character": "char_developer",
-          "text": "……"
-        },
-        {
-          "type": "narration",
-          "text": "박철수는 아무 말도 하지 않았다. 그의 얼굴에는 절망과 분노가 뒤섞여 있었다."
+          "text": "별말씀을요. 저도 흥미로운 경험이었어요."
         }
       ],
       "next": "scene_015"
     },
     {
       "id": "scene_015",
-      "background": "bg_lobby",
+      "background": "bg_cruise",
       "dialogue": [
         {
           "type": "narration",
-          "text": "사건은 해결되었지만, 씁쓸함은 가시지 않았다. 아이디어에 대한 집착이 한 사람의 인생을 망쳐버린 것이다."
+          "text": "하지만 마음 한구석에는 씁쓸함이 남았다. 인간의 욕망과 복수심이 만들어낸 비극… 다음 작품에는 어떤 이야기를 담아야 할까?"
         },
         {
           "type": "narration",
-          "text": "나는 방탈출 게임장을 나섰다. 미궁 속에서 빠져나온 기분이었다."
+          "text": "나는 다시 바다를 바라보며 새로운 영감을 떠올리기 시작했다."
+        },
+        {
+          "type": "narration",
+          "text": "The End."
         }
       ],
-      "next": "ending_true"
+      "next": null
     }
   ],
   "deductionPhase": {
@@ -352,55 +389,20 @@
         "question": "범인은 누구인가?",
         "options": [
           {
-            "characterId": "char_developer",
+            "characterId": "char_heiress",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_doctor",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_singer",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_steward",
             "isCorrect": true
-          },
-          {
-            "characterId": "char_student",
-            "isCorrect": false
-          },
-          {
-            "characterId": "char_employee",
-            "isCorrect": false
-          },
-          {
-            "characterId": "char_gamer",
-            "isCorrect": false
-          },
-          {
-            "characterId": "char_investor",
-            "isCorrect": false
-          }
-        ]
-      },
-      {
-        "id": "q_motive",
-        "question": "범행 동기는 무엇인가?",
-        "options": [
-          {
-            "characterId": "char_developer",
-            "isCorrect": true,
-            "text": "아이디어 도용에 대한 분노"
-          },
-          {
-            "characterId": "char_student",
-            "isCorrect": false,
-            "text": "단순한 호기심"
-          },
-          {
-            "characterId": "char_employee",
-            "isCorrect": false,
-            "text": "사장에게 불만이 많아서"
-          },
-          {
-            "characterId": "char_gamer",
-            "isCorrect": false,
-            "text": "게임의 일부로 착각해서"
-          },
-          {
-            "characterId": "char_investor",
-            "isCorrect": false,
-            "text": "투자금을 회수하기 위해"
           }
         ]
       }

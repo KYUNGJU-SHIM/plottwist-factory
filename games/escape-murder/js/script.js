@@ -33,7 +33,7 @@ monogatari.characters({
 });
 
 monogatari.assets ('music', {
-    'main_bgm': '../assets/audio/bgm/half-mystery.mp3'
+    'main_bgm': 'audio/bgm/basement-floor.mp3'
 });
 
 monogatari.assets('scenes', {

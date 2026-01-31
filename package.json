@@ -1,6 +1,6 @@
 {
-  "name": "mystery-vn-games",
-  "private": true,
+  "name": "plottwist-factory",
+  "version": "1.0.0",
   "scripts": {
     "build": "node scripts/build-games.js"
   }

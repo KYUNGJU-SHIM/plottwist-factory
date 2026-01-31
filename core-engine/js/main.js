@@ -1,22 +1,38 @@
+'use strict';
+/* global Monogatari */
+/* global monogatari */
+
 /**
- * PlotTwist-Factory Core Engine
- * 모든 게임 폴더에서 이 스크립트를 참조하여 실행합니다.
- */
+ * =============================================================================
+ * This is the file where you should put all your custom JavaScript code,
+ * depending on what you want to do, there are 3 different places in this file
+ * where you can add code.
+ *
+ * 1. Outside the $_ready function: At this point, the page may not be fully
+ *    loaded yet, however you can interact with Monogatari to register new
+ *    actions, components, labels, characters, etc.
+ *
+ * 2. Inside the $_ready function: At this point, the page has been loaded, and
+ *    you can now interact with the HTML elements on it.
+ *
+ * 3. Inside the init function: At this point, Monogatari has been initialized,
+ *    the event listeners for its inner workings have been registered, assets
+ *    have been preloaded (if enabled) and your game is ready to be played.
+ *
+ * You should always keep the $_ready function as the last thing on this file.
+ * =============================================================================
+ **/
 
-// Monogatari v2 기본 설정
-const { monogatari } = window;
+const { $_ready, $_ } = Monogatari;
 
-// 엔진 설정 (원하는 대로 커스터마이징 가능)
-monogatari.settings({
-	'Name': 'Mystery Game',
-	'Label': 'Start',
+// 1. Outside the $_ready function:
+
+
+$_ready (() => {
+	// 2. Inside the $_ready function:
+
+	monogatari.init ('#monogatari').then (() => {
+		// 3. Inside the init function:
+
+	});
 });
-
-// 자산 경로 설정 (필요시)
-monogatari.assets({
-	'scenes': {},
-	'characters': {},
-});
-
-// 엔진 실행
-monogatari.init('#game-screen');

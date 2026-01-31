@@ -1,9 +1,9 @@
 // 태풍 속 크루즈 빅토리아호
 // Generated: 2026-01-31T12:50:15.412Z
 
-const { Monogatari } = window;
+const { monogatari } = window;
 
-Monogatari.characters({
+monogatari.characters({
   "char_protagonist": {
     "name": "강수현",
     "color": "#2980b9"
@@ -34,7 +34,7 @@ Monogatari.characters({
   }
 });
 
-Monogatari.assets('scenes', {
+monogatari.assets('scenes', {
   "bg_cruise": "#1a1a2e",
   "bg_cabin": "#1a1a2e",
   "bg_hallway": "#1a1a2e",
@@ -42,7 +42,7 @@ Monogatari.assets('scenes', {
   "bg_lounge": "#1a1a2e"
 });
 
-Monogatari.script({
+monogatari.script({
   "scene_001": [
     "show scene bg_cabin",
     "화려한 크루즈 빅토리아호, 나는 추리 소설가 강수현. 휴가를 즐기러 왔지만, 불길한 기운이 감돈다.",

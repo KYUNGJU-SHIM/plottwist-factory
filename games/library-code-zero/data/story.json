@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "title": "루브르 도서관: 사서장의 비밀 금고",
+    "description": "루브르 도서관에서 발생한 살인 사건! 추리 소설 작가 강지훈은 사건의 진실을 파헤칠 수 있을까?",
+    "playtime": "30-60분"
+  },
+  "characters": {
+    "char_protagonist": {
+      "name": "강지훈",
+      "color": "#3498db"
+    },
+    "char_librarian": {
+      "name": "앙드레 뒤퐁",
+      "color": "#9b59b6"
+    },
+    "char_rival": {
+      "name": "피에르 르블랑",
+      "color": "#e74c3c"
+    },
+    "char_researcher1": {
+      "name": "마리 뒤퐁",
+      "color": "#2ecc71"
+    },
+    "char_researcher2": {
+      "name": "피에르 르블랑",
+      "color": "#f39c12"
+    },
+    "char_guard1": {
+      "name": "장 루소",
+      "color": "#777777"
+    },
+    "char_guard2": {
+      "name": "클로에 베르트랑",
+      "color": "#8e44ad"
+    },
+    "char_assistant": {
+      "name": "소피 마르탱",
+      "color": "#16a085"
+    },
+    "char_director": {
+      "name": "미셸 앙리",
+      "color": "#c0392b"
+    },
+    "char_professor": {
+      "name": "자크 베르나르",
+      "color": "#d35400"
+    }
+  },
+  "backgrounds": [
+    {
+      "id": "bg_library",
+      "name": "루브르 도서관 특별 구역"
+    },
+    {
+      "id": "bg_office",
+      "name": "사서장 사무실"
+    },
+    {
+      "id": "bg_lab",
+      "name": "연구실"
+    },
+    {
+      "id": "bg_hallway",
+      "name": "도서관 복도"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_001",
+      "background": "bg_office",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "늦은 밤, 루브르 도서관 사서장 앙드레 뒤퐁은 책상에 파묻혀 무언가를 열심히 읽고 있었다. 희미한 스탠드 불빛 아래, 그의 얼굴은 긴장으로 가득 차 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_librarian",
+          "text": "(혼잣말) 드디어... 이 암호의 해독이 눈앞에 왔어."
+        },
+        {
+          "type": "narration",
+          "text": "갑자기, 등 뒤에서 섬뜩한 기운이 느껴졌다. 뒤퐁은 황급히 뒤를 돌아보려 했지만, 이미 늦었다."
+        },
+        {
+          "type": "narration",
+          "text": "날카로운 흉기가 그의 심장을 꿰뚫었다. 뒤퐁은 고통스러운 신음조차 내지 못하고 쓰러졌다. 그의 손에는 찢어진 고서 페이지가 들려 있었다."
+        }
+      ],
+      "next": "scene_002"
+    },
+    {
+      "id": "scene_002",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "다음 날 아침, 나는 루브르 도서관의 초청을 받아 급히 파리로 향했다. 유명한 추리 소설 작가인 나에게, 도서관 측은 어젯밤 발생한 사서장 살인 사건의 자문을 부탁했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(혼잣말) 루브르 도서관에서 살인 사건이라니... 흥미로운걸."
+        },
+        {
+          "type": "narration",
+          "text": "도서관에 도착하자, 관장 미셸 앙리가 나를 맞이했다. 그의 얼굴은 심각한 표정이었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_director",
+          "text": "강 작가님, 부디 이 사건의 진실을 밝혀주십시오. 도서관의 명예가 걸린 문제입니다."
+        }
+      ],
+      "next": "scene_003"
+    },
+    {
+      "id": "scene_003",
+      "background": "bg_office",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 먼저 사건 현장인 사서장 사무실로 향했다. 핏자국은 이미 깨끗하게 지워져 있었지만, 곳곳에 남아있는 흔적들이 어젯밤의 참혹함을 말해주는 듯했다."
+        },
+        {
+          "type": "narration",
+          "text": "사무실 바닥에는 찢어진 고서 페이지 조각이 떨어져 있었다. 나는 조심스럽게 그것을 주워 들었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(혼잣말) 찢어진 고서 페이지... 중요한 단서가 될 수 있겠어."
+        },
+        {
+          "type": "narration",
+          "text": "사무실을 둘러보던 중, 나는 책상 밑에서 특이한 먼지 뭉치를 발견했다."
+        }
+      ],
+      "next": "scene_004"
+    },
+    {
+      "id": "scene_004",
+      "background": "bg_hallway",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 먼지 뭉치를 증거물로 보관하고, 다른 용의자들을 만나보기로 했다. 첫 번째로 만난 사람은 고서 연구원 마리 뒤퐁이었다. 그녀는 피해자인 앙드레 뒤퐁의 친척이라고 했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "마리 씨, 앙드레 뒤퐁 사서장님과는 어떤 관계셨습니까?"
+        },
+        {
+          "type": "speak",
+          "character": "char_researcher1",
+          "text": "그분은 저의 삼촌이셨어요. 존경하는 분이셨죠. 하지만... 최근 도서관 내 권력 다툼 때문에 힘들어하셨어요."
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "권력 다툼에 대해 더 자세히 물어본다.",
+              "next": "scene_005"
+            },
+            {
+              "text": "다른 용의자를 만나러 간다.",
+              "next": "scene_006"
+            }
+          ]
+        }
+      ],
+      "next": null
+    },
+    {
+      "id": "scene_005",
+      "background": "bg_hallway",
+      "dialogue": [
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "권력 다툼이라니, 어떤 내용이었나요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_researcher1",
+          "text": "최근에 삼촌이 발견한 고서 때문에 경쟁이 심해졌어요. 피에르 르블랑 연구원이 특히 삼촌을 질투했죠."
+        }
+      ],
+      "next": "scene_006"
+    },
+    {
+      "id": "scene_006",
+      "background": "bg_hallway",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "다음으로 만난 사람은 피에르 르블랑이었다. 그는 앙드레 뒤퐁과 경쟁 관계에 있는 고서 연구원이었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "르블랑 씨, 어젯밤에 무엇을 하고 계셨습니까?"
+        },
+        {
+          "type": "speak",
+          "character": "char_researcher2",
+          "text": "저는 연구실에서 고서 연구에 몰두하고 있었습니다. 다른 연구원들이 제 연구실에 왔던 것을 기억할 겁니다."
+        }
+      ],
+      "next": "scene_007"
+    },
+    {
+      "id": "scene_007",
+      "background": "bg_lab",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 르블랑의 연구실을 방문했다. 그의 책상 위에는 수많은 고서들이 펼쳐져 있었다. 그중에는 어젯밤 살해당한 앙드레 뒤퐁이 연구하던 고서와 비슷한 책도 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "자세히 살펴보니, 르블랑의 책상 위에도 찢어진 고서 페이지 조각이 있었다. 나는 마리 뒤퐁과 르블랑, 두 사람 모두 용의선상에 올려놓았다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(혼잣말) 찢어진 페이지 조각... 우연일까?"
+        }
+      ],
+      "next": "scene_008"
+    },
+    {
+      "id": "scene_008",
+      "background": "bg_hallway",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 도서관 경비원 장 루소와 클로에 베르트랑도 만났다. 그들은 사건 발생 시각에 도서관을 순찰하고 있었다고 진술했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_guard1",
+          "text": "저희는 평소처럼 순찰을 돌고 있었습니다. 도난 경보가 울렸을 때, 저희도 깜짝 놀랐습니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_guard2",
+          "text": "사서장님이 살해당했다는 소식을 듣고 너무 놀랐어요. 평소에 존경하던 분이었거든요."
+        }
+      ],
+      "next": "scene_009"
+    },
+    {
+      "id": "scene_009",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 앙드레 뒤퐁을 존경했다는 사서 보조 소피 마르탱을 만났다. 그녀는 슬픔에 잠겨 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_assistant",
+          "text": "사서장님은 정말 좋은 분이셨어요. 항상 저를 격려해주셨죠. 누가 그런 끔찍한 짓을..."
+        }
+      ],
+      "next": "scene_010"
+    },
+    {
+      "id": "scene_010",
+      "background": "bg_hallway",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "마지막으로, 나는 초빙 교수 자크 베르나르를 만났다. 그는 고서에 대한 깊은 지식을 가지고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_professor",
+          "text": "앙드레 뒤퐁은 뛰어난 학자였습니다. 그의 죽음은 학계의 큰 손실입니다."
+        }
+      ],
+      "next": "scene_011"
+    },
+    {
+      "id": "scene_011",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "모든 용의자들을 만나본 후, 나는 증거들을 다시 검토하기 시작했다. 찢어진 고서 페이지 조각, 르블랑의 알리바이 증언, 그리고 사서장 사무실에서 발견된 특이한 먼지 뭉치..."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(혼잣말) 모든 증거들이 하나의 그림을 그리고 있어..."
+        }
+      ],
+      "next": "scene_012"
+    },
+    {
+      "id": "scene_012",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 국립 과학 수사 연구소에 먼지 뭉치의 성분 분석을 의뢰했다. 결과는 놀라웠다. 먼지는 사서장 사무실 바닥에만 사용된 특수한 성분으로 이루어져 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(혼잣말) 이제 남은 것은 범인을 밝혀내는 것뿐이야."
+        }
+      ],
+      "next": "scene_013"
+    },
+    {
+      "id": "scene_013",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 르블랑을 다시 불러 추궁했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "르블랑 씨, 당신의 신발에서 사서장 사무실 바닥에만 있는 특수한 먼지 성분이 검출되었습니다. 어떻게 된 일이죠?"
+        },
+        {
+          "type": "speak",
+          "character": "char_rival",
+          "text": "(당황하며) 그, 그럴 리가 없습니다! 저는 정말 연구실에 있었습니다!"
+        }
+      ],
+      "next": "scene_014"
+    },
+    {
+      "id": "scene_014",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 르블랑의 연구실에서 발견된 찢어진 고서 페이지 조각을 보여주었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "이 페이지는 어젯밤 살해당한 앙드레 뒤퐁 사서장의 사무실에서 발견된 것과 동일한 고서의 일부입니다. 당신은 거짓말을 하고 있습니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_rival",
+          "text": "(침묵)"
+        }
+      ],
+      "next": "scene_015"
+    },
+    {
+      "id": "scene_015",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "침묵을 깨고, 르블랑은 마침내 모든 것을 자백했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_rival",
+          "text": "그래요, 제가 죽였습니다... 앙드레 뒤퐁이 발견한 고서의 가치를 가로채고 싶었습니다. 그가 그걸 막으려고 해서... 어쩔 수 없었습니다."
+        },
+        {
+          "type": "narration",
+          "text": "나는 르블랑을 경찰에 넘겼다. 루브르 도서관의 살인 사건은 그렇게 막을 내렸다."
+        },
+        {
+          "type": "narration",
+          "text": "하지만, 찢어진 페이지에 담긴 암호는 아직 풀리지 않았다..."
+        }
+      ],
+      "next": "scene_true"
+    },
+    {
+      "id": "scene_true",
+      "background": "bg_library",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "모든 사건이 해결된 후, 강지훈은 도서관을 떠나며 생각했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "이 사건은 단순한 살인 사건이 아니었어. 고서에 숨겨진 비밀, 그리고 인간의 욕망이 만들어낸 비극이었지."
+        },
+        {
+          "type": "narration",
+          "text": "하지만 그는 아직 풀리지 않은 고서의 암호에 대한 궁금증을 떨쳐버릴 수 없었다."
+        },
+        {
+          "type": "narration",
+          "text": "강지훈은 새로운 추리 소설의 영감을 얻으며, 다음 사건을 기다렸다."
+        }
+      ],
+      "next": null
+    }
+  ],
+  "deductionPhase": {
+    "questions": [
+      {
+        "id": "q_culprit",
+        "question": "범인은 누구인가?",
+        "options": [
+          {
+            "characterId": "char_rival",
+            "isCorrect": true
+          },
+          {
+            "characterId": "char_researcher1",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_guard1",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_assistant",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  "endings": [
+    {
+      "id": "ending_true",
+      "type": "true",
+      "startScene": "scene_true"
+    }
+  ]
+}

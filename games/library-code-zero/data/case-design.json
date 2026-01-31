@@ -1,0 +1,141 @@
+{
+  "caseDesign": {
+    "victim": {
+      "characterId": "char_librarian",
+      "name": "앙드레 뒤퐁",
+      "age": 45,
+      "occupation": "루브르 도서관 사서장",
+      "background": "루브르 도서관에서 20년 이상 근무한 베테랑 사서. 희귀 고서 감정 및 보존 전문가. 최근 도서관 내 권력 다툼에 휘말림."
+    },
+    "culprit": {
+      "characterId": "char_rival",
+      "motiveDetail": "앙드레 뒤퐁이 발견한 고서의 가치를 가로채, 자신의 연구 업적으로 발표하려 함. 뒤퐁이 이를 반대하자 살해를 계획.",
+      "alibiClaim": "사건 발생 시각에 자신의 연구실에서 고서 연구에 몰두하고 있었다고 주장. 다른 연구원들이 그의 연구실 출입을 목격했다고 증언.",
+      "actualTimeline": {
+        "23:00": "연구실에서 나와 사서장의 사무실로 향함",
+        "23:15": "사서장의 사무실에 침입, 뒤퐁을 살해하고 고서를 훔침",
+        "23:30": "미리 준비한 가짜 알리바이를 위해 연구실로 복귀, 연구에 몰두하는 척 함",
+        "23:58": "도난 경보가 울리자 당황한 표정을 지으며 다른 사람들과 함께 갇힘"
+      }
+    },
+    "trick": {
+      "type": "alibi",
+      "summary": "범인은 연구실에 있었다는 알리바이를 만들었지만, 실제로는 짧은 시간 동안 사서장의 사무실에 침입하여 범행을 저지르고 돌아왔다. 연구실에서 사서장 사무실까지의 거리가 짧고, 도서관 구조를 잘 알고 있었기에 가능한 범행.",
+      "criticalEvidence": "범인의 연구실 책상에서 발견된 희귀 고서의 페이지 조각. 사서장의 사무실에서 발견된 것과 일치함. 또한, 범인의 신발에서 사서장의 사무실 바닥에만 있는 특수한 먼지 성분이 검출됨."
+    }
+  },
+  "characters": [
+    {
+      "id": "char_protagonist",
+      "name": "강지훈",
+      "age": 28,
+      "occupation": "추리 소설 작가",
+      "personality": "침착하고 관찰력이 뛰어나다. 논리적인 추론에 능숙하며, 어려운 문제 해결에 흥미를 느낀다.",
+      "role": "protagonist"
+    },
+    {
+      "id": "char_researcher1",
+      "name": "마리 뒤퐁",
+      "age": 35,
+      "occupation": "고서 연구원",
+      "personality": "예민하고 신경질적이다. 뒤퐁 사서장과 친척 관계.",
+      "role": "suspect"
+    },
+    {
+      "id": "char_researcher2",
+      "name": "피에르 르블랑",
+      "age": 50,
+      "occupation": "고서 연구원",
+      "personality": "조용하고 내성적이다. 뒤퐁 사서장과 경쟁 관계.",
+      "role": "suspect"
+    },
+    {
+      "id": "char_guard1",
+      "name": "장 루소",
+      "age": 40,
+      "occupation": "도서관 경비원",
+      "personality": "성실하고 책임감이 강하다. 도서관 보안 시스템에 대해 잘 알고 있다.",
+      "role": "suspect"
+    },
+    {
+      "id": "char_guard2",
+      "name": "클로에 베르트랑",
+      "age": 25,
+      "occupation": "도서관 경비원",
+      "personality": "활발하고 호기심이 많다. 도서관 내 사건에 관심을 보인다.",
+      "role": "suspect"
+    },
+    {
+      "id": "char_assistant",
+      "name": "소피 마르탱",
+      "age": 22,
+      "occupation": "사서 보조",
+      "personality": "착하고 순수하다. 뒤퐁 사서장을 존경한다.",
+      "role": "suspect"
+    },
+    {
+      "id": "char_director",
+      "name": "미셸 앙리",
+      "age": 60,
+      "occupation": "루브르 도서관 관장",
+      "personality": "권위적이고 냉철하다. 도서관의 명예를 중요하게 생각한다.",
+      "role": "suspect"
+    },
+    {
+      "id": "char_professor",
+      "name": "자크 베르나르",
+      "age": 65,
+      "occupation": "초빙 교수",
+      "personality": "지적이고 해박하다. 고서에 대한 깊은 지식을 가지고 있다.",
+      "role": "suspect"
+    }
+  ],
+  "evidence": {
+    "physical": [
+      {
+        "id": "ev_001",
+        "name": "찢어진 고서 페이지",
+        "significance": "사서장의 사무실과 범인의 연구실에서 발견된 페이지 조각은 동일한 고서의 일부이다. 이 고서는 레오나르도 다 빈치의 암호가 숨겨져 있다고 알려진 책이다.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_002",
+        "name": "범인의 신발에 묻은 먼지",
+        "significance": "사서장의 사무실 바닥에만 있는 특수한 먼지 성분이 범인의 신발에서 검출되었다. 이는 범인이 사서장의 사무실에 들어갔다는 결정적인 증거이다.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_003",
+        "name": "알리바이 증언",
+        "significance": "다른 연구원들이 범인이 주장하는 시간대에 그의 연구실에 출입했다고 증언했지만, 정확한 시간은 기억하지 못한다.",
+        "isCritical": false
+      },
+      {
+        "id": "ev_004",
+        "name": "도난당한 고서",
+        "significance": "도난 경보를 울린 고서는 '보이니치 문서'와 '히포크라테스 전집'의 내용을 조합해 만든 암호가 숨겨진 특별 제작본이다.",
+        "isCritical": false
+      }
+    ],
+    "clues": [
+      {
+        "id": "clue_001",
+        "name": "보이니치 문서 암호",
+        "description": "보이니치 문서의 특정 페이지에 적힌 기묘한 문양들을 조합하면 특정 단어가 나타난다.",
+        "significance": "암호 해독의 단서"
+      },
+      {
+        "id": "clue_002",
+        "name": "히포크라테스 전집 암호",
+        "description": "히포크라테스 전집의 특정 구절들을 특정 순서대로 배열하면 의미 있는 문장이 완성된다.",
+        "significance": "암호 해독의 단서"
+      }
+    ]
+  },
+  "backgrounds": [
+    {
+      "id": "bg_library",
+      "name": "루브르 도서관 특별 구역"
+    }
+  ]
+}

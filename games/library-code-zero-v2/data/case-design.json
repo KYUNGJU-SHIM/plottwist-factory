@@ -1,0 +1,457 @@
+{
+  "caseDesign": {
+    "victim": {
+      "characterId": "char_victim",
+      "name": "오진혁",
+      "age": 58,
+      "occupation": "중앙 도서관 사서장",
+      "personality": "원리원칙을 중시하는 완고한 성격",
+      "background": "평생을 도서관에 헌신한 인물. 최근 정체불명의 누군가가 훼손된 고서를 완벽하게 복원하여 제자리에 돌려놓는 현상을 발견하고, 그 비밀을 파헤치기 위해 독자적으로 조사를 진행 중이었다.",
+      "secrets": [
+        "도서관 지하에 미지의 공간이 있다는 사실을 어렴풋이 눈치채고 있었다.",
+        "유령 사서의 존재를 밝혀내어 자신의 명성을 높이려 했다."
+      ],
+      "deathTime": "22:00 경",
+      "deathLocation": "bg_rotunda",
+      "causeOfDeath": "실종 및 생사불명 (실제로는 지하 서고에 감금됨)"
+    },
+    "culprit": {
+      "characterId": "char_culprit",
+      "motiveCategory": "은폐",
+      "motiveDetail": "20년간 도서관 지하에 숨어 살며 책을 복원해온 자신의 존재를 숨기기 위함. 사서장을 해칠 의도는 없었으며, 단지 자신의 공간과 삶을 지키기 위해 일시적으로 그를 제압하고 감금했다.",
+      "triggerEvent": "사서장 오진혁이 지하 서고로 통하는 입구인 로툰다의 비밀을 알아내고 자신을 찾아내자, 모든 것이 발각될 위기에 처했다.",
+      "alibiClaim": "경보가 울렸을 때, 900번대 역사 서고에서 서적 목록을 정리하고 있었다고 주장한다.",
+      "alibiTrick": "로툰다에서 사서장을 제압한 뒤, 특정 청구기호('027.4-L847-v.2')를 입력해 로툰다 전체를 지하로 하강시켰다. 사서장을 지하 작업실에 감금한 후, 비밀 유지보수 통로를 통해 900번대 서고로 빠져나와 알리바이를 완성했다.",
+      "actualTimeline": {
+        "21:55": "로툰다 중앙에서 오진혁 사서장과 대면.",
+        "21:58": "자신을 신고하려는 오진혁을 두꺼운 책으로 기절시킴.",
+        "22:00": "고서 도난 경보를 울려 도서관을 폐쇄하고, 로툰다를 작동시켜 지하로 하강.",
+        "22:05": "지하 작업실에 오진혁을 옮기고 로툰다를 원위치시킴.",
+        "22:10": "비밀 통로를 이용해 900번대 역사 서고에 도착하여 모습을 드러냄."
+      }
+    },
+    "trick": {
+      "type": "alibi",
+      "summary": "승강식 원형 서가와 비밀 통로를 이용한 장소 이동 알리바이.",
+      "mechanism": "중앙의 원형 서가(로툰다)는 단순한 회전 서가가 아니다. 특정 청구기호('027.4-L847-v.2')를 입력하면, DDC코드(027.4)와 좌표(L847), 그리고 층수(v.2)가 조합되어 기계 장치가 작동, 서가 전체가 지하 2층의 비밀 작업실로 내려가는 엘리베이터 역할을 한다. 범인은 이 장치를 이용해 피해자와 함께 순식간에 지하로 사라진 뒤, 지상층의 다른 구역으로 연결된 비밀 통로를 통해 나와 알리바이를 만들었다. 경보음이 장치 작동 소음을 가려주었다.",
+      "weakness": "1. 로툰다를 승강시키기 위해서는 일반적인 회전보다 훨씬 큰 전력이 필요하다. 2. 지하 작업실과 연결된 비밀 통로의 출구(900번대 서고의 환풍구) 근처에서는 지하의 오래된 책과 접착제 냄새가 난다. 3. 범인은 그곳에 계속 살았기 때문에 그 냄새에 익숙해져 알아채지 못한다.",
+      "criticalEvidence": "ev_power_log, ev_glue_smell, ev_call_slip"
+    }
+  },
+  "characters": [
+    {
+      "id": "char_protagonist",
+      "name": "김민준",
+      "age": 24,
+      "occupation": "건축학도",
+      "personality": "관찰력이 뛰어나고 논리적이다.",
+      "speechStyle": "차분하고 이성적인 존댓말",
+      "relationToVictim": "도서관의 특수 건축 구조에 대한 논문을 쓰기 위해 사서장의 특별 허가를 받아 방문했다.",
+      "motive": null,
+      "alibiClaim": "사건 추정 시각, 2층 열람실에서 자료를 보고 있었다.",
+      "alibiTruth": true,
+      "secret": "사실은 논문 주제보다 이 도서관에 숨겨진 비밀 공간이 있다는 소문을 듣고 탐사하러 온 것이다.",
+      "role": "protagonist"
+    },
+    {
+      "id": "char_suspect1",
+      "name": "박지수",
+      "age": 42,
+      "occupation": "수석 사서",
+      "personality": "야심이 많고 냉소적이다.",
+      "speechStyle": "가시 돋친 사무적인 말투",
+      "relationToVictim": "사서장 자리를 노리는 직속 부하이자 경쟁자.",
+      "motive": "오진혁이 사라지면 자신이 사서장 대리가 될 수 있다.",
+      "alibiClaim": "사서장실 옆 자신의 사무실에서 해외 도서관과 화상 회의 중이었다.",
+      "alibiTruth": true,
+      "secret": "사서장의 컴퓨터를 해킹하여 그의 약점을 찾으려 한 적이 있다.",
+      "role": "suspect",
+      "whyNotCulprit": "화상 회의 로그 기록이 서버에 남아있어 완벽한 알리바이가 증명된다."
+    },
+    {
+      "id": "char_suspect2",
+      "name": "김태준",
+      "age": 55,
+      "occupation": "고서 수집가",
+      "personality": "저돌적이고 소유욕이 강하다.",
+      "speechStyle": "거만하고 반말을 섞어 쓴다.",
+      "relationToVictim": "원하는 고서의 열람을 거부당해 앙심을 품고 있다.",
+      "motive": "사서장에게 복수하고 혼란을 틈타 고서를 훔치려 했다.",
+      "alibiClaim": "경보가 울릴 때 400번대 어학 서고에 있었다.",
+      "alibiTruth": true,
+      "secret": "과거 고서 절도 미수 전과가 있다.",
+      "role": "suspect",
+      "whyNotCulprit": "최민아가 경보 당시 그가 400번대 서고 문을 억지로 열려고 하는 것을 목격했다. 범행 장소인 로툰다와 물리적으로 너무 멀리 떨어져 있었다."
+    },
+    {
+      "id": "char_suspect3",
+      "name": "최민아",
+      "age": 29,
+      "occupation": "기록물 관리사",
+      "personality": "소심하고 겁이 많다.",
+      "speechStyle": "자신감 없이 목소리를 떨며 말한다.",
+      "relationToVictim": "직속 부하. 사서장의 엄격함에 항상 주눅 들어 있다.",
+      "motive": null,
+      "alibiClaim": "자료 정리실에서 혼자 일하고 있었다.",
+      "alibiTruth": true,
+      "secret": "오래전부터 '유령 사서'가 훼손된 책들을 복원해 놓는 것을 알고 있었지만, 무서워서 아무에게도 말하지 못했다.",
+      "role": "suspect",
+      "whyNotCulprit": "사건을 일으킬 만한 동기가 없고, 범행에 필요한 로툰다의 기계적 지식이나 물리적 힘이 없다."
+    },
+    {
+      "id": "char_culprit",
+      "name": "윤필서",
+      "age": 72,
+      "occupation": "전직 사서 / 유령 사서",
+      "personality": "책을 광적으로 사랑하며, 세상과 단절된 채 살아온 탓에 약간 괴짜 같지만 온화하다.",
+      "speechStyle": "느리고 조용한 옛날 말투",
+      "relationToVictim": "자신의 존재를 유일하게 눈치챈 인물.",
+      "motive": "20년간 도서관 지하에 숨어 살며 책을 복원해온 자신의 존재를 숨기기 위함. 사서장을 해칠 의도는 없었으며, 단지 자신의 공간과 삶을 지키기 위해 일시적으로 그를 제압하고 감금했다.",
+      "alibiClaim": "경보가 울렸을 때, 900번대 역사 서고에서 서적 목록을 정리하고 있었다고 주장한다.",
+      "alibiTruth": false,
+      "secret": "20년 전, 도서관의 폐기 서적들을 살리기 위해 공식적으로 사망 처리된 후 도서관 지하에 숨어들어와 책을 복원하며 살아왔다.",
+      "role": "culprit"
+    }
+  ],
+  "evidence": {
+    "physical": [
+      {
+        "id": "ev_call_slip",
+        "name": "이상한 청구기호가 적힌 대출 신청서",
+        "description": "로툰다 중앙 콘솔 옆에 떨어져 있던 종이. '027.4-L847-v.2'라는 일반적이지 않은 청구기호가 적혀 있다.",
+        "foundAt": "bg_rotunda",
+        "significance": "로툰다의 승강 장치를 작동시키는 암호. 범인이 급하게 작동시키느라 떨어뜨린 것이다.",
+        "pointsTo": null,
+        "isCritical": true,
+        "isRedHerring": false
+      },
+      {
+        "id": "ev_power_log",
+        "name": "도서관 전력 사용 기록",
+        "description": "보안실 컴퓨터에서 발견된 전력 사용 로그. 경보가 울린 22:00 정각에 로툰다 구역에서 순간적으로 엄청난 전력 스파크가 기록되어 있다. 단순 회전에 사용되는 전력량과는 비교가 안 된다.",
+        "foundAt": "bg_security_room",
+        "significance": "로툰다에 우리가 모르는 다른 기능, 즉 수직 이동 같은 기능이 있음을 시사한다.",
+        "pointsTo": null,
+        "isCritical": true,
+        "isRedHerring": false
+      },
+      {
+        "id": "ev_glue_smell",
+        "name": "900번대 서고의 낯선 냄새",
+        "description": "900번대 역사 서고의 특정 환풍구 근처에서 낡은 종이와 특이한 아교풀 냄새가 희미하게 난다. 윤필서가 주장한 알리바이 장소이다.",
+        "foundAt": "bg_archives_900",
+        "significance": "지하의 비밀 작업실과 연결된 비밀 통로의 출구라는 증거. 범인의 이동 경로를 암시한다.",
+        "pointsTo": "char_culprit",
+        "isCritical": true,
+        "isRedHerring": false
+      },
+      {
+        "id": "ev_perfect_book",
+        "name": "완벽하게 복원된 고서",
+        "description": "분명 10년 전에 심하게 훼손되어 폐기 직전이었던 책이, 마치 새것처럼 복원된 채 서가에 꽂혀있다.",
+        "foundAt": "bg_archives_special",
+        "significance": "도서관 내에 전문가 수준의 복원 기술을 가진 미지의 인물, 즉 '유령 사서'가 있음을 암시한다.",
+        "pointsTo": null,
+        "isCritical": false,
+        "isRedHerring": false
+      },
+      {
+        "id": "ev_scuff_marks",
+        "name": "로툰다 바닥의 끌린 자국",
+        "description": "로툰다 입구 바닥에 무거운 것을 급하게 옮긴 듯한 희미한 자국이 남아 있다.",
+        "foundAt": "bg_rotunda",
+        "significance": "범인이 기절한 사서장을 로툰다 안으로 끌고 갔다는 증거.",
+        "pointsTo": null,
+        "isCritical": false,
+        "isRedHerring": false
+      }
+    ],
+    "testimonies": [
+      {
+        "id": "ts_yoon_alibi",
+        "witnessId": "char_culprit",
+        "content": "저는 그 시간에... 저쪽 900번대 서가에서 먼지 쌓인 역사책들을 정리하고 있었습니다. 갑자기 경보가 울려서 깜짝 놀랐지요.",
+        "truthLevel": "partial_lie",
+        "hiddenMeaning": "900번대 서가에 있었던 것은 맞지만, 범행을 저지르고 '돌아온' 후의 시점이다. 범행 장소에서 900번대 서가로 이동했다는 사실을 숨기고 있다."
+      },
+      {
+        "id": "ts_park_alibi",
+        "witnessId": "char_suspect1",
+        "content": "흥, 내가 범인이라고 의심하는 건가요? 21시 30분부터 경보가 울릴 때까지 시드니 도서관이랑 화상 회의 중이었어요. 서버 기록 확인해보시죠.",
+        "truthLevel": "true",
+        "hiddenMeaning": "알리바이는 확실하지만, 사서장의 실종을 은근히 즐기는 듯한 태도를 보인다."
+      },
+      {
+        "id": "ts_choi_witness",
+        "witnessId": "char_suspect3",
+        "content": "저... 경보가 울리기 직전에... 김태준 씨가 400번대 서고 문을 막 흔들면서 열려고 하는 걸 봤어요... 너무 무서웠어요.",
+        "truthLevel": "true",
+        "hiddenMeaning": "김태준의 알리바이를 증명해주는 동시에, 그녀가 도서관의 다른 인물들을 계속 관찰하고 있었음을 보여준다."
+      },
+      {
+        "id": "ts_choi_ghost",
+        "witnessId": "char_suspect3",
+        "content": "사실... 이 도서관에는 책을 고쳐주는 유령이 있다는 소문이... 낡은 책이 다음날 보면 깨끗해져 있곤 했어요. 사서장님도 그걸 조사하고 계셨던 것 같아요.",
+        "truthLevel": "true",
+        "hiddenMeaning": "사건의 배경에 '유령 사서'가 있음을 알려주는 중요한 정황 증언."
+      }
+    ]
+  },
+  "flagSystem": {
+    "flags": [
+      {
+        "id": "ev_call_slip",
+        "category": "evidence",
+        "name": "이상한 청구기호",
+        "description": "로툰다에서 발견된 청구기호가 적힌 종이.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_power_log",
+        "category": "evidence",
+        "name": "전력 사용 기록",
+        "description": "보안실에서 확인한 로툰다 구역의 전력 스파크 기록.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_glue_smell",
+        "category": "evidence",
+        "name": "낯선 냄새",
+        "description": "900번대 서고 환풍구의 특이한 아교풀 냄새.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_perfect_book",
+        "category": "evidence",
+        "name": "완벽하게 복원된 고서",
+        "description": "새것처럼 복원된 낡은 책.",
+        "isCritical": false
+      },
+      {
+        "id": "ev_scuff_marks",
+        "category": "evidence",
+        "name": "바닥의 끌린 자국",
+        "description": "로툰다 입구의 희미한 자국.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_yoon_alibi",
+        "category": "testimony",
+        "name": "윤필서의 증언",
+        "description": "900번대 서고에 있었다는 알리바이.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_park_alibi",
+        "category": "testimony",
+        "name": "박지수의 증언",
+        "description": "화상 회의를 했다는 알리바이.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_choi_witness",
+        "category": "testimony",
+        "name": "최민아의 목격담",
+        "description": "김태준을 목격했다는 증언.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_choi_ghost",
+        "category": "testimony",
+        "name": "최민아의 소문 이야기",
+        "description": "'유령 사서'에 대한 소문.",
+        "isCritical": false
+      },
+      {
+        "id": "vs_rotunda",
+        "category": "visited",
+        "name": "로툰다 조사",
+        "description": "중앙 원형 서가 로툰다를 조사했다.",
+        "isCritical": false
+      },
+      {
+        "id": "vs_security_room",
+        "category": "visited",
+        "name": "보안실 조사",
+        "description": "보안실을 조사했다.",
+        "isCritical": false
+      },
+      {
+        "id": "st_found_victim_missing",
+        "category": "story",
+        "name": "사서장 실종 확인",
+        "description": "사서장이 사라졌다는 사실을 모두가 인지했다.",
+        "isCritical": true
+      }
+    ],
+    "criticalFlags": [
+      "ev_call_slip",
+      "ev_power_log",
+      "ev_glue_smell"
+    ],
+    "minimumCluesForTrueEnd": 5
+  },
+  "branchingStructure": {
+    "investigationPhase": {
+      "description": "사서장이 사라진 후, 자유롭게 장소를 이동하며 단서를 수집한다.",
+      "locations": [
+        {
+          "id": "bg_rotunda",
+          "name": "중앙 로툰다",
+          "availableAfter": "st_found_victim_missing",
+          "cluesHere": [
+            "ev_call_slip",
+            "ev_scuff_marks"
+          ],
+          "testimonyHere": []
+        },
+        {
+          "id": "bg_security_room",
+          "name": "보안실",
+          "availableAfter": "st_found_victim_missing",
+          "cluesHere": [
+            "ev_power_log"
+          ],
+          "testimonyHere": [
+            "ts_park_alibi"
+          ]
+        },
+        {
+          "id": "bg_archives_900",
+          "name": "900번대 역사 서고",
+          "availableAfter": "st_found_victim_missing",
+          "cluesHere": [
+            "ev_glue_smell"
+          ],
+          "testimonyHere": [
+            "ts_yoon_alibi"
+          ]
+        },
+        {
+          "id": "bg_archives_400",
+          "name": "400번대 어학 서고",
+          "availableAfter": "st_found_victim_missing",
+          "cluesHere": [],
+          "testimonyHere": [
+            "ts_choi_witness"
+          ]
+        },
+        {
+          "id": "bg_lounge",
+          "name": "직원 휴게실",
+          "availableAfter": "st_found_victim_missing",
+          "cluesHere": [],
+          "testimonyHere": [
+            "ts_choi_ghost"
+          ]
+        }
+      ],
+      "investigationRounds": 3,
+      "cluesPerRound": 2
+    },
+    "mergePoint": {
+      "scene": "scene_deduction_start",
+      "description": "모든 조사를 마친 후, 용의자들을 모아 추리를 시작한다.",
+      "minimumCluesRequired": 3
+    }
+  },
+  "deductionDesign": {
+    "questions": [
+      {
+        "id": "q_culprit",
+        "question": "사서장 오진혁을 사라지게 한 인물은 누구인가?",
+        "correctAnswer": "char_culprit",
+        "wrongAnswers": [
+          "char_suspect1",
+          "char_suspect2",
+          "char_suspect3"
+        ],
+        "requiredForEnding": [
+          "true",
+          "good",
+          "normal"
+        ]
+      },
+      {
+        "id": "q_trick",
+        "question": "범인은 어떻게 사서장을 모두의 눈을 피해 감쪽같이 숨겼는가?",
+        "correctAnswer": "원형 서가(로툰다)를 암호(청구기호)로 작동시켜 지하로 피해자를 숨기고, 비밀 통로로 알리바이를 만들었다.",
+        "wrongAnswers": [
+          "아무도 안보는 사이에 사서장을 업고 다른 방으로 도망쳤다.",
+          "사서장을 책장 뒤 좁은 공간에 숨겨두었다.",
+          "다른 용의자들과 공모하여 사서장을 숨겼다."
+        ],
+        "requiredForEnding": [
+          "true",
+          "good"
+        ]
+      },
+      {
+        "id": "q_motive",
+        "question": "범인의 진짜 목적은 무엇이었는가?",
+        "correctAnswer": "자신이 도서관 지하에 숨어 산다는 사실과 책을 복원해온 평생의 업적을 숨기기 위해.",
+        "wrongAnswers": [
+          "사서장 자리를 차지하기 위해.",
+          "개인적인 원한으로 복수하기 위해.",
+          "귀중한 고서를 훔치기 위해."
+        ],
+        "requiredForEnding": [
+          "true"
+        ]
+      }
+    ]
+  },
+  "endings": [
+    {
+      "id": "ending_true",
+      "type": "true",
+      "title": "TRUE END - 도서관의 유령",
+      "condition": {
+        "correctAnswers": {
+          "culprit": true,
+          "trick": true,
+          "motive": true
+        },
+        "minClueCount": 5
+      },
+      "description": "모든 진실이 밝혀졌다. 당신의 추리에 따라 로툰다의 암호를 입력하자, 거대한 서가가 움직이며 지하의 비밀 작업실이 드러난다. 그곳에는 멀쩡한 모습의 오진혁 사서장과, 수많은 복원 도구에 둘러싸인 '유령 사서' 윤필서가 있었다. 그의 황당하지만 숭고한 사연에 모두가 말을 잃는다. 사건은 해프닝으로 끝나고, 도서관은 새로운 비밀을 품게 되었다."
+    },
+    {
+      "id": "ending_good",
+      "type": "good",
+      "title": "GOOD END - 기계장치의 비밀",
+      "condition": {
+        "correctAnswers": {
+          "culprit": true,
+          "trick": true,
+          "motive": false
+        }
+      },
+      "description": "범인과 트릭은 정확히 간파했다. 당신의 추리에 따라 로툰다의 비밀은 밝혀졌고, 지하에서 윤필서와 오진혁 사서장이 발견되었다. 하지만 당신은 윤필서가 왜 이런 일을 벌였는지, 그의 진짜 동기까지는 이해하지 못했다. 그는 그저 미치광이 취급을 받으며 연행되었다."
+    },
+    {
+      "id": "ending_normal",
+      "type": "normal",
+      "title": "NORMAL END - 어설픈 해결",
+      "condition": {
+        "correctAnswers": {
+          "culprit": true,
+          "trick": false,
+          "motive": false
+        }
+      },
+      "description": "당신은 정확히 범인으로 윤필서를 지목했다. 하지만 그가 사용한 트릭을 밝혀내지 못하자, 그는 압박감에 못 이겨 스스로 비밀 통로의 위치를 실토했다. 결국 사서장은 구출되었지만, 로툰다의 비밀은 영원히 묻히고 말았다."
+    },
+    {
+      "id": "ending_bad",
+      "type": "bad",
+      "title": "BAD END - 잘못된 지목",
+      "condition": {
+        "correctAnswers": {
+          "culprit": false
+        }
+      },
+      "description": "당신이 지목한 사람은 범인이 아니었다. 진범을 찾지 못한 채 시간은 흘러가고, 도서관의 문이 다시 열리는 순간까지 사서장은 발견되지 않았다. 사건은 영구 미제로 남았고, 도서관의 어딘가에서 유령 사서의 전설만이 계속될 것이다."
+    }
+  ]
+}

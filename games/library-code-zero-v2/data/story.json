@@ -1,0 +1,874 @@
+{
+  "meta": {
+    "title": "중앙 도서관의 유령 사서",
+    "description": "폐관 시간 직후, 경보가 울려 퍼진 도서관. 사서장이 감쪽같이 사라졌다. 건축학도인 당신은 남겨진 용의자들 사이에서 도서관의 구조에 숨겨진 비밀을 파헤치고 진실을 밝혀내야 한다.",
+    "playtime": "45-60분"
+  },
+  "characters": {
+    "char_protagonist": {
+      "name": "김민준",
+      "color": "#4a90e2"
+    },
+    "char_victim": {
+      "name": "오진혁",
+      "color": "#888888"
+    },
+    "char_suspect1": {
+      "name": "박지수",
+      "color": "#9013fe"
+    },
+    "char_suspect2": {
+      "name": "김태준",
+      "color": "#d0021b"
+    },
+    "char_suspect3": {
+      "name": "최민아",
+      "color": "#f5a623"
+    },
+    "char_culprit": {
+      "name": "윤필서",
+      "color": "#5f4b32"
+    }
+  },
+  "backgrounds": [
+    {
+      "id": "bg_rotunda",
+      "name": "중앙 로툰다",
+      "color": "#4a4a4a"
+    },
+    {
+      "id": "bg_security_room",
+      "name": "보안실",
+      "color": "#1e3a5f"
+    },
+    {
+      "id": "bg_archives_900",
+      "name": "900번대 역사 서고",
+      "color": "#5d4a3a"
+    },
+    {
+      "id": "bg_archives_400",
+      "name": "400번대 어학 서고",
+      "color": "#6b5b95"
+    },
+    {
+      "id": "bg_lounge",
+      "name": "직원 휴게실",
+      "color": "#86ac41"
+    },
+    {
+      "id": "bg_archives_special",
+      "name": "특별 자료실",
+      "color": "#3e5641"
+    },
+    {
+      "id": "bg_underground_workshop",
+      "name": "지하 작업실",
+      "color": "#2a2a2a"
+    },
+    {
+      "id": "bg_library_entrance",
+      "name": "도서관 입구",
+      "color": "#c0c0c0"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_prologue_01",
+      "chapter": "prologue",
+      "background": "bg_library_entrance",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "웅장한 중앙 도서관. 나의 논문 주제인 '거대 회전 서가의 건축 역학'에 대해 조사하기 위해, 나는 폐관 시간 이후에도 남을 수 있도록 특별 허가를 받았다."
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "김민준 학생, 다시 말하지만 폐관 후에는 절대 지정된 구역을 벗어나면 안 되네. 특히 중앙 로툰다는 위험하니 함부로 조작하지 말게."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "네, 사서장님. 명심하겠습니다. 배려해주셔서 감사합니다."
+        },
+        {
+          "type": "narration",
+          "text": "원리원칙을 중시하는 오진혁 사서장. 그의 완고한 표정 뒤로 무언가에 대한 강한 호기심이 스치는 것을 나는 놓치지 않았다."
+        }
+      ],
+      "next": "scene_prologue_02"
+    },
+    {
+      "id": "scene_prologue_02",
+      "chapter": "prologue",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "얼마 후, 로툰다 근처에서 언성이 높아지는 소리가 들렸다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "이봐, 사서장! 내 컬렉션에 꼭 필요한 책이란 말이야! 열람만이라도 하게 해줘!"
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "김태준 씨, 규정은 규정입니다. 보존 상태가 좋지 않아 특별 허가 없이는 절대 불가합니다."
+        },
+        {
+          "type": "narration",
+          "text": "고서 수집가 김태준이 씩씩거리며 자리를 떴다. 그 뒤를 이어 수석 사서 박지수가 다가왔다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "사서장님, 해외 도서관과의 협력 건, 재검토가 필요해 보입니다. 지금 방식은 너무 비효율적이에요."
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "박 사서, 내 방식에 불만 있나? 아직은 내가 책임자일세."
+        },
+        {
+          "type": "narration",
+          "text": "두 사람 사이에는 차가운 기류가 흘렀다. 저편에서는 기록물 관리사 최민아가 잔뜩 주눅이 든 채 서류를 옮기고 있었고, 나이 든 사서 한 분이 묵묵히 책을 정리하고 있었다."
+        }
+      ],
+      "next": "scene_prologue_03"
+    },
+    {
+      "id": "scene_prologue_03",
+      "chapter": "prologue",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "시간은 흘러 밤 10시가 가까워졌다. 나는 2층 열람실에서 자료를 정리하고 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "그때였다."
+        }
+      ],
+      "next": "scene_incident_01"
+    },
+    {
+      "id": "scene_incident_01",
+      "chapter": "incident",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "끼이이이이익-! 귀를 찢는 듯한 경보음이 도서관 전체에 울려 퍼졌다."
+        },
+        {
+          "type": "narration",
+          "text": "동시에 철컹, 하는 소리와 함께 모든 출입문이 폐쇄되었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "이, 이게 무슨 소리지?"
+        },
+        {
+          "type": "narration",
+          "text": "나는 급히 중앙 로툰다로 향했다. 그곳에는 나처럼 놀란 얼굴의 사람들이 모여들고 있었다."
+        }
+      ],
+      "next": "scene_incident_02"
+    },
+    {
+      "id": "scene_incident_02",
+      "chapter": "incident",
+      "background": "bg_rotunda",
+      "onEnter": {
+        "setFlags": {
+          "st_found_victim_missing": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "고서 도난 경보예요! 모두 침착하세요! 일단 사서장님부터..."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "사, 사서장님이... 안 보이세요!"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "뭐? 그 영감탱이가 어디 갔어!"
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "이런... 큰일이군요..."
+        },
+        {
+          "type": "narration",
+          "text": "모두가 당황한 사이, 나는 로툰다 중앙 바닥에서 무언가 이상한 점을 발견했다. 오진혁 사서장은... 마치 연기처럼 사라져 버렸다."
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_hub",
+      "chapter": "investigation",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "경찰이 도착하려면 시간이 걸린다. 그 전에 내가 직접 단서를 찾아봐야 한다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(어디부터 조사해볼까?)"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "사건 현장, 중앙 로툰다를 조사한다.",
+              "next": "scene_investigation_rotunda",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_rotunda"
+              }
+            },
+            {
+              "text": "보안 시스템을 확인하러 보안실로 간다.",
+              "next": "scene_investigation_security",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_security_room"
+              }
+            },
+            {
+              "text": "900번대 역사 서고를 조사한다.",
+              "next": "scene_investigation_archives900"
+            },
+            {
+              "text": "400번대 어학 서고를 조사한다.",
+              "next": "scene_investigation_archives400"
+            },
+            {
+              "text": "직원 휴게실에서 이야기를 들어본다.",
+              "next": "scene_investigation_lounge"
+            },
+            {
+              "text": "특별 자료실을 확인해본다.",
+              "next": "scene_investigation_special_archives"
+            },
+            {
+              "text": "수사를 마치고 추리를 시작한다.",
+              "next": "scene_investigation_end",
+              "condition": {
+                "type": "minClueCount",
+                "count": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_investigation_rotunda",
+      "chapter": "investigation",
+      "background": "bg_rotunda",
+      "onEnter": {
+        "setFlags": {
+          "vs_rotunda": true
+        },
+        "addClues": [
+          "ev_call_slip",
+          "ev_scuff_marks"
+        ]
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "사서장이 사라진 로툰다. 거대한 원형 서가는 불길한 침묵을 지키고 있다."
+        },
+        {
+          "type": "narration",
+          "text": "나는 바닥을 살피다가 희미하게 무언가에 쓸린 자국을 발견했다. 누군가를 급하게 옮긴 흔적 같다. [단서: 바닥의 끌린 자국 획득]"
+        },
+        {
+          "type": "narration",
+          "text": "그리고 중앙 제어 콘솔 옆에 작은 종이 한 장이 떨어져 있었다. 대출 신청서 같지만, 적힌 청구기호가 이상하다. '027.4-L847-v.2'... [단서: 이상한 청구기호가 적힌 대출 신청서 획득]"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(이 숫자들이 의미하는 건 뭘까? 단순한 책 번호는 아닌 것 같은데...)"
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_security",
+      "chapter": "investigation",
+      "background": "bg_security_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_security_room": true
+        },
+        "addClues": [
+          "ev_power_log",
+          "ts_park_alibi"
+        ]
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "보안실에는 수석 사서 박지수가 신경질적으로 모니터를 보고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "흥, 내가 범인이라고 의심하는 건가요? 21시 30분부터 경보가 울릴 때까지 시드니 도서관이랑 화상 회의 중이었어요. 서버 기록 확인해보시죠. [증언: 박지수의 증언 획득]"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "알겠습니다. 혹시 시스템에 이상한 점은 없었나요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "글쎄요... 아, 전력 사용 기록이 좀 이상하긴 하네요. 경보가 울린 22시 정각에 로툰다 구역에서 엄청난 전력 스파크가 있었어요. 단순 회전과는 비교도 안 될 정도로."
+        },
+        {
+          "type": "narration",
+          "text": "나는 그녀가 가리키는 모니터를 확인했다. 그래프가 비정상적으로 치솟아 있었다. [단서: 도서관 전력 사용 기록 획득]"
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_archives900",
+      "chapter": "investigation",
+      "background": "bg_archives_900",
+      "onEnter": {
+        "addClues": [
+          "ts_yoon_alibi",
+          "ev_glue_smell"
+        ]
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "900번대 역사 서고. 낡은 책 냄새가 가득한 곳이다. 그곳에서 조용히 책을 정리하던 노신사, 윤필서 씨를 만났다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "선생님, 경보가 울렸을 때 어디에 계셨습니까?"
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "저는 그 시간에... 저쪽 900번대 서가에서 먼지 쌓인 역사책들을 정리하고 있었습니다. 갑자기 경보가 울려서 깜짝 놀랐지요. [증언: 윤필서의 증언 획득]"
+        },
+        {
+          "type": "narration",
+          "text": "그와 대화하던 중, 나는 특정 환풍구 근처에서 이상한 냄새를 맡았다. 낡은 종이 냄새에 섞인, 독특하고 시큼한 아교풀 냄새였다. [단서: 900번대 서고의 낯선 냄새 획득]"
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "글쎄요... 워낙 오래된 책들이 많아서 별별 냄새가 다 난답니다. 허허..."
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_archives400",
+      "chapter": "investigation",
+      "background": "bg_archives_400",
+      "onEnter": {
+        "addClues": [
+          "ts_choi_witness"
+        ]
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "400번대 어학 서고에는 고서 수집가 김태준이 불만 가득한 얼굴로 서성이고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "뭘 봐? 내가 그 영감탱이를 어떻게 했다고 의심하는 거냐? 난 그냥 책 좀 보려던 것뿐이야!"
+        },
+        {
+          "type": "narration",
+          "text": "그때, 최민아 씨가 겁먹은 얼굴로 다가왔다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "저... 경보가 울리기 직전에... 김태준 씨가 400번대 서고 문을 막 흔들면서 열려고 하는 걸 봤어요... 너무 무서웠어요. [증언: 최민아의 목격담 획득]"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "시끄러! 잠긴 문 좀 열어보려던 게 뭐 어쨌다고!"
+        },
+        {
+          "type": "narration",
+          "text": "김태준은 버럭 소리를 지르며 자리를 피했다. 그의 알리바이는 확실해 보이지만, 무언가를 숨기는 듯한 태도가 마음에 걸린다."
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_lounge",
+      "chapter": "investigation",
+      "background": "bg_lounge",
+      "onEnter": {
+        "addClues": [
+          "ts_choi_ghost"
+        ]
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "직원 휴게실 구석에서 최민아 씨가 혼자 떨고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "최민아 씨, 괜찮으세요? 혹시 짚이는 점이라도 있나요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "저... 이건 그냥 소문인데요... 이 도서관에는 '유령 사서'가 살고 있대요..."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "유령 사서요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "네... 낡고 찢어진 책이 다음날 보면... 새것처럼 깨끗하게 고쳐져 있곤 했어요. 사서장님도 그걸 이상하게 여기고 혼자서 뭔가를 계속 조사하고 계셨던 것 같아요... [증언: 최민아의 소문 이야기 획득]"
+        },
+        {
+          "type": "narration",
+          "text": "그녀의 이야기는 황당했지만, 사서장의 최근 행적과 관련된 중요한 단서처럼 느껴졌다."
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_special_archives",
+      "chapter": "investigation",
+      "background": "bg_archives_special",
+      "onEnter": {
+        "addClues": [
+          "ev_perfect_book"
+        ]
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "최민아의 이야기가 마음에 걸려 특별 자료실을 확인해보기로 했다."
+        },
+        {
+          "type": "narration",
+          "text": "사서장의 연구 기록을 살펴보던 중, '유령 사서'에 대한 메모와 함께 특정 고서의 관리 번호가 적혀 있었다."
+        },
+        {
+          "type": "narration",
+          "text": "해당 서가로 가 책을 꺼내 본 나는 놀라지 않을 수 없었다. 분명 10년 전 기록에는 심하게 훼손되어 폐기 직전이라고 되어 있는데, 내 손에 들린 책은 마치 어제 인쇄한 것처럼 완벽했다. [단서: 완벽하게 복원된 고서 획득]"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(이건... 인간의 솜씨라고 믿기 어려울 정도의 복원 기술이야. '유령 사서'는 실존하는 걸까?)"
+        }
+      ],
+      "next": "scene_investigation_hub"
+    },
+    {
+      "id": "scene_investigation_end",
+      "chapter": "investigation",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나는 모은 단서들을 머릿속으로 정리했다."
+        },
+        {
+          "type": "conditional_text",
+          "condition": {
+            "type": "minClueCount",
+            "count": 5
+          },
+          "ifTrue": "충분한 단서를 모았다. 사건의 전말이 보이기 시작한다.",
+          "ifFalse": "아직 단서가 부족한 느낌이지만... 더 이상 시간을 지체할 수는 없다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "여러분, 잠시 주목해주시겠습니까? 사서장님의 실종에 대해 제가 알아낸 것들을 말씀드리겠습니다."
+        }
+      ],
+      "next": "scene_deduction_start"
+    },
+    {
+      "id": "scene_deduction_start",
+      "chapter": "deduction",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "나의 말에 모두의 시선이 집중되었다. 이제, 이 미스터리를 끝낼 시간이다."
+        }
+      ]
+    },
+    {
+      "id": "scene_ending_true_01",
+      "chapter": "ending",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "당신의 완벽한 추리에 따라, 모든 진실이 밝혀졌다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "사서장님은 이 도서관 어딘가에 살아계십니다. 그리고 범인은... 사서장님을 사라지게 하기 위해 이 로툰다의 숨겨진 기능을 이용했습니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "경보가 울렸을 때 발생한 거대한 전력 스파크. 그건 이 로툰다가 단순한 회전 서가가 아니라, 아래로 내려가는 거대한 엘리베이터라는 증거입니다!"
+        },
+        {
+          "type": "narration",
+          "text": "나는 로툰다 콘솔에 다가가, 현장에서 발견한 종이에 적힌 청구기호 '027.4-L847-v.2'를 입력했다."
+        }
+      ],
+      "next": "scene_ending_true_02"
+    },
+    {
+      "id": "scene_ending_true_02",
+      "chapter": "ending",
+      "background": "bg_underground_workshop",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "묵직한 기계음과 함께, 발밑의 거대한 서가가 통째로 하강하기 시작했다. 모두가 경악하는 가운데, 우리는 어둡고 오래된 공간으로 내려갔다."
+        },
+        {
+          "type": "narration",
+          "text": "그곳은 수많은 책과 전문적인 복원 도구로 가득 찬 비밀 작업실이었다. 그리고 그 중앙에는... 의자에 묶여 있지만 멀쩡한 모습의 오진혁 사서장과, 그의 곁을 지키고 선 윤필서 씨가 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "......결국 찾아내셨군요."
+        }
+      ],
+      "next": "scene_ending_true_03"
+    },
+    {
+      "id": "scene_ending_true_03",
+      "chapter": "ending",
+      "background": "bg_underground_workshop",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "윤필서 씨는 20년 전, 폐기될 책들을 살리기 위해 스스로 죽음을 위장하고 이 지하에 숨어들어와 책을 복원하며 살아온 '유령 사서'였다."
+        },
+        {
+          "type": "narration",
+          "text": "자신의 존재를 눈치챈 사서장이 이곳을 찾아내자, 그는 자신의 삶과 책들을 지키기 위해 사서장을 잠시 감금했던 것이다."
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "허허... 이보게 윤 선배, 내가 이길 줄 알았는데... 자네의 책에 대한 열정은 도저히 못 당하겠군."
+        },
+        {
+          "type": "narration",
+          "text": "그의 황당하지만 숭고한 사연에 모두가 말을 잃었다. 사건은 해프닝으로 마무리되었고, 중앙 도서관은 새로운 비밀과 함께 내일을 맞이하게 되었다."
+        }
+      ]
+    },
+    {
+      "id": "scene_ending_good_01",
+      "chapter": "ending",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "당신은 범인과 그가 사용한 트릭을 정확히 간파했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "로툰다는 아래로 내려가는 엘리베이터입니다! 윤필서 씨, 당신이 사서장님을 데리고 지하로 내려간 거죠!"
+        },
+        {
+          "type": "narration",
+          "text": "당신의 추리에 따라 로툰다를 작동시키자, 지하의 비밀 공간이 드러났다. 그곳에서 오진혁 사서장이 무사히 발견되었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "......"
+        },
+        {
+          "type": "narration",
+          "text": "하지만 당신은 그가 왜 이런 일을 벌였는지, 그의 진짜 동기까지는 이해하지 못했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "책에 미쳐서 사서장님을 납치 감금하다니... 제정신이 아니군요. 당장 경찰에 넘기죠."
+        },
+        {
+          "type": "narration",
+          "text": "윤필서는 그저 책에 미친 노인 취급을 받으며 연행되었다. 도서관의 비밀은 일부만 밝혀진 채, 씁쓸하게 사건이 종결되었다."
+        }
+      ]
+    },
+    {
+      "id": "scene_ending_normal_01",
+      "chapter": "ending",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "당신은 여러 정황 증거를 통해 범인으로 윤필서를 정확히 지목했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "윤필서 씨, 900번대 서고의 이상한 냄새... 당신과 관련이 있죠? 사서장님은 어디에 계십니까!"
+        },
+        {
+          "type": "narration",
+          "text": "하지만 그가 사용한 기상천외한 트릭까지는 밝혀내지 못했다. 당신의 계속된 추궁에 압박감을 느낀 윤필서는 결국 스스로 입을 열었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "...사서장님은... 무사하십니다. 저를 따라오시지요."
+        },
+        {
+          "type": "narration",
+          "text": "그는 900번대 서고의 환풍구 뒤에 숨겨진 비밀 통로를 열었다. 결국 사서장은 무사히 구출되었다."
+        },
+        {
+          "type": "narration",
+          "text": "그러나 로툰다의 거대한 비밀은 영원히 책장 속에 묻히고 말았다. 당신은 사건을 해결했지만, 진실의 전모에는 다다르지 못했다."
+        }
+      ]
+    },
+    {
+      "id": "scene_ending_bad_01",
+      "chapter": "ending",
+      "background": "bg_rotunda",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "당신이 지목한 사람은 범인이 아니었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "지금 제정신이세요? 말도 안 되는 소리 하지 마세요!"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "어이, 학생. 추리 소설을 너무 많이 읽은 거 아니야?"
+        },
+        {
+          "type": "narration",
+          "text": "당신의 섣부른 추리는 모두의 비웃음만 산 채, 아무런 해결도 이끌어내지 못했다."
+        },
+        {
+          "type": "narration",
+          "text": "진범을 찾지 못한 채 시간은 흘러갔고, 결국 경찰이 도착해 수사를 인계받았다. 하지만 결정적인 증거는 나오지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "오진혁 사서장 실종 사건은 영구 미제로 남았고, 도서관의 어딘가에서는 오늘도 유령 사서가 조용히 책장을 넘기고 있을 것이다."
+        }
+      ]
+    }
+  ],
+  "deductionPhase": {
+    "entryScene": "scene_deduction_start",
+    "questions": [
+      {
+        "id": "q_culprit",
+        "question": "사서장 오진혁을 사라지게 한 인물은 누구인가?",
+        "type": "character_select",
+        "options": [
+          {
+            "characterId": "char_suspect1",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_suspect2",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_suspect3",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_culprit",
+            "isCorrect": true
+          }
+        ],
+        "onCorrect": {},
+        "onWrong": {},
+        "correctExplanation": "맞습니다. 조용히 책을 정리하던 노신사 윤필서, 그가 바로 이 사건의 범인입니다.",
+        "wrongExplanation": "아닙니다. 다른 용의자에게는 확실한 알리바이가 있거나 동기가 부족합니다. 다시 생각해보죠."
+      },
+      {
+        "id": "q_trick",
+        "question": "범인은 어떻게 사서장을 모두의 눈을 피해 감쪽같이 숨겼는가?",
+        "type": "text_select",
+        "options": [
+          {
+            "text": "아무도 안보는 사이에 사서장을 업고 다른 방으로 도망쳤다.",
+            "isCorrect": false
+          },
+          {
+            "text": "원형 서가(로툰다)를 암호(청구기호)로 작동시켜 지하로 피해자를 숨기고, 비밀 통로로 알리바이를 만들었다.",
+            "isCorrect": true
+          },
+          {
+            "text": "사서장을 책장 뒤 좁은 공간에 숨겨두었다.",
+            "isCorrect": false
+          },
+          {
+            "text": "다른 용의자들과 공모하여 사서장을 숨겼다.",
+            "isCorrect": false
+          }
+        ],
+        "onCorrect": {},
+        "onWrong": {},
+        "correctExplanation": "정확합니다. 로툰다의 비정상적인 전력 사용 기록과 이상한 청구기호가 적힌 쪽지가 바로 그 증거입니다.",
+        "wrongExplanation": "그 방법으로는 이 거대한 도서관에서 사람 한 명을 완벽하게 숨길 수 없습니다."
+      },
+      {
+        "id": "q_motive",
+        "question": "범인의 진짜 목적은 무엇이었는가?",
+        "type": "text_select",
+        "options": [
+          {
+            "text": "사서장 자리를 차지하기 위해.",
+            "isCorrect": false
+          },
+          {
+            "text": "자신이 도서관 지하에 숨어 산다는 사실과 책을 복원해온 평생의 업적을 숨기기 위해.",
+            "isCorrect": true
+          },
+          {
+            "text": "개인적인 원한으로 복수하기 위해.",
+            "isCorrect": false
+          },
+          {
+            "text": "귀중한 고서를 훔치기 위해.",
+            "isCorrect": false
+          }
+        ],
+        "onCorrect": {},
+        "onWrong": {},
+        "correctExplanation": "그렇습니다. 그는 '유령 사서'로서의 자신의 삶을 지키고 싶었던 겁니다. 사서장을 해칠 의도는 없었습니다.",
+        "wrongExplanation": "그 동기는 다른 용의자에게 더 어울리는 것입니다. 범인의 행동을 다시 떠올려보세요."
+      }
+    ]
+  },
+  "endings": [
+    {
+      "id": "ending_true",
+      "type": "true",
+      "title": "TRUE END - 도서관의 유령",
+      "condition": {
+        "type": "and",
+        "conditions": [
+          {
+            "type": "allCorrectAnswers",
+            "questions": [
+              "q_culprit",
+              "q_trick",
+              "q_motive"
+            ]
+          },
+          {
+            "type": "minClueCount",
+            "count": 5
+          }
+        ]
+      },
+      "priority": 100,
+      "scenes": [
+        "scene_ending_true_01"
+      ]
+    },
+    {
+      "id": "ending_good",
+      "type": "good",
+      "title": "GOOD END - 기계장치의 비밀",
+      "condition": {
+        "type": "allCorrectAnswers",
+        "questions": [
+          "q_culprit",
+          "q_trick"
+        ]
+      },
+      "priority": 80,
+      "scenes": [
+        "scene_ending_good_01"
+      ]
+    },
+    {
+      "id": "ending_normal",
+      "type": "normal",
+      "title": "NORMAL END - 어설픈 해결",
+      "condition": {
+        "type": "allCorrectAnswers",
+        "questions": [
+          "q_culprit"
+        ]
+      },
+      "priority": 50,
+      "scenes": [
+        "scene_ending_normal_01"
+      ]
+    },
+    {
+      "id": "ending_bad",
+      "type": "bad",
+      "title": "BAD END - 잘못된 지목",
+      "condition": {
+        "type": "any",
+        "conditions": []
+      },
+      "priority": 10,
+      "scenes": [
+        "scene_ending_bad_01"
+      ]
+    }
+  ]
+}

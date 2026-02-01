@@ -73,6 +73,11 @@ monogatari.assets('scenes', {
   "bg_dining_hall": "#4A4A4A"
 });
 
+monogatari.assets ('music', {
+    'main_bgm': 'bgm/dreamy-flashback.mp3'
+});
+
+
 // ========================================
 // 스크립트
 // ========================================
@@ -607,6 +612,7 @@ monogatari.script({
     'end',
   ],
   'Start': [
+    "play music main_bgm with loop",
     'jump scene_prologue_01',
   ]
 });

@@ -1,0 +1,456 @@
+{
+  "caseDesign": {
+    "victim": {
+      "characterId": "char_victim",
+      "name": "강태준",
+      "age": 48,
+      "occupation": "오리온호 선장",
+      "personality": "권위적이고 탐욕스러우며, 자신의 이익을 위해서는 수단을 가리지 않음.",
+      "background": "유능한 항해사로 명성을 쌓았으나, 이면에는 어두운 거래가 많았다. 과거 보험금을 노리고 일부러 선박을 침몰시킨 전적이 있다.",
+      "secrets": [
+        "사업가 박선우와 함께 밀수품을 운반하고 있었다.",
+        "과거 보험사기를 위해 고의로 선박 '파랑새호'를 침몰시켰고, 당시 선장이었던 윤서진의 아버지에게 모든 죄를 뒤집어씌웠다."
+      ],
+      "deathTime": "1일차 23:00 경",
+      "deathLocation": "bg_captain_room",
+      "causeOfDeath": "예리한 흉기에 의한 심장 자상"
+    },
+    "culprit": {
+      "characterId": "char_culprit",
+      "motiveCategory": "복수",
+      "motiveDetail": "과거 강태준 선장의 보험사기 때문에 아버지가 모든 누명을 쓰고 비극적으로 사망했다. 아버지의 명예를 회복하고 원수를 갚기 위해 신분을 숨기고 오리온호에 승선했다.",
+      "triggerEvent": "이번 항해 중 강태준이 자신의 아버지를 모욕하며 과거의 사건을 자랑처럼 이야기하는 것을 우연히 엿듣게 되어 복수심이 극에 달했다.",
+      "alibiClaim": "태풍 대비를 위해 22:30부터 23:30까지 기관실에서 홀로 비상 설비를 점검하고 있었다고 주장. 증거로 기관실 운행 일지를 제출했다.",
+      "alibiTrick": "소음이 심한 기관실을 빠져나와 승무원 전용 비상 통로를 이용해 선장실로 신속하게 이동했다. 범행 후 다시 기관실로 돌아와 운행 일지의 시간을 조작하여 완벽한 알리바이를 만들었다.",
+      "actualTimeline": {
+        "22:50": "기관실을 몰래 빠져나와 승무원 전용 통로로 향함.",
+        "23:00": "선장실에서 강태준 선장을 살해.",
+        "23:10": "기관실로 복귀하여 운행 일지를 조작하고 증거를 인멸함."
+      }
+    },
+    "trick": {
+      "type": "alibi",
+      "summary": "소음과 특수 공간을 이용한 장소 이동 및 기록 조작을 통한 알리바이 위장",
+      "mechanism": "1. 엄청난 소음이 발생하는 기관실은 다른 사람의 감시 없이 출입이 용이하다는 점을 이용. 2. 일반 승객은 모르는 '승무원 전용 비상 통로'를 이용해 기관실과 상층 갑판을 최단 거리로 이동하여 범행 시간을 확보. 3. 범행 후 기관실에 복귀하여, 미리 앞뒤 시간대의 기록을 작성해 둔 운행 일지의 빈칸에 범행 시간대(23:00)의 기록을 기입하여 알리바이를 조작했다.",
+      "weakness": "아무리 빠른 통로라도 왕복 시간은 걸린다. 또한, 운행 일지를 나중에 기입했기 때문에, 주변의 다른 기록들과 잉크의 번짐이나 마른 상태에서 미세한 차이가 발생한다. 결정적으로, 기관실에서 묻은 기름이 범행 현장 주변에 남았을 가능성이 있다.",
+      "criticalEvidence": "ev_oily_footprint"
+    }
+  },
+  "characters": [
+    {
+      "id": "char_protagonist",
+      "name": "김지운",
+      "age": 32,
+      "occupation": "추리소설 작가",
+      "personality": "냉철하고 관찰력이 뛰어나며, 논리적인 사고를 즐긴다.",
+      "speechStyle": "차분하고 논리적인 존댓말을 사용한다.",
+      "relationToVictim": "이번 크루즈에 탑승한 평범한 승객. 초면이다.",
+      "motive": null,
+      "alibiClaim": "1일차 22:00부터 계속 자신의 객실에서 집필 활동을 하고 있었다.",
+      "alibiTruth": true,
+      "secret": "차기작의 소재가 고갈되어 슬럼프를 겪고 있다.",
+      "role": "protagonist"
+    },
+    {
+      "id": "char_culprit",
+      "name": "윤서진",
+      "age": 27,
+      "occupation": "오리온호 1등 항해사",
+      "personality": "과묵하고 성실하며, 맡은 바 임무를 완벽하게 수행한다.",
+      "speechStyle": "간결하고 사무적인 말투.",
+      "relationToVictim": "직속상관. 내심 깊은 원한을 품고 있다.",
+      "motive": "과거 강태준 선장의 보험사기 때문에 아버지가 모든 누명을 쓰고 비극적으로 사망했다. 아버지의 명예를 회복하고 원수를 갚기 위해 신분을 숨기고 오리온호에 승선했다.",
+      "alibiClaim": "22:30~23:30, 기관실에서 비상 설비 점검.",
+      "alibiTruth": false,
+      "secret": "사망한 '파랑새호' 선장의 딸이라는 사실과, 복수를 위해 승선했다는 것.",
+      "role": "culprit"
+    },
+    {
+      "id": "char_suspect1",
+      "name": "박선우",
+      "age": 50,
+      "occupation": "사업가",
+      "personality": "거만하고 신경질적이며, 자신에게 불리한 상황이 되면 초조함을 감추지 못한다.",
+      "speechStyle": "반말과 존댓말을 섞어 쓰며, 목소리가 크다.",
+      "relationToVictim": "밀수품 운반을 공모한 사업 파트너이자, 약점을 잡혀 협박당하는 관계.",
+      "motive": "강태준 선장이 밀수 사실을 빌미로 협박하며 돈을 요구하고 있었기에, 그를 제거하고 싶어 했다.",
+      "alibiClaim": "22:00~24:00, 카지노에서 계속 칩 게임을 하고 있었다.",
+      "alibiTruth": true,
+      "secret": "선장과 함께 밀수품을 운반하고 있었다.",
+      "role": "suspect",
+      "whyNotCulprit": "카지노 딜러와 다른 승객들에 의해 23:00경 카지노에 있었다는 사실이 교차 검증된다. 불안해 보였던 이유는 선장과의 거래 때문이었다."
+    },
+    {
+      "id": "char_suspect2",
+      "name": "최유리",
+      "age": 24,
+      "occupation": "가수",
+      "personality": "자존심이 강하고 감정 표현이 솔직하다.",
+      "speechStyle": "쌀쌀맞고 다소 공격적인 말투.",
+      "relationToVictim": "크루즈의 초청 가수. 선장에게 지속적으로 성희롱을 당해왔다.",
+      "motive": "강태준 선장의 지속적인 성희롱에 극심한 스트레스와 혐오감을 느끼고 있었다.",
+      "alibiClaim": "22:30부터 자신의 객실에서 혼자 노래 연습을 했다.",
+      "alibiTruth": true,
+      "secret": "선장의 성희롱 사실을 폭로하기 위해 녹음기를 가지고 다녔다.",
+      "role": "suspect",
+      "whyNotCulprit": "범행 추정 시각에 객실에 있었으며, 범행과 연결되는 어떠한 물리적 증거도 발견되지 않았다. 그녀의 증오심은 사실이지만, 실행에 옮기지는 않았다."
+    },
+    {
+      "id": "char_suspect3",
+      "name": "이정훈",
+      "age": 68,
+      "occupation": "은퇴한 교사",
+      "personality": "온화하고 관찰력이 뛰어나지만, 때로는 수다스럽다.",
+      "speechStyle": "느긋하고 인자한 존댓말.",
+      "relationToVictim": "승객과 선장의 관계.",
+      "motive": null,
+      "alibiClaim": "태풍 때문에 잠이 오지 않아 배 안을 산책하고 있었다.",
+      "alibiTruth": true,
+      "secret": "사실은 심각한 불면증을 앓고 있다.",
+      "role": "suspect",
+      "whyNotCulprit": "범행 동기가 없으며, 오히려 사건 해결의 실마리가 되는 목격 증언을 제공하는 핵심 증인이다."
+    },
+    {
+      "id": "char_victim",
+      "name": "강태준",
+      "age": 48,
+      "occupation": "오리온호 선장",
+      "personality": "권위적이고 탐욕스러움",
+      "speechStyle": "명령조의 거만한 말투",
+      "relationToVictim": "피해자 본인",
+      "motive": null,
+      "alibiClaim": null,
+      "alibiTruth": null,
+      "secret": "밀수 및 과거 보험사기",
+      "role": "victim"
+    }
+  ],
+  "evidence": {
+    "physical": [
+      {
+        "id": "ev_oily_footprint",
+        "name": "기름 묻은 족적",
+        "description": "선장실 입구 복도 카펫에서 발견된 희미한 발자국. 기관실에서 사용하는 특수 윤활유 성분이 검출되었다.",
+        "foundAt": "bg_captain_room",
+        "significance": "기관실에 있던 인물이 선장실 근처에 왔다는 강력한 증거. 윤서진의 알리바이를 직접적으로 위협한다.",
+        "pointsTo": "char_culprit",
+        "isCritical": true,
+        "isRedHerring": false
+      },
+      {
+        "id": "ev_logbook",
+        "name": "기관실 운행 일지",
+        "description": "윤서진이 자신의 알리바이 증거로 제출한 수기 일지. 23:00에 '3번 터빈 압력 정상'이라고 기록되어 있다.",
+        "foundAt": "bg_engine_room",
+        "significance": "자세히 보면 23:00 기록의 잉크만 주변 기록보다 미세하게 덜 말라있고 번짐이 적다. 나중에 급하게 쓰였다는 증거.",
+        "pointsTo": "char_culprit",
+        "isCritical": true,
+        "isRedHerring": false
+      },
+      {
+        "id": "ev_blackmail_note",
+        "name": "협박 편지 초안",
+        "description": "선장실 쓰레기통에서 발견된 찢어진 종이 조각. '밀수... 약속한 금액을 당장...' 등의 단어가 적혀 있다.",
+        "foundAt": "bg_captain_room",
+        "significance": "선장이 누군가를 협박하고 있었음을 암시하며, 박선우에게 의심을 집중시키는 역할을 한다.",
+        "pointsTo": "char_suspect1",
+        "isCritical": false,
+        "isRedHerring": true
+      },
+      {
+        "id": "ev_hidden_recorder",
+        "name": "소형 녹음기",
+        "description": "최유리의 핸드백에서 발견된 소형 녹음기. 선장과의 대화를 녹음하려 했던 것으로 보인다.",
+        "foundAt": "bg_dining_hall",
+        "significance": "최유리가 선장에게 강한 반감을 가졌다는 증거지만, 살인의 직접 증거는 아니다.",
+        "pointsTo": "char_suspect2",
+        "isCritical": false,
+        "isRedHerring": false
+      }
+    ],
+    "testimonies": [
+      {
+        "id": "ts_culprit_alibi",
+        "witnessId": "char_culprit",
+        "content": "22시 30분부터 23시 30분까지, 태풍 때문에 기관실 설비를 혼자 점검하고 있었습니다. 그 증거로 운행 일지를 제출합니다. 소리가 너무 시끄러워서 다른 건 아무것도 듣지 못했습니다.",
+        "truthLevel": "lie",
+        "hiddenMeaning": "기관실에 있었던 시간 자체는 사실이나, '계속' 있었다는 부분이 거짓이다. 소음은 자신의 행동을 감추기 위한 좋은 방패였다."
+      },
+      {
+        "id": "ts_suspect1_alibi",
+        "witnessId": "char_suspect1",
+        "content": "나는 그 시간에 카지노에 있었어! 딜러한테 물어보라고! 물론... 그 자식 때문에 좀 신경이 곤두서 있긴 했지만, 내가 죽이진 않았다고!",
+        "truthLevel": "true",
+        "hiddenMeaning": "알리바이는 사실이다. 그가 초조했던 이유는 살인 때문이 아니라 선장과의 밀수 거래와 협박 때문이다."
+      },
+      {
+        "id": "ts_witness_sighting",
+        "witnessId": "char_suspect3",
+        "content": "잠이 안 와서 복도를 서성이고 있었는데, 23시 직전이었을 겁니다. 승무원 복장을 한 사람이 3층 복도 끝에 있는 창고 같은 문으로 휙 사라지는 걸 봤습니다. 얼굴은 못 봤지만, 체격이 그리 크지 않았어요.",
+        "truthLevel": "true",
+        "hiddenMeaning": "증인이 본 '창고 같은 문'은 승무원 전용 비상 통로의 입구이며, 그가 본 인물은 범인인 윤서진이다."
+      },
+      {
+        "id": "ts_harassment",
+        "witnessId": "char_suspect2",
+        "content": "그 인간, 역겨웠어요. 계속 추근댔다고요. 그래서 증거라도 잡으려고 녹음기도 갖고 다녔어요. 하지만 죽이진 않았어요. 그런 쓰레기 때문에 내 인생을 망칠 순 없으니까.",
+        "truthLevel": "true",
+        "hiddenMeaning": "선장에 대한 강한 동기를 드러내지만, 살인은 부정한다. 그녀의 증언은 선장의 평판을 알려주어 다른 용의자들의 동기를 강화하는 역할을 한다."
+      }
+    ]
+  },
+  "flagSystem": {
+    "flags": [
+      {
+        "id": "ev_oily_footprint",
+        "category": "evidence",
+        "name": "기름 묻은 족적",
+        "description": "선장실 근처에서 기관실의 기름 족적을 발견했다.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_logbook",
+        "category": "evidence",
+        "name": "기관실 운행 일지",
+        "description": "윤서진의 알리바이가 적힌 일지를 입수했다.",
+        "isCritical": true
+      },
+      {
+        "id": "ev_blackmail_note",
+        "category": "evidence",
+        "name": "협박 편지 초안",
+        "description": "선장이 누군가를 협박하려던 정황을 발견했다.",
+        "isCritical": false
+      },
+      {
+        "id": "ev_hidden_recorder",
+        "category": "evidence",
+        "name": "소형 녹음기",
+        "description": "최유리가 선장을 경계하던 증거를 발견했다.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_culprit_alibi",
+        "category": "testimony",
+        "name": "윤서진의 알리바이",
+        "description": "윤서진의 증언을 들었다.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_suspect1_alibi",
+        "category": "testimony",
+        "name": "박선우의 알리바이",
+        "description": "박선우의 증언을 들었다.",
+        "isCritical": false
+      },
+      {
+        "id": "ts_witness_sighting",
+        "category": "testimony",
+        "name": "이정훈의 목격담",
+        "description": "이정훈의 목격 증언을 들었다.",
+        "isCritical": true
+      },
+      {
+        "id": "ts_harassment",
+        "category": "testimony",
+        "name": "최유리의 증언",
+        "description": "최유리가 선장에게 성희롱을 당했다는 증언을 들었다.",
+        "isCritical": false
+      },
+      {
+        "id": "vs_captain_room",
+        "category": "visited",
+        "name": "선장실 방문",
+        "description": "선장실을 조사했다.",
+        "isCritical": false
+      },
+      {
+        "id": "vs_engine_room",
+        "category": "visited",
+        "name": "기관실 방문",
+        "description": "기관실을 조사했다.",
+        "isCritical": false
+      },
+      {
+        "id": "vs_casino",
+        "category": "visited",
+        "name": "카지노 방문",
+        "description": "카지노를 조사했다.",
+        "isCritical": false
+      },
+      {
+        "id": "st_found_body",
+        "category": "story",
+        "name": "시체 발견",
+        "description": "선장의 시체를 발견하고 조사가 시작되었다.",
+        "isCritical": true
+      }
+    ],
+    "criticalFlags": [
+      "ev_oily_footprint",
+      "ev_logbook",
+      "ts_witness_sighting"
+    ],
+    "minimumCluesForTrueEnd": 5
+  },
+  "branchingStructure": {
+    "investigationPhase": {
+      "description": "태풍 속에서 3번의 수사 기회가 주어진다. 매 기회마다 지정된 장소를 방문하여 단서를 수집할 수 있다.",
+      "locations": [
+        {
+          "id": "bg_captain_room",
+          "name": "선장실",
+          "availableAfter": "st_found_body",
+          "cluesHere": [
+            "ev_blackmail_note",
+            "ev_oily_footprint"
+          ],
+          "testimonyHere": []
+        },
+        {
+          "id": "bg_engine_room",
+          "name": "기관실",
+          "availableAfter": "st_found_body",
+          "cluesHere": [
+            "ev_logbook"
+          ],
+          "testimonyHere": [
+            "ts_culprit_alibi"
+          ]
+        },
+        {
+          "id": "bg_casino",
+          "name": "카지노",
+          "availableAfter": "st_found_body",
+          "cluesHere": [],
+          "testimonyHere": [
+            "ts_suspect1_alibi"
+          ]
+        },
+        {
+          "id": "bg_deck",
+          "name": "갑판",
+          "availableAfter": "st_found_body",
+          "cluesHere": [],
+          "testimonyHere": [
+            "ts_witness_sighting"
+          ]
+        },
+        {
+          "id": "bg_dining_hall",
+          "name": "식당",
+          "availableAfter": "st_found_body",
+          "cluesHere": [
+            "ev_hidden_recorder"
+          ],
+          "testimonyHere": [
+            "ts_harassment"
+          ]
+        }
+      ],
+      "investigationRounds": 3,
+      "cluesPerRound": 2
+    },
+    "mergePoint": {
+      "scene": "scene_final_deduction",
+      "description": "모든 수사 활동이 끝나고, 모든 생존자가 라운지에 모여 주인공의 추리를 듣는다.",
+      "minimumCluesRequired": 3
+    }
+  },
+  "deductionDesign": {
+    "questions": [
+      {
+        "id": "q_culprit",
+        "question": "강태준 선장을 살해한 범인은 누구인가?",
+        "correctAnswer": "char_culprit",
+        "wrongAnswers": [
+          "char_suspect1",
+          "char_suspect2"
+        ],
+        "requiredForEnding": [
+          "true",
+          "good",
+          "normal"
+        ]
+      },
+      {
+        "id": "q_trick",
+        "question": "범인은 어떻게 완벽한 알리바이를 만들었는가?",
+        "correctAnswer": "승무원 전용 통로로 이동 후, 기관실 일지를 조작했다.",
+        "wrongAnswers": [
+          "카지노의 다른 손님을 매수하여 알리바이를 위증시켰다.",
+          "미리 녹음해 둔 소리를 이용해 객실에 있는 척 위장했다."
+        ],
+        "requiredForEnding": [
+          "true",
+          "good"
+        ]
+      },
+      {
+        "id": "q_motive",
+        "question": "범인의 진짜 범행 동기는 무엇이었나?",
+        "correctAnswer": "과거 선장의 보험사기로 희생된 아버지의 복수.",
+        "wrongAnswers": [
+          "밀수 사실을 폭로하겠다는 선장의 협박 때문에.",
+          "선장의 지속적인 성희롱을 참을 수 없어서."
+        ],
+        "requiredForEnding": [
+          "true"
+        ]
+      }
+    ]
+  },
+  "endings": [
+    {
+      "id": "ending_true",
+      "type": "true",
+      "title": "폭풍 속의 진실",
+      "condition": {
+        "correctAnswers": {
+          "culprit": true,
+          "trick": true,
+          "motive": true
+        },
+        "minClueCount": 5
+      },
+      "description": "당신은 범인의 신원과 교묘한 알리바이 트릭, 그리고 그 뒤에 숨겨진 슬픈 원한까지 모든 것을 완벽하게 밝혀냈다. 태풍이 그치고 마침내 구조 신호가 연결되었을 때, 사건의 진실은 고요한 바다 위로 떠오른다."
+    },
+    {
+      "id": "ending_good",
+      "type": "good",
+      "title": "차가운 복수",
+      "condition": {
+        "correctAnswers": {
+          "culprit": true,
+          "trick": true,
+          "motive": false
+        }
+      },
+      "description": "당신은 범인의 트릭을 간파하여 그를 논리적으로 압박했다. 범행을 인정한 범인은 끝내 자신의 진짜 동기에 대해서는 입을 다물었다. 그의 마음속 깊은 어둠은 영원히 태평양의 심해에 잠기게 되었다."
+    },
+    {
+      "id": "ending_normal",
+      "type": "normal",
+      "title": "우연한 해결",
+      "condition": {
+        "correctAnswers": {
+          "culprit": true,
+          "trick": false,
+          "motive": false
+        }
+      },
+      "description": "결정적인 증거를 바탕으로 범인을 지목하는 데는 성공했다. 하지만 범인이 어떻게 알리바이를 만들었는지, 왜 그런 짓을 했는지는 명확히 설명하지 못했다. 어딘가 찜찜함이 남는 반쪽짜리 해결이다."
+    },
+    {
+      "id": "ending_bad",
+      "type": "bad",
+      "title": "뒤바뀐 운명",
+      "condition": {
+        "correctAnswers": {
+          "culprit": false
+        }
+      },
+      "description": "당신의 추리는 빗나갔다. 무고한 사람이 범인으로 지목되었고, 진범은 어둠 속에서 조용히 미소 짓고 있다. 태풍이 지나간 후에도, 오리온호의 진실은 영원히 폭풍 속에 갇히고 말았다."
+    }
+  ]
+}

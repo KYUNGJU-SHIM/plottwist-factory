@@ -1,0 +1,1085 @@
+{
+  "meta": {
+    "title": "폭풍의 항해: 오리온호 살인사건",
+    "description": "거친 태풍이 몰아치는 호화 크루즈 '오리온호'. 선장이 자신의 방에서 시체로 발견된다. 고립된 바다 위, 한정된 용의자들. 추리소설가인 당신은 이 비극 뒤에 숨겨진 진실을 파헤쳐야 한다.",
+    "playtime": "45-60분"
+  },
+  "characters": {
+    "char_protagonist": {
+      "name": "김지운",
+      "color": "#E0E0E0"
+    },
+    "char_culprit": {
+      "name": "윤서진",
+      "color": "#A0C4FF"
+    },
+    "char_suspect1": {
+      "name": "박선우",
+      "color": "#FFADAD"
+    },
+    "char_suspect2": {
+      "name": "최유리",
+      "color": "#FFD6A5"
+    },
+    "char_suspect3": {
+      "name": "이정훈",
+      "color": "#FDFFB6"
+    },
+    "char_victim": {
+      "name": "강태준",
+      "color": "#BDB2FF"
+    }
+  },
+  "backgrounds": [
+    {
+      "id": "bg_captain_room",
+      "name": "선장실",
+      "color": "#192A56"
+    },
+    {
+      "id": "bg_engine_room",
+      "name": "기관실",
+      "color": "#2F3640"
+    },
+    {
+      "id": "bg_casino",
+      "name": "카지노",
+      "color": "#8C2A3C"
+    },
+    {
+      "id": "bg_deck",
+      "name": "갑판",
+      "color": "#2C3E50"
+    },
+    {
+      "id": "bg_dining_hall",
+      "name": "식당/라운지",
+      "color": "#4A4A4A"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_prologue_01",
+      "chapter": "prologue",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "북태평양을 가로지르는 호화 크루즈 '오리온호'. 나는 차기작 구상을 위해 이 배에 올랐다."
+        },
+        {
+          "type": "narration",
+          "text": "하지만 망망대해 위에서의 낭만도 잠시, 거대한 태풍이 오리온호를 집어삼키려 하고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "최유리 씨, 이런 날은 둘이서 와인이나 한잔하면 좋지 않겠어? 내 방에 아주 좋은 게 있는데."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "관심 없어요, 선장님. 배나 제대로 신경 쓰시죠."
+        },
+        {
+          "type": "narration",
+          "text": "가수 최유리는 혐오감이 가득한 얼굴로 선장을 쏘아붙이고는 자리를 떠났다. 선장의 평판은 그리 좋아 보이지 않았다."
+        }
+      ],
+      "next": "scene_prologue_02"
+    },
+    {
+      "id": "scene_prologue_02",
+      "chapter": "prologue",
+      "background": "bg_deck",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "바람을 쐬러 나온 갑판은 이미 거친 비바람이 몰아치고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "이런, 폭풍이 생각보다 더 거세군요. 이런 날은 잠들기도 쉽지 않겠어요."
+        },
+        {
+          "type": "narration",
+          "text": "온화한 인상의 노신사, 이정훈 씨가 내게 말을 걸어왔다. 그때, 선장실 쪽에서 고성이 터져 나왔다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "이건 약속이랑 다르잖소! 당장 내 물건부터 처리해 줘요!"
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "시끄럽소, 박 사장. 이 배에선 내가 왕이야. 돈을 더 가져오든가, 아니면 조용히 하든가."
+        },
+        {
+          "type": "narration",
+          "text": "사업가 박선우가 핏발 선 눈으로 선장을 노려보고 있었다. 두 사람 사이에도 심상치 않은 기류가 흘렀다."
+        }
+      ],
+      "next": "scene_prologue_03"
+    },
+    {
+      "id": "scene_prologue_03",
+      "chapter": "prologue",
+      "background": "bg_deck",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "박선우가 분을 삭이지 못하고 떠난 뒤, 1등 항해사 윤서진이 선장에게 다가갔다."
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "선장님, 태풍 대비 보고 드립니다. 기관실 비상 설비 점검이 필요할 것 같습니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_victim",
+          "text": "알아서 해. 쯧, 자네 아비처럼 무능하게 배나 가라앉히지 말고."
+        },
+        {
+          "type": "narration",
+          "text": "선장의 모욕적인 말에, 윤서진 항해사의 표정이 순간 얼어붙었다. 그녀는 아무 말 없이 고개를 숙이고 자리를 떠났다."
+        },
+        {
+          "type": "narration",
+          "text": "폭풍우가 몰아치는 배 안에서, 저마다의 갈등이 파도처럼 일렁이고 있었다. 그리고 이것이 내가 선장을 본 마지막 모습이었다."
+        }
+      ],
+      "next": "scene_incident_01"
+    },
+    {
+      "id": "scene_incident_01",
+      "chapter": "incident",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "다음 날 아침, 배는 여전히 폭풍의 영향권 안에 있었다. 승객들은 불안감 속에서 식당에 모여들었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "선장은 어디 있는 거야? 배가 이 모양인데 코빼기도 안 보이다니!"
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "선장님께서 응답이 없으십니다. 계속 호출하고 있지만..."
+        },
+        {
+          "type": "narration",
+          "text": "그때, 한 승무원이 새파랗게 질린 얼굴로 식당에 뛰어 들어왔다."
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "무슨 일이지?"
+        },
+        {
+          "type": "narration",
+          "text": "\"서... 선장실 문이 열려 있는데... 피가...\""
+        }
+      ],
+      "next": "scene_incident_02"
+    },
+    {
+      "id": "scene_incident_02",
+      "chapter": "incident",
+      "background": "bg_captain_room",
+      "onEnter": {
+        "setFlags": {
+          "st_found_body": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "강태준 선장은 자신의 방, 그 화려한 집무용 책상에 쓰러져 있었다. 가슴에는 날카로운 흉기가 남긴 단 하나의 자상이 선명했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(사망 추정 시각은 어젯밤... 태풍이 가장 심할 때로군.)"
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "외부와의 통신은 두절 상태입니다. 구조 신호도 보낼 수 없습니다. 이 배 안의 누군가가... 범인입니다."
+        },
+        {
+          "type": "narration",
+          "text": "고립된 크루즈, 폭풍 속의 살인. 원치 않았지만, 나의 추리가 시작되어야만 했다."
+        }
+      ],
+      "next": "scene_investigation_hub_1"
+    },
+    {
+      "id": "scene_investigation_hub_1",
+      "chapter": "investigation",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "1차 수사를 시작한다. 어디를 먼저 조사할까?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "사건 현장인 [선장실]을 조사한다.",
+              "next": "scene_investigate_captain_room_1",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_captain_room"
+              }
+            },
+            {
+              "text": "알리바이를 주장하는 [기관실]을 조사한다.",
+              "next": "scene_investigate_engine_room_1",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_engine_room"
+              }
+            },
+            {
+              "text": "박선우가 있었다는 [카지노]를 조사한다.",
+              "next": "scene_investigate_casino_1",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_casino"
+              }
+            },
+            {
+              "text": "목격자를 찾으러 [갑판]으로 가본다.",
+              "next": "scene_investigate_deck_1",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_deck"
+              }
+            },
+            {
+              "text": "다른 용의자들이 있는 [식당]으로 가본다.",
+              "next": "scene_investigate_dining_hall_1",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_dining_hall"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_investigate_captain_room_1",
+      "background": "bg_captain_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_captain_room": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "선장실은 여전히 어지럽다. 시신은 옮겨졌지만, 비릿한 냄새는 가시지 않았다."
+        },
+        {
+          "type": "narration",
+          "text": "나는 주변을 샅샅이 살폈다."
+        },
+        {
+          "type": "narration",
+          "text": "쓰레기통에서 찢어진 종이 조각을 발견했다. 이어 붙여보니 '밀수... 약속한 금액을 당장...'이라는 글자가 보인다.",
+          "addClue": "ev_blackmail_note"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(선장이 박선우 씨를 협박하고 있었던 건가... 강력한 동기가 되겠군.)"
+        },
+        {
+          "type": "narration",
+          "text": "그리고... 문 앞 카펫에서 아주 희미한 자국을 발견했다. 기름때가 묻은 발자국 같다.",
+          "addClue": "ev_oily_footprint"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(이 기름... 어디서 본 것 같은데. 기관실에서 쓰는 윤활유와 비슷하다.)"
+        }
+      ],
+      "next": "scene_investigation_hub_2"
+    },
+    {
+      "id": "scene_investigate_engine_room_1",
+      "background": "bg_engine_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_engine_room": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "기관실은 귀가 먹먹할 정도의 굉음과 뜨거운 열기로 가득했다. 윤서진 항해사가 묵묵히 계기판을 살피고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "윤서진 씨, 어젯밤 알리바이에 대해 다시 한번 들을 수 있을까요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_culprit",
+          "text": "어제 말씀드린 그대로입니다. 22시 30분부터 23시 30분까지, 이곳에서 비상 설비를 점검했습니다. 여기 운행 일지가 증거입니다."
+        },
+        {
+          "type": "narration",
+          "text": "그녀가 내민 일지에는 빽빽한 기록이 적혀 있었다. 23:00 정각에는 '3번 터빈 압력 정상'이라고 쓰여 있다.",
+          "addClue": "ts_culprit_alibi"
+        },
+        {
+          "type": "narration",
+          "text": "나는 일지를 유심히 살펴보았다. 무언가 위화감이 느껴진다.",
+          "addClue": "ev_logbook"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(23시 기록만... 주변의 다른 기록들과 잉크의 마른 상태가 미묘하게 달라 보인다. 마치 나중에 급하게 써넣은 것처럼...)"
+        }
+      ],
+      "next": "scene_investigation_hub_2"
+    },
+    {
+      "id": "scene_investigate_casino_1",
+      "background": "bg_casino",
+      "onEnter": {
+        "setFlags": {
+          "vs_casino": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "카지노는 사건 때문인지 한산했다. 박선우가 초조하게 손톱을 물어뜯으며 앉아 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "박선우 씨, 어젯밤 23시경에 이곳에 계셨다고 들었습니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect1",
+          "text": "그래! 여기 딜러도 봤고, 다른 손님들도 봤어! 그 영감탱이 때문에 머리는 복잡했지만, 난 사람 죽일 배짱은 없다고!"
+        },
+        {
+          "type": "narration",
+          "text": "그는 신경질적으로 소리쳤다. 딜러에게 확인해보니, 그의 알리바이는 확실해 보였다.",
+          "addClue": "ts_suspect1_alibi"
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "(알리바이는 확실한가... 하지만 선장과 금전 문제가 있었던 건 분명해 보인다.)"
+        }
+      ],
+      "next": "scene_investigation_hub_2"
+    },
+    {
+      "id": "scene_investigate_deck_1",
+      "background": "bg_deck",
+      "onEnter": {
+        "setFlags": {
+          "vs_deck": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "갑판에는 이정훈 씨가 나와 바다를 보고 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "이정훈 선생님, 어젯밤 혹시 무언가 보신 게 있으신가요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "글쎄요... 제가 불면증이 있어서 밤새 배 안을 좀 돌아다녔습니다. 그러다 23시가 되기 직전이었을 겁니다."
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect3",
+          "text": "승무원 복장을 한 사람이 3층 복도 끝에 있는 창고 같은 문으로 휙 사라지는 걸 봤어요. 어두워서 얼굴은 못 봤지만, 체격은 그리 크지 않은 사람이었죠."
+        },
+        {
+          "type": "narration",
+          "text": "나는 그의 증언을 기억해두었다. 승무원만 아는 통로 같은 것이 있을지도 모른다.",
+          "addClue": "ts_witness_sighting"
+        }
+      ],
+      "next": "scene_investigation_hub_2"
+    },
+    {
+      "id": "scene_investigate_dining_hall_1",
+      "background": "bg_dining_hall",
+      "onEnter": {
+        "setFlags": {
+          "vs_dining_hall": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "식당 한쪽 구석에 가수 최유리가 홀로 앉아 있었다. 그녀의 얼굴에는 여전히 분노가 서려 있었다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "최유리 씨, 선장님과의 관계에 대해 들을 수 있을까요?"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "그 인간, 역겨웠어요. 계속 추근댔다고요. 그래서 증거라도 잡으려고 녹음기도 갖고 다녔어요. 이거요."
+        },
+        {
+          "type": "narration",
+          "text": "그녀는 핸드백에서 작은 녹음기를 꺼내 보여주었다.",
+          "addClue": "ev_hidden_recorder"
+        },
+        {
+          "type": "speak",
+          "character": "char_suspect2",
+          "text": "하지만 죽이진 않았어요. 그런 쓰레기 때문에 내 인생을 망칠 순 없으니까. 어젯밤엔 계속 방에서 노래 연습만 했어요."
+        },
+        {
+          "type": "narration",
+          "text": "그녀의 증언은 선장에 대한 강한 살해 동기를 보여주었다.",
+          "addClue": "ts_harassment"
+        }
+      ],
+      "next": "scene_investigation_hub_2"
+    },
+    {
+      "id": "scene_investigation_hub_2",
+      "chapter": "investigation",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "2차 수사를 시작한다. 남은 장소 중 어디를 조사할까?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "[선장실] 조사",
+              "next": "scene_investigate_captain_room_2",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_captain_room"
+              }
+            },
+            {
+              "text": "[기관실] 조사",
+              "next": "scene_investigate_engine_room_2",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_engine_room"
+              }
+            },
+            {
+              "text": "[카지노] 조사",
+              "next": "scene_investigate_casino_2",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_casino"
+              }
+            },
+            {
+              "text": "[갑판] 조사",
+              "next": "scene_investigate_deck_2",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_deck"
+              }
+            },
+            {
+              "text": "[식당] 조사",
+              "next": "scene_investigate_dining_hall_2",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_dining_hall"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_investigate_captain_room_2",
+      "background": "bg_captain_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_captain_room": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "선장실을 다시 조사했다. 쓰레기통에서 찢어진 종이 조각을 발견했다. '밀수... 약속한 금액을 당장...'이라고 적혀있다.",
+          "addClue": "ev_blackmail_note"
+        },
+        {
+          "type": "narration",
+          "text": "문 앞 카펫에서 희미한 기름 발자국을 발견했다. 기관실에서 사용하는 윤활유 성분 같다.",
+          "addClue": "ev_oily_footprint"
+        }
+      ],
+      "next": "scene_investigation_hub_3"
+    },
+    {
+      "id": "scene_investigate_engine_room_2",
+      "background": "bg_engine_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_engine_room": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "기관실에서 윤서진 항해사를 만났다. 그녀는 22:30-23:30까지 설비 점검을 했다며 운행 일지를 보여주었다.",
+          "addClue": "ts_culprit_alibi"
+        },
+        {
+          "type": "narration",
+          "text": "일지를 살펴보니 23:00 기록의 잉크만 미세하게 달라 보인다. 나중에 급하게 쓴 것 같다.",
+          "addClue": "ev_logbook"
+        }
+      ],
+      "next": "scene_investigation_hub_3"
+    },
+    {
+      "id": "scene_investigate_casino_2",
+      "background": "bg_casino",
+      "onEnter": {
+        "setFlags": {
+          "vs_casino": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "카지노에서 박선우를 만났다. 그는 어젯밤 계속 이곳에 있었다고 주장했고, 딜러 역시 그 사실을 증언했다.",
+          "addClue": "ts_suspect1_alibi"
+        }
+      ],
+      "next": "scene_investigation_hub_3"
+    },
+    {
+      "id": "scene_investigate_deck_2",
+      "background": "bg_deck",
+      "onEnter": {
+        "setFlags": {
+          "vs_deck": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "갑판에서 이정훈 씨를 만났다. 그는 어젯밤 23시 직전, 승무원 복장의 사람이 3층 복도 끝 '창고 같은 문'으로 사라지는 것을 봤다고 증언했다.",
+          "addClue": "ts_witness_sighting"
+        }
+      ],
+      "next": "scene_investigation_hub_3"
+    },
+    {
+      "id": "scene_investigate_dining_hall_2",
+      "background": "bg_dining_hall",
+      "onEnter": {
+        "setFlags": {
+          "vs_dining_hall": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "식당에서 최유리를 만났다. 그녀는 선장에게 성희롱을 당해왔으며, 증거를 잡기 위해 소형 녹음기를 가지고 다녔다고 털어놓았다.",
+          "addClue": "ts_harassment"
+        },
+        {
+          "type": "narration",
+          "text": "그녀의 핸드백에서 실제로 소형 녹음기를 확인했다.",
+          "addClue": "ev_hidden_recorder"
+        }
+      ],
+      "next": "scene_investigation_hub_3"
+    },
+    {
+      "id": "scene_investigation_hub_3",
+      "chapter": "investigation",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "마지막 3차 수사를 시작한다. 어디로 갈까?"
+        },
+        {
+          "type": "choice",
+          "options": [
+            {
+              "text": "[선장실] 조사",
+              "next": "scene_investigate_captain_room_3",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_captain_room"
+              }
+            },
+            {
+              "text": "[기관실] 조사",
+              "next": "scene_investigate_engine_room_3",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_engine_room"
+              }
+            },
+            {
+              "text": "[카지노] 조사",
+              "next": "scene_investigate_casino_3",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_casino"
+              }
+            },
+            {
+              "text": "[갑판] 조사",
+              "next": "scene_investigate_deck_3",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_deck"
+              }
+            },
+            {
+              "text": "[식당] 조사",
+              "next": "scene_investigate_dining_hall_3",
+              "condition": {
+                "type": "notHasFlag",
+                "flag": "vs_dining_hall"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_investigate_captain_room_3",
+      "background": "bg_captain_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_captain_room": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "선장실을 마지막으로 조사했다. 쓰레기통에서 '밀수'라고 적힌 협박 편지 초안을, 카펫에서 기름 발자국을 발견했다.",
+          "addClue": "ev_blackmail_note"
+        },
+        {
+          "type": "narration",
+          "text": "...",
+          "addClue": "ev_oily_footprint"
+        }
+      ],
+      "next": "scene_investigation_end"
+    },
+    {
+      "id": "scene_investigate_engine_room_3",
+      "background": "bg_engine_room",
+      "onEnter": {
+        "setFlags": {
+          "vs_engine_room": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "기관실을 마지막으로 조사했다. 윤서진의 알리바이 증거인 운행 일지를 확보했다. 하지만 잉크가 미심쩍다.",
+          "addClue": "ts_culprit_alibi"
+        },
+        {
+          "type": "narration",
+          "text": "...",
+          "addClue": "ev_logbook"
+        }
+      ],
+      "next": "scene_investigation_end"
+    },
+    {
+      "id": "scene_investigate_casino_3",
+      "background": "bg_casino",
+      "onEnter": {
+        "setFlags": {
+          "vs_casino": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "카지노를 마지막으로 조사했다. 박선우의 알리바이는 딜러에 의해 교차 검증되었다.",
+          "addClue": "ts_suspect1_alibi"
+        }
+      ],
+      "next": "scene_investigation_end"
+    },
+    {
+      "id": "scene_investigate_deck_3",
+      "background": "bg_deck",
+      "onEnter": {
+        "setFlags": {
+          "vs_deck": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "갑판을 마지막으로 조사했다. 이정훈 씨로부터 '승무원 복장의 사람이 사라진 창고 같은 문'에 대한 결정적인 목격담을 들었다.",
+          "addClue": "ts_witness_sighting"
+        }
+      ],
+      "next": "scene_investigation_end"
+    },
+    {
+      "id": "scene_investigate_dining_hall_3",
+      "background": "bg_dining_hall",
+      "onEnter": {
+        "setFlags": {
+          "vs_dining_hall": true
+        }
+      },
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "식당을 마지막으로 조사했다. 최유리로부터 선장의 성희롱에 대한 증언과 증거인 소형 녹음기를 확보했다.",
+          "addClue": "ts_harassment"
+        },
+        {
+          "type": "narration",
+          "text": "...",
+          "addClue": "ev_hidden_recorder"
+        }
+      ],
+      "next": "scene_investigation_end"
+    },
+    {
+      "id": "scene_investigation_end",
+      "chapter": "investigation",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "모든 수사가 끝났다. 나는 생존자 전원을 라운지로 모이게 했다."
+        },
+        {
+          "type": "speak",
+          "character": "char_protagonist",
+          "text": "지금부터... 제가 알아낸 진실을 말씀드리겠습니다."
+        },
+        {
+          "type": "conditional_text",
+          "condition": {
+            "type": "minClueCount",
+            "count": 5
+          },
+          "ifTrue": "(단서는 충분히 모였다. 범인을 지목하고 트릭을 밝혀낼 수 있을 것 같다.)",
+          "ifFalse": "(단서가 부족한 것 같지만... 어떻게든 추리를 완성해야 한다.)"
+        }
+      ],
+      "next": "scene_deduction_start"
+    },
+    {
+      "id": "scene_deduction_start",
+      "chapter": "deduction",
+      "background": "bg_dining_hall",
+      "dialogue": [
+        {
+          "type": "narration",
+          "text": "모두의 시선이 내게 쏠린다. 이제, 나의 마지막 추리를 시작할 시간이다."
+        }
+      ]
+    }
+  ],
+  "deductionPhase": {
+    "entryScene": "scene_deduction_start",
+    "questions": [
+      {
+        "id": "q_culprit",
+        "question": "강태준 선장을 살해한 범인은 누구입니까?",
+        "type": "character_select",
+        "options": [
+          {
+            "characterId": "char_suspect1",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_suspect2",
+            "isCorrect": false
+          },
+          {
+            "characterId": "char_culprit",
+            "isCorrect": true
+          }
+        ],
+        "onCorrect": {
+          "setFlags": {
+            "correct_culprit": true,
+            "st_correct_culprit": true
+          }
+        },
+        "onWrong": {
+          "setFlags": {
+            "correct_culprit": false
+          }
+        },
+        "correctExplanation": "맞습니다. 범인은 바로 1등 항해사, 윤서진 씨입니다.",
+        "wrongExplanation": "아닙니다. 그 사람에겐 확실한 알리바이가 있거나, 결정적인 증거가 없습니다."
+      },
+      {
+        "id": "q_trick",
+        "question": "범인은 어떻게 완벽한 알리바이를 만들었습니까?",
+        "type": "text_select",
+        "options": [
+          {
+            "text": "카지노의 다른 손님을 매수하여 알리바이를 위증시켰다.",
+            "isCorrect": false
+          },
+          {
+            "text": "미리 녹음해 둔 소리를 이용해 객실에 있는 척 위장했다.",
+            "isCorrect": false
+          },
+          {
+            "text": "승무원 전용 통로로 이동 후, 기관실 일지를 조작했다.",
+            "isCorrect": true
+          }
+        ],
+        "onCorrect": {
+          "setFlags": {
+            "correct_trick": true,
+            "st_correct_trick": true
+          }
+        },
+        "onWrong": {
+          "setFlags": {
+            "correct_trick": false
+          }
+        },
+        "correctExplanation": "정확합니다. 범인은 기관실의 소음을 방패 삼아 승무원 전용 통로로 이동해 범행을 저지르고, 돌아와 일지를 조작한 겁니다.",
+        "wrongExplanation": "아닙니다. 그것은 이 사건의 트릭이 아닙니다."
+      },
+      {
+        "id": "q_motive",
+        "question": "그렇다면, 범인의 진짜 범행 동기는 무엇이었을까요?",
+        "type": "text_select",
+        "options": [
+          {
+            "text": "밀수 사실을 폭로하겠다는 선장의 협박 때문에.",
+            "isCorrect": false
+          },
+          {
+            "text": "선장의 지속적인 성희롱을 참을 수 없어서.",
+            "isCorrect": false
+          },
+          {
+            "text": "과거 선장의 보험사기로 희생된 아버지의 복수.",
+            "isCorrect": true
+          }
+        ],
+        "onCorrect": {
+          "setFlags": {
+            "correct_motive": true,
+            "st_correct_motive": true
+          }
+        },
+        "onWrong": {
+          "setFlags": {
+            "correct_motive": false
+          }
+        },
+        "correctExplanation": "그렇습니다. 이 모든 비극은 과거 '파랑새호' 침몰 사건에서부터 시작된, 한 딸의 슬픈 복수극이었습니다.",
+        "wrongExplanation": "그것은 다른 용의자의 동기일 뿐, 범인의 진짜 마음속 어둠은 아니었습니다."
+      }
+    ]
+  },
+  "endings": [
+    {
+      "id": "ending_true",
+      "type": "true",
+      "title": "폭풍 속의 진실",
+      "condition": {
+        "hasAllFlags": [
+          "correct_culprit",
+          "correct_trick",
+          "correct_motive"
+        ],
+        "minClueCount": 5
+      },
+      "priority": 100,
+      "scenes": [
+        {
+          "id": "scene_ending_true",
+          "background": "bg_dining_hall",
+          "dialogue": [
+            {
+              "type": "speak",
+              "character": "char_protagonist",
+              "text": "당신은 과거 '파랑새호' 선장의 딸이군요. 강태준이 당신의 아버지를 파멸시키고, 어젯밤 그 사실을 모욕했기 때문에... 복수한 겁니다."
+            },
+            {
+              "type": "speak",
+              "character": "char_culprit",
+              "text": "...모든 걸 알고 있었군요. 네, 맞습니다. 아버님의 원수를... 갚았을 뿐입니다."
+            },
+            {
+              "type": "narration",
+              "text": "나의 완벽한 추리 앞에, 윤서진은 모든 것을 자백했다. 그녀의 눈에서 뒤늦은 눈물이 흘러내렸다."
+            },
+            {
+              "type": "narration",
+              "text": "태풍이 그치고 마침내 구조 신호가 연결되었을 때, 사건의 진실은 고요한 바다 위로 떠올랐다. 슬픈 복수극은 막을 내렸다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ending_good",
+      "type": "good",
+      "title": "차가운 복수",
+      "condition": {
+        "hasAllFlags": [
+          "correct_culprit",
+          "correct_trick"
+        ]
+      },
+      "priority": 80,
+      "scenes": [
+        {
+          "id": "scene_ending_good",
+          "background": "bg_dining_hall",
+          "dialogue": [
+            {
+              "type": "speak",
+              "character": "char_protagonist",
+              "text": "기관실 기름 발자국과 조작된 일지, 그리고 승무원 통로에 대한 목격 증언. 범인은 당신입니다, 윤서진 씨."
+            },
+            {
+              "type": "speak",
+              "character": "char_culprit",
+              "text": "......"
+            },
+            {
+              "type": "speak",
+              "character": "char_culprit",
+              "text": "거기까지 밝혀내다니, 대단하군요. 네, 제가 죽였습니다."
+            },
+            {
+              "type": "narration",
+              "text": "나의 논리적인 추궁에, 그녀는 범행을 인정했다. 하지만 끝내 자신의 진짜 동기에 대해서는 입을 다물었다."
+            },
+            {
+              "type": "narration",
+              "text": "그녀의 마음속 깊은 어둠은 영원히 태평양의 심해에 잠기게 되었다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ending_normal",
+      "type": "normal",
+      "title": "우연한 해결",
+      "condition": {
+        "hasAllFlags": [
+          "correct_culprit"
+        ]
+      },
+      "priority": 50,
+      "scenes": [
+        {
+          "id": "scene_ending_normal",
+          "background": "bg_dining_hall",
+          "dialogue": [
+            {
+              "type": "speak",
+              "character": "char_protagonist",
+              "text": "선장실 근처에서 발견된 기관실의 기름 발자국... 윤서진 씨, 당신이 범인이라는 증거입니다."
+            },
+            {
+              "type": "speak",
+              "character": "char_culprit",
+              "text": "...그 발자국 하나로요?"
+            },
+            {
+              "type": "speak",
+              "character": "char_protagonist",
+              "text": "다른 증거는... 아직 찾지 못했지만, 당신이 가장 유력합니다!"
+            },
+            {
+              "type": "narration",
+              "text": "결정적인 증거 하나로 범인을 지목하는 데는 성공했다. 하지만 범인이 어떻게 알리바이를 만들었는지, 왜 그랬는지는 명확히 설명하지 못했다."
+            },
+            {
+              "type": "narration",
+              "text": "어딘가 찜찜함이 남는 반쪽짜리 해결이다."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ending_bad",
+      "type": "bad",
+      "title": "뒤바뀐 운명",
+      "condition": {
+        "hasAllFlags": []
+      },
+      "priority": 10,
+      "scenes": [
+        {
+          "id": "scene_ending_bad",
+          "background": "bg_dining_hall",
+          "dialogue": [
+            {
+              "type": "speak",
+              "character": "char_protagonist",
+              "text": "범인은 바로 당신입니다, 박선우 씨! 선장의 협박 편지가 증거입니다!"
+            },
+            {
+              "type": "speak",
+              "character": "char_suspect1",
+              "text": "뭐? 나는 계속 카지노에 있었다고! 말도 안 돼!"
+            },
+            {
+              "type": "narration",
+              "text": "나의 추리는 빗나갔다. 무고한 사람이 범인으로 지목되었고, 모두가 혼란에 빠졌다."
+            },
+            {
+              "type": "narration",
+              "text": "그 혼란 속에서, 진범은 어둠 속에서 조용히 미소 짓고 있었다. 오리온호의 진실은 영원히 폭풍 속에 갇히고 말았다."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
